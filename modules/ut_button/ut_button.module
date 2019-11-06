@@ -1,0 +1,93 @@
+<?php
+/**
+ * @file
+ * ut_button module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+* Implements hook_help().
+*
+* @inheritdoc
+*/
+function ut_button_help($route_name, RouteMatchInterface $route_match) {
+ switch ($route_name) {
+   case 'help.page.ut_button':
+     $text = file_get_contents(dirname(__FILE__) . "/README.md");
+     if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+       return '<pre>' . $text . '</pre>';
+     }
+     else {
+       // Use the Markdown filter to render the README.
+       $filter_manager = \Drupal::service('plugin.manager.filter');
+       $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+       $config = ['settings' => $settings];
+       $filter = $filter_manager->createInstance('markdown', $config);
+       return $filter->process($text, 'en');
+     }
+ }
+ return NULL;
+}
+
+/**
+* Implements hook_theme().
+* Lets us define our paragraphs templates in this module.
+*/
+function ut_button_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__ut_button' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__ut_button_set' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__ut_link' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__ut_link_set' => [
+      'base hook' => 'paragraph',
+    ]
+  ];
+}
+
+/**
+ * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
+ * 
+ * Adds "Content Tips" helper text to the paragraph
+ */
+function ut_button_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+  if ($element['#paragraph_type'] == 'ut_button_set') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>Use 1-3 buttons at a time.</strong> This will avoid overwhelming a user with buttons, and will help to narrow down choices.</li>';
+    $markup .= '<li><strong>Keep button label reasonable.</strong> Try to keep button labels to 1-3 words. Overly long buttons can look awkward. If a button has long text, try pairing the button with a heading to break it up.</li>';
+    $markup .= '<li><strong>Use meaningful language that tells users what to expect.</strong> Make sure the user knows where they will go when they click a button. Avoid generic language such as "More," "Click Here," or "Submit."</li>';
+    $markup .= '<li><strong>Don\'t Overuse buttons.</strong> Prioritize the actions you want your users to take. Avoid using a row of over 3 buttons, as well as "sprinkling" too many buttons throughout a page.</li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_button">Buttons Module Help</a></li>';
+    $markup .= '</ul>';
+    $element['ut_button_tips'] = array(
+      '#type' => 'details',
+      '#title' => t('Button Content Tips'),
+      '#weight' => -1000
+    );
+    $element['ut_button_tips']['#markup'] = $markup;
+  } elseif ($element['#paragraph_type'] == 'ut_link_set') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>Use 1-3 links at a time.</strong> This will avoid overwhelming a user with links, and will help to narrow down choices.</li>';
+    $markup .= '<li><strong>Keep link label reasonable.</strong> Try to keep link labels to 1-3 words. Overly long links can look awkward. If a link has long text, try pairing the link with a heading to break it up.</li>';
+    $markup .= '<li><strong>Use meaningful language that tells users what to expect.</strong> Make sure the user knows where they will go when they click a link. Avoid generic language such as "More," "Click Here," or "Submit."</li>';
+    $markup .= '<li><strong>Don\'t Overuse links.</strong> Prioritize the actions you want your users to take. Avoid using a row of over 3 links, as well as "sprinkling" too many links throughout a page.</li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_button">Links Module Help</a></li>';
+    $markup .= '</ul>';
+    $element['ut_link_tips'] = array(
+      '#type' => 'details',
+      '#title' => t('Link Content Tips'),
+      '#weight' => -1000
+    );
+    $element['ut_link_tips']['#markup'] = $markup;
+  }
+}

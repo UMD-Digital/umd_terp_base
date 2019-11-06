@@ -1,0 +1,95 @@
+<?php
+/**
+ * @file
+ * ut_button module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+* Implements hook_help().
+*
+* @inheritdoc
+*/
+function ut_text_help($route_name, RouteMatchInterface $route_match) {
+ switch ($route_name) {
+   case 'help.page.ut_text':
+     $text = file_get_contents(dirname(__FILE__) . "/README.md");
+     if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+       return '<pre>' . $text . '</pre>';
+     }
+     else {
+       // Use the Markdown filter to render the README.
+       $filter_manager = \Drupal::service('plugin.manager.filter');
+       $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+       $config = ['settings' => $settings];
+       $filter = $filter_manager->createInstance('markdown', $config);
+       return $filter->process($text, 'en');
+     }
+ }
+ return NULL;
+}
+
+/**
+* Implements hook_theme().
+* Lets us define our paragraphs templates in this module.
+*/
+function ut_text_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__ut_text' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__ut_text_2_columns' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__ut_text_3_columns' => [
+      'base hook' => 'paragraph',
+    ]
+  ];
+}
+
+/**
+ * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
+ * 
+ * Adds "Content Tips" helper text to the paragraph
+ */
+function ut_text_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+  if ($element['#paragraph_type'] == 'ut_text') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>Make use of headings to organize content.</strong> If a page has a clear hierarchy of content, use different heading styles to indicate importance. For example, a news story can be broken up by using an H2 for large sections, and then H3/H4 headings for details within each section.</li>';
+    $markup .= '<li><strong>Copy and paste text without formatting.</strong> All copy on the site should use the website font styling, and should not be modified in any way besides using bold text, underlining or italics. Pasting in text with formatting from another website or a Word doc can carry over colors, type sizes and styles that you don’t want.</li>';
+    $markup .= '<li><strong>Optimize images before embedding them.</strong> Large images slow down sites, which does not make your users happy. Save your image to the recommended pixel dimensions and file size before uploading.</li>';
+    $markup .= '<li><strong>Include captions with images.</strong> Users read captions, sometimes before they even read the body copy. Captions are also great for accessibility because it can be read by screen readers and provides context.</li>';
+    $markup .= '<li><strong>Don\'t Use headings just for styling purposes.</strong> Headings are meant to help organize content for readers, which is especially important for the visually impaired who may use screen readers. Don’t use a heading just because it has a size, color, or style that looks nice. This may confuse readers.</li>';
+    $markup .= '<li><strong>Don\'t Use headings that take up an entire paragraph of text.</strong> Headings are meant to be a summary of what you’re going to read. Using a heading for long chunks of text dilutes your message.</li>';
+    $markup .= '<li><strong>Don\'t Copy and paste directly from Word or another website.</strong> This can carry over colors, type sizes and styles that you don’t want.</li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_text">HTML/Text Module Help</a></li>';
+    $markup .= '</ul>';
+    $element['ut_text_tips'] = array(
+      '#type' => 'details',
+      '#title' => t('HTML/Text Content Tips'),
+      '#weight' => -1000
+    );
+    $element['ut_text_tips']['#markup'] = $markup;
+  } elseif ($element['#paragraph_type'] == 'ut_text_2_columns' || $element['#paragraph_type'] == 'ut_text_3_columns') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>Make use of the title heading to organize content.</strong> This heading will span the columns, and provide for an overview within each section.</li>';
+    $markup .= '<li><strong>Copy and paste text without formatting.</strong> All copy on the site should use the website font styling, and should not be modified in any way besides using bold text, underlining or italics. Pasting in text with formatting from another website or a Word doc can carry over colors, type sizes and styles that you don’t want.</li>';
+    $markup .= '<li><strong>Try to avoid images.</strong> The smaller width of columns make the display hard to control sometimes.</li>';
+    $markup .= '<li><strong>Don\'t Use headings just for styling purposes.</strong> Headings are meant to help organize content for readers, which is especially important for the visually impaired who may use screen readers. Don’t use a heading just because it has a size, color, or style that looks nice. This may confuse readers.</li>';
+    $markup .= '<li><strong>Don\'t Use headings that take up an entire paragraph of text.</strong> Headings are meant to be a summary of what you’re going to read. Using a heading for long chunks of text dilutes your message.</li>';
+    $markup .= '<li><strong>Don\'t Copy and paste directly from Word or another website.</strong> This can carry over colors, type sizes and styles that you don’t want.</li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_text">HTML/Text Module Help</a></li>';
+    $markup .= '</ul>';
+    $element['ut_text_column_tips'] = array(
+      '#type' => 'details',
+      '#title' => t('HTML/Text (Columned) Content Tips'),
+      '#weight' => -1000
+    );
+    $element['ut_text_column_tips']['#markup'] = $markup;
+  }
+}

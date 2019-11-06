@@ -1,0 +1,28 @@
+{%
+  set classes = [
+    'blockquote',
+    paragraph.field_ut_blockquote_style.value ? paragraph.field_ut_blockquote_style.value|clean_class,
+  ]
+%}
+<blockquote class="{{ classes|join(' ') }}">
+  {{ content.field_ut_blockquote_text|field_value }}
+  {% if content.field_ut_blockquote_image|field_value or content.field_ut_blockquote_author|field_value or content.field_ut_blockquote_source|field_value %}
+    <footer class="blockquote-footer">
+      {% if content.field_ut_blockquote_image|field_value %}
+        <div class="blockquote-portrait">
+          <img src="{{ file_url(content.field_ut_blockquote_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="Portrait of Firstname Lastname ’19">
+        </div>
+      {% endif %}
+      {% if content.field_ut_blockquote_author|field_value or content.field_ut_blockquote_source|field_value %}
+        <div class="blockquote-attribution">
+          {% if content.field_ut_blockquote_author|field_value %}
+            <span class="blockquote-author">{{ content.field_ut_blockquote_author|field_value }}</span>
+          {% endif %}
+          {% if content.field_ut_blockquote_source|field_value %}
+            <span class="blockquote-title">{{ content.field_ut_blockquote_source|field_value }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </footer>
+  {% endif %}
+</blockquote>

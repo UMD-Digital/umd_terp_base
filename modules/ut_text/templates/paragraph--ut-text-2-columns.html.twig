@@ -1,0 +1,14 @@
+
+{% if content.field_ut_text_2_columns_title|field_value %}
+  <h2>{{ content.field_ut_text_2_columns_title|field_value }}</h2>
+{% endif %}
+<div class="container-fluid p-0 editor-content">
+  <div class="row">
+    <div class="col-800">
+      {{ content.field_ut_text_2_columns_column_1|field_value }}
+    </div>
+    <div class="col-800">
+      {{ content.field_ut_text_2_columns_column_2|field_value }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{%
+  set classes = [
+    'btn',
+    paragraph.field_ut_button_style.value ? paragraph.field_ut_button_style.value|clean_class,
+  ]
+%}
+{% if content.field_ut_button_link.0 %}
+  {% include directory ~ '/templates/helpers/link.html.twig' with {'link': content.field_ut_button_link.0, 'classes': classes|join(' ') } %}
+{% endif %}
+

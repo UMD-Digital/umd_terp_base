@@ -1,0 +1,17 @@
+{%
+  set classes = [
+    'embed-bg',
+    paragraph.field_ut_video_style.value ? paragraph.field_ut_video_style.value|clean_class,
+  ]
+%}
+<div class="{{ classes|join(' ') }}">
+  <figure>
+    <div class="embed-responsive embed-responsive-2by1">
+      <iframe class="embed-responsive-item" title="{{ content.field_ut_video_title|field_value }}" src="{{ content.field_ut_video_url|field_value }}" allowfullscreen></iframe>
+    </div>
+    {% if content.field_ut_video_caption|field_value %}
+      <figcaption>{{ content.field_ut_video_caption|field_value }}</figcaption>
+    {% endif %}
+  </figure>
+</div>
+

@@ -1,0 +1,192 @@
+<?php
+
+/**
+ * @file
+ * ut_news module file.
+ */
+
+ use Drupal\Core\Routing\RouteMatchInterface;
+ use Drupal\paragraphs\Entity\Paragraph;
+ use Drupal\Core\Form\FormStateInterface;
+
+ /**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function ut_news_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.ut_news':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ * @param $variables
+ * This sets variables for getting events, and then gets events, and displays.
+ */
+function ut_news_preprocess_paragraph__ut_news(&$variables) {
+
+    // UUID to pass for cache
+    $uuid = $variables['elements']['#paragraph']->uuid->value;
+
+    // Check on Destination filter
+    $destination = null;
+    if(isset($variables['elements']['#paragraph']->field_ut_news_destination->value)) {
+        $destination = $variables['elements']['#paragraph']->field_ut_news_destination->value;
+    }
+
+    // Check on Colleges and Schools filter
+    $colleges_schools = null;
+    if(isset($variables['elements']['#paragraph']->field_ut_news_colleges_schools->value)) {
+        $colleges_schools = $variables['elements']['#paragraph']->field_ut_news_colleges_schools->value;
+    }
+
+    // Check on Audience filter
+    $audience = null;
+    if(isset($variables['elements']['#paragraph']->field_ut_news_audience->value)) {
+        $audience = $variables['elements']['#paragraph']->field_ut_news_audience->value;
+    }
+
+    // Check on Messaging Area filter
+    $messaging_area = null;
+    if(isset($variables['elements']['#paragraph']->field_ut_news_messaging_area->value)) {
+        $messaging_area = $variables['elements']['#paragraph']->field_ut_news_messaging_area->value;
+    }
+
+    // Check on Priorities filter
+    $priorities = null;
+    if(isset($variables['elements']['#paragraph']->field_ut_news_priorities->value)) {
+        $priorities = $variables['elements']['#paragraph']->field_ut_news_priorities->value;
+    }
+
+    // Check on Topics filter
+    $topic = null;
+    if(isset($variables['elements']['#paragraph']->field_ut_news_topics->value)) {
+        $topic = $variables['elements']['#paragraph']->field_ut_news_topics->value;
+    }
+
+    // Get news
+    $variables['ut_news_list'] = _ut_news_get_news(
+        $destination,
+        $colleges_schools,
+        $audience,
+        $messaging_area,
+        $priorities,
+        $topic,
+        3,
+        $uuid
+    );
+}
+
+ /**
+  * Implements hook_theme().
+  * Lets us define our paragraphs templates in this module.
+  */
+ function ut_news_theme($existing, $type, $theme, $path) {
+   return [
+     'paragraph__ut_news' => [
+       'base hook' => 'paragraph',
+     ]
+   ];
+ }
+
+ /**
+ * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
+ * 
+ * Adds "Content Tips" helper text to the paragraph
+ */
+function ut_news_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+    if ($element['#paragraph_type'] == 'ut_news') {
+      // Tips text.
+      $markup = '<ul>';
+      $markup .= '<li><strong>Use as few filters as possible.</strong> This gives the site abetter chance at having refreshed content.</li>';
+      $markup .= '<li><strong>Clear cache when testing.</strong> All calls to the HUB API are cached for efficiency, so you will need to clear cache EVERY TIME if you are testing different filter combinations.</li>';
+      $markup .= '<li><a target="_blank" href="/admin/help/ut_news">News Feed Module Help</a></li>';
+      $markup .= '</ul>';
+      $element['ut_news_tips'] = array(
+        '#type' => 'details',
+        '#title' => t('UMD HUB News Feed Content Tips'),
+        '#weight' => -1000
+      );
+      $element['ut_news_tips']['#markup'] = $markup;
+    }
+}
+
+/**
+* CUSTOM FUNCTIONS
+*
+*/
+
+
+ /**
+ * Gets news from HUB, and displays.
+ * 
+ * See https://umd-hub.herokuapp.com/graphql for self documentation.
+ *
+ */
+function _ut_news_get_news(
+    $destination = null,
+    $colleges_schools = null,
+    $audience = null,
+    $messaging_area = null,
+    $priorities = null,
+    $topic = null,
+    $range = 3, 
+    $id = 'news-default'
+) {
+    if ($cache = \Drupal::cache()->get('ut_news--' . $id)) {
+     return $cache->data;
+    } else {
+        $query = 'articles(page: {limit: ' . $range . ', offset: 0}';
+        if(isset($destination) || isset($colleges_schools) || isset($audience) || isset($messaging_area) || isset($priorities) || isset($topic)) {
+            $query .= ',filter: {';
+            if(isset($destination)) {
+                $query .= 'destination:' . $destination . ',';
+            }
+            if(isset($colleges_schools)) {
+                $query .= 'school:' . $colleges_schools . ',';
+            }
+            if(isset($audience)) {
+                $query .= 'audience:' . $audience . ',';
+            }
+            if(isset($messaging_area)) {
+                $query .= 'message_area:' . $messaging_area . ',';
+            }
+            if(isset($priorities)) {
+                $query .= 'initiative:' . $priorities . ',';
+            }
+            if(isset($topic)) {
+                $query .= 'topic:' . $topic . ',';
+            }
+            $query .= '}';
+        }
+
+        $query .= ' ) { data { title slug id summary hero_image { url_600_338 alt } }}';
+        $result = _umd_terp_base_middleware_get($query);
+        $result = $result['data']['articles']['data'];
+        if($result) {
+            \Drupal::cache()->set('ut_news--' . $id, $result, time() + 7200);
+            return $result;
+        } else {
+            return null;
+        }
+    }
+}
+
+
+ // UPDATES
+//////////////////////////////////////////////////////

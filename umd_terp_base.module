@@ -1,0 +1,48 @@
+<?php
+use GuzzleHttp\Client;
+use Drupal\Component\Serialization\Json;
+
+
+/**
+ * Implements hook_preprocess_paragraph().
+ * @param $variables
+ * Adds some them settings/info to paragraphs.
+ */
+function umd_terp_base_preprocess_paragraph(&$variables) {
+  // Need some theme settings for asset path/etc
+  _umd_terp_extend_theme_variables($variables);
+}
+
+/**
+ * Custom functions for the External Data Source Plugins, and content calls to the HUB.
+ *
+ * Gets taxonomies/term ID's/etc from the HUB Middleware.
+ */
+function _umd_terp_base_middleware_get($query) {
+  $graphQLquery = '{"query": "query { ' . $query . ' } "}';
+  $response = (new Client)->request('post', 'https://umd-hub.herokuapp.com/graphql', [
+      'headers' => [
+          'Content-Type' => 'application/json'
+      ],
+      'body' => $graphQLquery
+  ]);
+  $result = Json::decode($response->getBody());
+  return $result;
+}
+// Taxonomy Terms, format response
+function _umd_terp_base_middleware_format_taxonomy($response) {
+  $collection = [];
+  foreach ($response['data']['taxonomy']['data'] as $entry) {
+    // Workaround to set as a text string, as a bug prevents from setting simply a number, even as string.
+    $collection[] = [
+      'value' => $entry['tid'],
+      'label' => $entry['name']
+    ];
+  }
+  return $collection;
+}
+// Taxonomy Terms, set query
+function _umd_terp_base_middleware_taxonomy($taxonomy) {
+  $query = 'taxonomy(filter: {vocabulary: \"' . $taxonomy . '\"}) { data { tid name } }';
+  return _umd_terp_base_middleware_get($query);
+}

@@ -1,0 +1,7 @@
+{%
+  set classes = [
+    'divider',
+    paragraph.field_ut_divider_size.value ? paragraph.field_ut_divider_size.value|clean_class,
+  ]
+%}
+<hr {{ attributes.addClass(classes) }}>

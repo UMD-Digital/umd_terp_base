@@ -1,0 +1,9 @@
+{%
+  set classes = [
+    'fancy-link'
+  ]
+%}
+{% if content.field_ut_link_link.0 %}
+  {% include directory ~ '/templates/helpers/link.html.twig' with {'link': content.field_ut_link_link.0, 'classes': classes|join(' ') } %}
+{% endif %}
+

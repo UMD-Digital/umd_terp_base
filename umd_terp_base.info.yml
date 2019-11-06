@@ -1,0 +1,5 @@
+name: 'UMD Terp Base'
+type: module
+description: 'Provides base functionality'
+package: UMD.EDU
+core: '8.x'
