@@ -3,7 +3,7 @@
     "type": "drupal-module",
     "description": "Base Drupal 8 module for UMD.",
     "keywords": ["Drupal"],
-    "homepage": "https://bitbucket.org/idfivellc/idfive-component-library-d8-paragraphs",
+    "homepage": "https://github.com/UMD-Digital/umd_terp_base",
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
     "authors": [
