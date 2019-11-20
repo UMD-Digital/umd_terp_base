@@ -48,11 +48,12 @@ function ut_slideshow_theme($existing, $type, $theme, $path) {
 
 /**
  * Implements hook_preprocess_paragraph().
+ *
  * @param $variables
- * This sets the total number of slides.
+ *   This sets the total number of slides.
  */
 function ut_slideshow_preprocess_paragraph__ut_slideshow(&$variables) {
-  if(isset($variables['elements']['#paragraph']->field_ut_slideshow_items)) {
+  if (isset($variables['elements']['#paragraph']->field_ut_slideshow_items)) {
     $length = $variables['elements']['#paragraph']->field_ut_slideshow_items->getValue();
     $variables['ut_slideshow_length'] = count($length);
   }
