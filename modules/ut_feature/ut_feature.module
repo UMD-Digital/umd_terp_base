@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Ut_feature module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function ut_feature_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.ut_feature':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ * Lets us define our paragraphs templates in this module.
+ */
+function ut_feature_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__ut_feature' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
+ *
+ * Adds "Content Tips" helper text to the paragraph.
+ */
+function ut_feature_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+  if ($element['#paragraph_type'] == 'ut_feature') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>These work best as a grid.</strong> Use 2-3 stacked.</li>';
+    $markup .= '<li><strong>Reverse every other feature.</strong> This will make a more flowing grid.</li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_feature">Feature Module Help</a></li>';
+    $markup .= '</ul>';
+    $element['ut_feature_tips'] = [
+      '#type' => 'details',
+      '#title' => t('Feature Content Tips'),
+      '#weight' => -1000,
+    ];
+    $element['ut_feature_tips']['#markup'] = $markup;
+  }
+}

@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Ut_images module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function ut_images_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.ut_images':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ * Lets us define our paragraphs templates in this module.
+ */
+function ut_images_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__ut_image' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__ut_image_with_text' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
+ *
+ * Adds "Content Tips" helper text to the paragraph.
+ */
+function ut_images_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+  if ($element['#paragraph_type'] == 'ut_image') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>Select Good, large images.</strong></li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_image">Image Module Help</a></li>';
+    $markup .= '</ul>';
+    $element['ut_image_tips'] = [
+      '#type' => 'details',
+      '#title' => t('Image Content Tips'),
+      '#weight' => -1000,
+    ];
+    $element['ut_image_tips']['#markup'] = $markup;
+  }
+  elseif ($element['#paragraph_type'] == 'ut_image_with_text') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>Select Good, large images.</strong></li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_image">Image Module Help</a></li>';
+    $markup .= '</ul>';
+    $element['ut_image_wt_tips'] = [
+      '#type' => 'details',
+      '#title' => t('Image With Text Content Tips'),
+      '#weight' => -1000,
+    ];
+    $element['ut_image_wt_tips']['#markup'] = $markup;
+  }
+}

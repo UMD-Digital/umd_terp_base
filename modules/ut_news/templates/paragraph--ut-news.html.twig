@@ -38,7 +38,7 @@
                     {% if news.slug %}
                         {% spaceless %}
                             <a href="https://today.umd.edu/articles/{{ news.slug }}-{{news.id}}" class="card-cta fancy-link">
-                                View Article
+                                View Article <span class="sr-only">{{ news.title|raw }}</span>
                             </a>
                         {% endspaceless %}
                     {% endif %}

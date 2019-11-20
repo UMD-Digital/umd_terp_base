@@ -2,14 +2,12 @@
 
 /**
  * @file
- * ut_events module file.
+ * Ut_events module file.
  */
 
- use Drupal\Core\Routing\RouteMatchInterface;
- use Drupal\paragraphs\Entity\Paragraph;
- use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
- /**
+/**
  * Implements hook_help().
  *
  * @inheritdoc
@@ -35,46 +33,47 @@ function ut_events_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * Implements hook_preprocess_paragraph().
+ *
  * @param $variables
- * This sets variables for getting events, and then gets events, and displays.
+ *   This sets variables for getting events, and then gets events, and displays.
  */
 function ut_events_preprocess_paragraph__ut_events(&$variables) {
 
-    // UUID to pass for cache
-    $uuid = $variables['elements']['#paragraph']->uuid->value;
+  // UUID to pass for cache.
+  $uuid = $variables['elements']['#paragraph']->uuid->value;
 
-    // Check on Destination filter
-    $destination = null;
-    if(isset($variables['elements']['#paragraph']->field_ut_events_destination->value)) {
-        $destination = $variables['elements']['#paragraph']->field_ut_events_destination->value;
-    }
+  // Check on Destination filter.
+  $destination = NULL;
+  if (isset($variables['elements']['#paragraph']->field_ut_events_destination->value)) {
+    $destination = $variables['elements']['#paragraph']->field_ut_events_destination->value;
+  }
 
-    // Check on Colleges and Schools filter
-    $colleges_schools = null;
-    if(isset($variables['elements']['#paragraph']->field_ut_events_colleges_schools->value)) {
-        $colleges_schools = $variables['elements']['#paragraph']->field_ut_events_colleges_schools->value;
-    }
+  // Check on Colleges and Schools filter.
+  $colleges_schools = NULL;
+  if (isset($variables['elements']['#paragraph']->field_ut_events_colleges_schools->value)) {
+    $colleges_schools = $variables['elements']['#paragraph']->field_ut_events_colleges_schools->value;
+  }
 
-    // Check on Event Type filter
-    $event_type = null;
-    if(isset($variables['elements']['#paragraph']->field_ut_events_event_types->value)) {
-        $event_type = $variables['elements']['#paragraph']->field_ut_events_event_types->value;
-    }
+  // Check on Event Type filter.
+  $event_type = NULL;
+  if (isset($variables['elements']['#paragraph']->field_ut_events_event_types->value)) {
+    $event_type = $variables['elements']['#paragraph']->field_ut_events_event_types->value;
+  }
 
-    // Check on Messaging Area filter
-    $messaging_area = null;
-    if(isset($variables['elements']['#paragraph']->field_ut_events_messaging_area->value)) {
-        $messaging_area = $variables['elements']['#paragraph']->field_ut_events_messaging_area->value;
-    }
+  // Check on Messaging Area filter.
+  $messaging_area = NULL;
+  if (isset($variables['elements']['#paragraph']->field_ut_events_messaging_area->value)) {
+    $messaging_area = $variables['elements']['#paragraph']->field_ut_events_messaging_area->value;
+  }
 
-    // Check on Priorities filter
-    $priorities = null;
-    if(isset($variables['elements']['#paragraph']->field_ut_events_priorities->value)) {
-        $priorities = $variables['elements']['#paragraph']->field_ut_events_priorities->value;
-    }
+  // Check on Priorities filter.
+  $priorities = NULL;
+  if (isset($variables['elements']['#paragraph']->field_ut_events_priorities->value)) {
+    $priorities = $variables['elements']['#paragraph']->field_ut_events_priorities->value;
+  }
 
-    // Get events
-    $variables['ut_events_list'] = _ut_events_get_events(
+  // Get events.
+  $variables['ut_events_list'] = _ut_events_get_events(
         $destination,
         $colleges_schools,
         $event_type,
@@ -85,98 +84,97 @@ function ut_events_preprocess_paragraph__ut_events(&$variables) {
     );
 }
 
- /**
-  * Implements hook_theme().
-  * Lets us define our paragraphs templates in this module.
-  */
- function ut_events_theme($existing, $type, $theme, $path) {
-   return [
-     'paragraph__ut_events' => [
-       'base hook' => 'paragraph',
-     ]
-   ];
- }
+/**
+ * Implements hook_theme().
+ * Lets us define our paragraphs templates in this module.
+ */
+function ut_events_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__ut_events' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
 
 /**
  * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
- * 
- * Adds "Content Tips" helper text to the paragraph
+ *
+ * Adds "Content Tips" helper text to the paragraph.
  */
 function ut_events_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
-    if ($element['#paragraph_type'] == 'ut_events') {
-      // Tips text.
-      $markup = '<ul>';
-      $markup .= '<li><strong>Use as few filters as possible.</strong> This gives the site abetter chance at having refreshed content.</li>';
-      $markup .= '<li><strong>Clear cache when testing.</strong> All calls to the HUB API are cached for efficiency, so you will need to clear cache EVERY TIME if you are testing different filter combinations.</li>';
-      $markup .= '<li><a target="_blank" href="/admin/help/ut_events">Events Feed Module Help</a></li>';
-      $markup .= '</ul>';
-      $element['ut_events_tips'] = array(
-        '#type' => 'details',
-        '#title' => t('UMD HUB Events Feed Content Tips'),
-        '#weight' => -1000
-      );
-      $element['ut_events_tips']['#markup'] = $markup;
-    }
+  if ($element['#paragraph_type'] == 'ut_events') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>More filters may mean fewer results.</strong> Filters are additive. Each event must meet all filtered requirements. Apply filters selectively.</li>';
+    $markup .= '<li><strong>Clear your caches after saving a new filter combination.</strong> Calls to the HUB API are cached for efficiency. To view updated results, clear the cache every time you update this widget.</li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_events">Events Feed Module Help</a></li>';
+    $markup .= '</ul>';
+
+    $element['ut_events_tips'] = [
+      '#type' => 'details',
+      '#title' => t('UMD HUB Events Feed Content Tips'),
+      '#weight' => -1000,
+    ];
+    $element['ut_events_tips']['#markup'] = $markup;
+  }
 }
 
 /**
-* CUSTOM FUNCTIONS
-*
-*/
+ * CUSTOM FUNCTIONS.
+ */
 
-
- /**
+/**
  * Gets events from HUB, and displays.
- * 
- * See https://umd-hub.herokuapp.com/graphql for self documentation.
  *
+ * See https://umd-hub.herokuapp.com/graphql for self documentation.
  */
 function _ut_events_get_events(
-    $destination = null,
-    $colleges_schools = null,
-    $event_type = null,
-    $messaging_area = null,
-    $priorities = null,
-    $range = 3, 
+    $destination = NULL,
+    $colleges_schools = NULL,
+    $event_type = NULL,
+    $messaging_area = NULL,
+    $priorities = NULL,
+    $range = 3,
     $id = 'events-default'
 ) {
-    if ($cache = \Drupal::cache()->get('ut_events--' . $id)) {
-     return $cache->data;
-    } else {
-        $currentDate = date('Y-m-d') . 'T00:00:00';
-        $query = 'adv_events(date_one: {field: \"start_date\", date: \"' . $currentDate . '\", operator: \">=\"}, page: {limit: ' . $range . ', offset: 0}';
-        if(isset($destination) || isset($colleges_schools) || isset($event_type) || isset($messaging_area) || isset($priorities)) {
-            $query .= ',filter: {';
-            if(isset($destination)) {
-                $query .= 'destination:' . $destination . ',';
-            }
-            if(isset($colleges_schools)) {
-                $query .= 'school:' . $colleges_schools . ',';
-            }
-            if(isset($event_type)) {
-                $query .= 'type:' . $event_type . ',';
-            }
-            if(isset($messaging_area)) {
-                $query .= 'message_area:' . $messaging_area . ',';
-            }
-            if(isset($priorities)) {
-                $query .= 'initiative:' . $priorities . ',';
-            }
-            $query .= '}';
-        }
-
-        $query .= ' ) { data { title slug all_day family_friendly featured start_date { formatted_short time } end_date { time } campus_location { name } }}';
-        $result = _umd_terp_base_middleware_get($query);
-        $result = $result['data']['adv_events']['data'];
-        if($result) {
-            \Drupal::cache()->set('ut_events--' . $id, $result, time() + 7200);
-            return $result;
-        } else {
-            return null;
-        }
+  if ($cache = \Drupal::cache()->get('ut_events--' . $id)) {
+    return $cache->data;
+  }
+  else {
+    $currentDate = date('Y-m-d') . 'T00:00:00';
+    $query = 'adv_events(date_one: {field: \"start_date\", date: \"' . $currentDate . '\", operator: \">=\"}, page: {limit: ' . $range . ', offset: 0}';
+    if (isset($destination) || isset($colleges_schools) || isset($event_type) || isset($messaging_area) || isset($priorities)) {
+      $query .= ',filter: {';
+      if (isset($destination)) {
+        $query .= 'destination:' . $destination . ',';
+      }
+      if (isset($colleges_schools)) {
+        $query .= 'school:' . $colleges_schools . ',';
+      }
+      if (isset($event_type)) {
+        $query .= 'type:' . $event_type . ',';
+      }
+      if (isset($messaging_area)) {
+        $query .= 'message_area:' . $messaging_area . ',';
+      }
+      if (isset($priorities)) {
+        $query .= 'initiative:' . $priorities . ',';
+      }
+      $query .= '}';
     }
+
+    $query .= ' ) { data { title slug all_day start_date { formatted_short time } end_date { time } campus_location { name } }}';
+    $result = _umd_terp_base_middleware_get($query);
+    $result = $result['data']['adv_events']['data'];
+    if ($result) {
+      \Drupal::cache()->set('ut_events--' . $id, $result, time() + 7200);
+      return $result;
+    }
+    else {
+      return NULL;
+    }
+  }
 }
 
-
- // UPDATES
-//////////////////////////////////////////////////////
+// UPDATES
+// .

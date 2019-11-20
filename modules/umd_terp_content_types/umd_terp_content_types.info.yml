@@ -1,0 +1,5 @@
+name: 'UMD Terp Content Types'
+type: module
+description: 'Provides various customizations and configurations for content types used in the "UMD Terp" theme.'
+package: UMD.EDU
+core: '8.x'

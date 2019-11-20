@@ -1,53 +1,52 @@
 <?php
+
 /**
  * @file
- * ut_webform module file.
+ * Ut_webform module file.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\paragraphs\Entity\Paragraph;
-use Drupal\Core\Form\FormStateInterface;
 
 /**
-* Implements hook_help().
-*
-* @inheritdoc
-*/
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
 function ut_webform_help($route_name, RouteMatchInterface $route_match) {
- switch ($route_name) {
-   case 'help.page.ut_webform':
-     $text = file_get_contents(dirname(__FILE__) . "/README.md");
-     if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
-       return '<pre>' . $text . '</pre>';
-     }
-     else {
-       // Use the Markdown filter to render the README.
-       $filter_manager = \Drupal::service('plugin.manager.filter');
-       $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
-       $config = ['settings' => $settings];
-       $filter = $filter_manager->createInstance('markdown', $config);
-       return $filter->process($text, 'en');
-     }
- }
- return NULL;
+  switch ($route_name) {
+    case 'help.page.ut_webform':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
 }
 
 /**
-* Implements hook_theme().
-* Lets us define our paragraphs templates in this module.
-*/
+ * Implements hook_theme().
+ * Lets us define our paragraphs templates in this module.
+ */
 function ut_webform_theme($existing, $type, $theme, $path) {
   return [
     'paragraph__ut_webform' => [
       'base hook' => 'paragraph',
-    ]
+    ],
   ];
 }
 
 /**
  * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
- * 
- * Adds "Content Tips" helper text to the paragraph
+ *
+ * Adds "Content Tips" helper text to the paragraph.
  */
 function ut_webform_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
   if ($element['#paragraph_type'] == 'ut_webform') {
@@ -57,11 +56,11 @@ function ut_webform_field_widget_paragraphs_form_alter(&$element, &$form_state, 
     $markup .= '<li><strong>This Kitchen Sink widget embeds existing webforms into a page.</strong> It is neccesary for you to create the webform first, before it will be available here.</li>';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_webform">Webform Module Help</a></li>';
     $markup .= '</ul>';
-    $element['ut_webform_tips'] = array(
+    $element['ut_webform_tips'] = [
       '#type' => 'details',
       '#title' => t('Webform Notes'),
-      '#weight' => -1000
-    );
+      '#weight' => -1000,
+    ];
     $element['ut_webform_tips']['#markup'] = $markup;
   }
 }

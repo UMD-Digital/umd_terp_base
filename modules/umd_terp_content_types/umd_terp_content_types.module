@@ -1,0 +1,155 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * @file
+ * Module file for umd_content_types module.
+ */
+
+/**
+ * Implements hook_preprocess_node.
+ *
+ * Add Does some preproccessing on different umd terp content types.
+ */
+function umd_terp_content_types_preprocess_node(&$variables) {
+
+  // Specific variables/etc per type.
+  $node = $variables['elements']['#node'];
+  $view_mode = $variables['view_mode'];
+  $bundle = $node->bundle();
+  $nid = $node->id();
+  $variables['nid'] = $nid;
+  // Link URL for all teasers, as most need them.
+  if ($view_mode !== 'full') {
+    $variables['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $nid);
+  }
+
+  if ($bundle == 'umd_terp_homepage') {
+    // Homepage.
+  }
+  elseif ($bundle == 'umd_terp_basic_page') {
+    // Basic Page
+    // Full.
+    if ($view_mode == 'full') {
+
+    }
+
+  }
+  elseif ($bundle == 'umd_terp_article') {
+    // Article
+    // Full.
+    if ($view_mode == 'full') {
+      $categories = $node->field_umdt_ct_article_categories->getValue();
+      if (!empty($categories)) {
+        $categories_formatted = _umd_terp_content_types_format_term_links($categories, '/articles?field_umdt_ct_article_categories=');
+        $variables['categories'] = $categories_formatted;
+      }
+    }
+
+  }
+  elseif ($bundle == 'umd_terp_person') {
+    // Person
+    // Full.
+    if ($view_mode == 'full') {
+      $departments = $node->field_umdt_ct_person_departments->getValue();
+      if (!empty($departments)) {
+        $departments_formatted = _umd_terp_content_types_format_term_links($departments, '/LINK_TO_PROFILE_VIEW?field_umdt_ct_DEPARTMENT=');
+        $variables['departments'] = $departments_formatted;
+      }
+    }
+    if ($node->field_umdt_ct_person_phone->getValue()) {
+      $variables['phone'] = $node->field_umdt_ct_person_phone->getString();
+      $variables['phone_link'] = preg_replace('/[^0-9]/', '', $variables['phone']);
+      if ($node->field_umdt_ct_person_phone_ext->getValue()) {
+        $variables['phone_ext'] = $node->field_umdt_ct_person_phone_ext->getString();
+        $variables['phone_link'] .= ' ' . preg_replace('/[^0-9]/', '', $variables['phone_ext']);
+      }
+    }
+
+  }
+
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alters the some filter options on views pages.
+ */
+function umd_terp_content_types_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-articles-block-1') {
+
+    $form['field_umdt_ct_article_author']['#type'] = 'select';
+    $form['field_umdt_ct_article_author']['#multiple'] = FALSE;
+    $form['field_umdt_ct_article_author']['#empty_option'] = t('- Any -');
+    unset($form['field_umdt_ct_article_author']['#size']);
+    unset($form['field_umdt_ct_article_author']['#default_value']);
+    $options = [];
+    $nodes = _umd_terp_content_types_get_people();
+    $i = 1;
+    foreach ($nodes as $node) {
+      $options[$node->id()] = t($node->getTitle());
+      $i++;
+    }
+    $form['field_umdt_ct_article_author']['#options'] = $options;
+  }
+}
+
+/**
+ * CUSTOM FUNCTIONS.
+ */
+
+/**
+ * Format taxonomy term links to go to a views page and preformat it.
+ */
+function _umd_terp_content_types_format_term_links(&$terms, $link) {
+  if (count($terms)) {
+    $formatted = [];
+    foreach ($terms as $key => $item) {
+      $tid = $item['target_id'];
+      $term = Term::load($tid);
+      $cat = [
+        'title' => $term->getName(),
+        'link'  => $link . $tid,
+      ];
+      $formatted[] = $cat;
+    }
+    return $formatted;
+  }
+  else {
+    return NULL;
+  }
+}
+
+/**
+ * Returns People.
+ */
+function _umd_terp_content_types_get_people() {
+  // Get cache if it's there.
+  if ($cache = \Drupal::cache()->get('umd_terp_content_types__people')) {
+    return $cache->data;
+  }
+  else {
+    $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
+    $nids = $storage->getQuery();
+    // Gather published artist nodes and sort by title.
+    $nids = $nids->condition('type', 'umd_terp_person')
+      ->condition('status', 1)
+      ->sort('title')
+      ->execute();
+    $result = $storage->loadMultiple($nids);
+    // Set cache.
+    if ($result) {
+      \Drupal::cache()->set('umd_terp_content_types__people', $result, time() + 7200);
+      return $result;
+    }
+    else {
+      return NULL;
+    }
+  }
+}

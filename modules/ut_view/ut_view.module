@@ -1,53 +1,52 @@
 <?php
+
 /**
  * @file
- * ut_view module file.
+ * Ut_view module file.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\paragraphs\Entity\Paragraph;
-use Drupal\Core\Form\FormStateInterface;
 
 /**
-* Implements hook_help().
-*
-* @inheritdoc
-*/
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
 function ut_view_help($route_name, RouteMatchInterface $route_match) {
- switch ($route_name) {
-   case 'help.page.ut_view':
-     $text = file_get_contents(dirname(__FILE__) . "/README.md");
-     if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
-       return '<pre>' . $text . '</pre>';
-     }
-     else {
-       // Use the Markdown filter to render the README.
-       $filter_manager = \Drupal::service('plugin.manager.filter');
-       $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
-       $config = ['settings' => $settings];
-       $filter = $filter_manager->createInstance('markdown', $config);
-       return $filter->process($text, 'en');
-     }
- }
- return NULL;
+  switch ($route_name) {
+    case 'help.page.ut_view':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
 }
 
 /**
-* Implements hook_theme().
-* Lets us define our paragraphs templates in this module.
-*/
+ * Implements hook_theme().
+ * Lets us define our paragraphs templates in this module.
+ */
 function ut_view_theme($existing, $type, $theme, $path) {
   return [
     'paragraph__ut_view' => [
       'base hook' => 'paragraph',
-    ]
+    ],
   ];
 }
 
 /**
  * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
- * 
- * Adds "Content Tips" helper text to the paragraph
+ *
+ * Adds "Content Tips" helper text to the paragraph.
  */
 function ut_view_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
   if ($element['#paragraph_type'] == 'ut_view') {
@@ -57,11 +56,11 @@ function ut_view_field_widget_paragraphs_form_alter(&$element, &$form_state, $co
     $markup .= '<li><strong>Use block display.</strong> Other displays will work, but block works the best.</li>';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_view">View Module Help</a></li>';
     $markup .= '</ul>';
-    $element['ut_view_tips'] = array(
+    $element['ut_view_tips'] = [
       '#type' => 'details',
       '#title' => t('View Notes'),
-      '#weight' => -1000
-    );
+      '#weight' => -1000,
+    ];
     $element['ut_view_tips']['#markup'] = $markup;
   }
 }

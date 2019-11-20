@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Ut_accordion module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function ut_accordion_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.ut_accordion':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ * Lets us define our paragraphs templates in this module.
+ */
+function ut_accordion_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__ut_accordion' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
+ *
+ * Adds "Content Tips" helper text to the paragraph.
+ */
+function ut_accordion_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+  if ($element['#paragraph_type'] == 'ut_accordion') {
+    // Tips text.
+    $markup = '<p>Group related information in a series of accordions.</p>';
+    $markup = '<ul>';
+    $markup .= '<li><strong>Always create two or more accordions.</strong> Use brief, descriptive phrases for each label.</li>';
+    $markup .= '<li><strong>Minimize embedded images and tables.</strong> If you’re adding a lot of content to a tab, consider using a different widget. </li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_accordion">Accordion Module Help</a></li>';
+    $markup .= '</ul>';
+
+    $element['ut_accordion_tips'] = [
+      '#type' => 'details',
+      '#title' => t('Accordion Content Tips'),
+      '#weight' => -1000,
+    ];
+    $element['ut_accordion_tips']['#markup'] = $markup;
+  }
+}

@@ -1,16 +1,9 @@
 <?php
-use GuzzleHttp\Client;
-/**
- * @file
- * Provides Drupal\external_data_source\Plugin\ExternalWsSource\Audience.
- */
 
 namespace Drupal\umd_terp_base\Plugin\ExternalDataSource;
 
 use Drupal\external_data_source\Plugin\ExternalDataSourceBase;
 use Symfony\Component\HttpFoundation\Request;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception as GuzzleException;
 
 /**
  * Provides a 'Audience' ExternalDataSource.
@@ -40,8 +33,8 @@ class Audience extends ExternalDataSourceBase {
   }
 
   /**
-   * setRequest
-   * Setting sent request
+   * SetRequest
+   * Setting sent request.
    *
    * @params Symfony\Component\HttpFoundation\Request $request
    */
@@ -50,8 +43,8 @@ class Audience extends ExternalDataSourceBase {
   }
 
   /**
-   * getRequest
-   * getting sent request
+   * GetRequest
+   * getting sent request.
    *
    * @return \Symfony\Component\HttpFoundation\Request $request
    */
@@ -60,8 +53,9 @@ class Audience extends ExternalDataSourceBase {
   }
 
   /**
-   * getResponse
-   * Call WS to retrieve data
+   * GetResponse
+   * Call WS to retrieve data.
+   *
    * @return array
    */
   public function getResponse() {
@@ -70,11 +64,11 @@ class Audience extends ExternalDataSourceBase {
   }
 
   /**
-   * formatResponse
+   * FormatResponse.
    *
    * @param array $response
-   * Formatting data retrieved from ws to match [{"value":"","label":""},
-   *   {"value":"", "label":""}] return array $collection retrieved suggestions
+   *   Formatting data retrieved from ws to match [{"value":"","label":""},
+   *   {"value":"", "label":""}] return array $collection retrieved suggestions.
    *
    * @return array $collection
    */

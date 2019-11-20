@@ -1,66 +1,67 @@
 <?php
+
 /**
  * @file
- * ut_divider module file.
+ * Ut_divider module file.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\paragraphs\Entity\Paragraph;
-use Drupal\Core\Form\FormStateInterface;
 
 /**
-* Implements hook_help().
-*
-* @inheritdoc
-*/
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
 function ut_divider_help($route_name, RouteMatchInterface $route_match) {
- switch ($route_name) {
-   case 'help.page.ut_divider':
-     $text = file_get_contents(dirname(__FILE__) . "/README.md");
-     if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
-       return '<pre>' . $text . '</pre>';
-     }
-     else {
-       // Use the Markdown filter to render the README.
-       $filter_manager = \Drupal::service('plugin.manager.filter');
-       $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
-       $config = ['settings' => $settings];
-       $filter = $filter_manager->createInstance('markdown', $config);
-       return $filter->process($text, 'en');
-     }
- }
- return NULL;
+  switch ($route_name) {
+    case 'help.page.ut_divider':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
 }
 
 /**
-* Implements hook_theme().
-* Lets us define our paragraphs templates in this module.
-*/
+ * Implements hook_theme().
+ * Lets us define our paragraphs templates in this module.
+ */
 function ut_divider_theme($existing, $type, $theme, $path) {
   return [
     'paragraph__ut_divider' => [
       'base hook' => 'paragraph',
-    ]
+    ],
   ];
 }
 
 /**
  * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
- * 
- * Adds "Content Tips" helper text to the paragraph
+ *
+ * Adds "Content Tips" helper text to the paragraph.
  */
 function ut_divider_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
   if ($element['#paragraph_type'] == 'ut_divider') {
     // Tips text.
     $markup = '<ul>';
-    $markup .= '<li><strong>Use this to visually seperate content only.</strong></li>';
-    $markup .= '<li><a target="_blank" href="/admin/help/ut_divider">Divider Module Help</a></li>';
+    $markup .= '<li><strong>Visually separate content with a horizontal rule.</strong></li>';
+    $markup .= '<li>Select the thickness of the line (1 to 8 pixels).</li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_divider">Divider Help</a></li>';
     $markup .= '</ul>';
-    $element['ut_divider_tips'] = array(
+
+    $element['ut_divider_tips'] = [
       '#type' => 'details',
       '#title' => t('Divider Notes'),
-      '#weight' => -1000
-    );
+      '#weight' => -1000,
+    ];
     $element['ut_divider_tips']['#markup'] = $markup;
   }
 }

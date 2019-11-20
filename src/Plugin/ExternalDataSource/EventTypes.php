@@ -1,16 +1,9 @@
 <?php
-use GuzzleHttp\Client;
-/**
- * @file
- * Provides Drupal\external_data_source\Plugin\ExternalWsSource\EventCategories.
- */
 
 namespace Drupal\umd_terp_base\Plugin\ExternalDataSource;
 
 use Drupal\external_data_source\Plugin\ExternalDataSourceBase;
 use Symfony\Component\HttpFoundation\Request;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception as GuzzleException;
 
 /**
  * Provides a 'Event Types' ExternalDataSource.
@@ -40,20 +33,18 @@ class EventTypes extends ExternalDataSourceBase {
   }
 
   /**
-   * setRequest
-   * Setting sent request
+   * SetRequest
+   * Setting sent request.
    *
    * @params Symfony\Component\HttpFoundation\Request $request
    */
   public function setRequest(Request $request) {
-    
     $this->request = $request;
-    dsm($request);
   }
 
   /**
-   * getRequest
-   * getting sent request
+   * GetRequest
+   * getting sent request.
    *
    * @return \Symfony\Component\HttpFoundation\Request $request
    */
@@ -62,8 +53,9 @@ class EventTypes extends ExternalDataSourceBase {
   }
 
   /**
-   * getResponse
-   * Call WS to retrieve data
+   * GetResponse
+   * Call WS to retrieve data.
+   *
    * @return array
    */
   public function getResponse() {
@@ -72,11 +64,11 @@ class EventTypes extends ExternalDataSourceBase {
   }
 
   /**
-   * formatResponse
+   * FormatResponse.
    *
    * @param array $response
-   * Formatting data retrieved from ws to match [{"value":"","label":""},
-   *   {"value":"", "label":""}] return array $collection retrieved suggestions
+   *   Formatting data retrieved from ws to match [{"value":"","label":""},
+   *   {"value":"", "label":""}] return array $collection retrieved suggestions.
    *
    * @return array $collection
    */
@@ -86,7 +78,7 @@ class EventTypes extends ExternalDataSourceBase {
       // Workaround to set as a text string, as a bug prevents from setting simply a number, even as string.
       $collection[] = [
         'value' => $entry['tid'],
-        'label' => $entry['name']
+        'label' => $entry['name'],
       ];
     }
     return $collection;

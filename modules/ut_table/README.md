@@ -2,16 +2,16 @@
 
 Paragraphs integration of a tablefield for UMD projects. This module provides a way to add a a table to Kitchen Sink Pages.
 
-This module contains markup only (no js or css), those should be provided in the client theme, loaded via the idfive Component Library:
+This module contains markup only (no js or css), those should be provided in the UMD Terp Theme:
 
- - [idfive Component Library](https://bitbucket.org/idfivellc/idfive-component-library)
- - [idfive Component Library D8 Theme](https://bitbucket.org/idfivellc/idfive-component-library-d8-theme)
+ - [UMD Terp Theme](https://github.com/UMD-Digital/umd_terp)
 
 ## Configuration
 
 Provides the "Table" paragraph.
 
 The following fields are available on the View KS widget:
+
  - Style: Light or Dark
  - Table Caption: This brief caption will be associated with the table and will help screen reader better describe the content within
  - Table: tablefield. Change columns/rows/etc as needed

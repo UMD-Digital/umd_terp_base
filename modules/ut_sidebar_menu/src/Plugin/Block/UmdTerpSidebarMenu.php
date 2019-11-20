@@ -7,14 +7,13 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Utility\NestedArray;
 
 /**
- * UMD Terp Sidebar Menu Block
+ * UMD Terp Sidebar Menu Block.
  *
  * @Block(
  *   id = "umd_terp_sidebar_menu",
  *   admin_label = @Translation("UMD Terp Sidebar Menu Block")
  * )
  */
-
 class UmdTerpSidebarMenu extends BlockBase {
 
   /**
@@ -94,20 +93,21 @@ class UmdTerpSidebarMenu extends BlockBase {
     // Finally, build a renderable array.
     $menu = $menu_tree->build($tree);
 
-    // Set custom theme in order to template
+    // Set custom theme in order to template.
     $menu['#theme'] = 'umd_terp_sidebar_menu__main';
 
-    // Pass template, parent, and rendered menu
+    // Pass template, parent, and rendered menu.
     $build['#markup'] = \Drupal::service('renderer')->render($menu);
 
     if ($show_parent) {
-      // Get parent link title and URL to display as "back link". Manually set Home for first level pages
+      // Get parent link title and URL to display as "back link". Manually set Home for first level pages.
       $parent = [];
-      if(isset($parent_link_id) && $parent_link_id !== NULL && $parent_link_id !== '') {
+      if (isset($parent_link_id) && $parent_link_id !== NULL && $parent_link_id !== '') {
         $parent['#title'] = $menu_link_manager->createInstance($parent_link_id)->getTitle();
         $url_obj = $menu_link_manager->createInstance($parent_link_id)->getUrlObject();
         $parent['#link'] = $url_obj->toString();
-      } else {
+      }
+      else {
         $parent['#title'] = 'Home';
         $parent['#link'] = '/';
       }
@@ -124,7 +124,7 @@ class UmdTerpSidebarMenu extends BlockBase {
   public function defaultConfiguration() {
     return [
       'menu_name' => 'main',
-      'show_parent' => 1
+      'show_parent' => 1,
     ];
   }
 

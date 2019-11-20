@@ -1,34 +1,32 @@
 {%
   set classes = [
     'table',
-    'table-striped',
+    'table-stacked',
      paragraph.field_ut_table_style.value ? paragraph.field_ut_table_style.value|clean_class,
   ]
 %}
 
 {% for key, item in content.field_ut_table_table if key|first != '#' %}
-  <div class="table-responsive">
-    <table{{ attributes.addClass(classes) }}>
-      {% if item.tablefield['#header'] %}
-        <thead>
-          <tr>
-            {% for col in item.tablefield['#header'] %}
-              <th>{{ col.data }}</th>
-            {% endfor %}
-          </tr>
-        </thead>
-      {% endif %}
-      {% if item.tablefield['#rows'] %}
-        <tbody>
-          {% for row in item.tablefield['#rows'] %}
-            <tr>
-              {% for col in row %}
-              <td>{{ col.data }}</td>
-            {% endfor %}
-            </tr>
+  <table{{ attributes.addClass(classes).setAttribute('data-tablesaw-mode', 'stack') }}>
+    {% if item.tablefield['#header'] %}
+      <thead>
+        <tr>
+          {% for col in item.tablefield['#header'] %}
+            <th>{{ col.data }}</th>
           {% endfor %}
-        </tbody>
-      {% endif %}
-    </table>
-  </div>
+        </tr>
+      </thead>
+    {% endif %}
+    {% if item.tablefield['#rows'] %}
+      <tbody>
+        {% for row in item.tablefield['#rows'] %}
+          <tr>
+            {% for col in row %}
+            <td>{{ col.data }}</td>
+          {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    {% endif %}
+  </table>
 {% endfor %}

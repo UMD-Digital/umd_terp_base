@@ -2,13 +2,13 @@
 
 Paragraphs integration of a News Feed (from calendar.umd.edu) for UMD projects. Essentially, this module pulls a feed of articles from hub.umd.edu, with optional filter paramaters available, in order to highlight relevant articles.
 
-This module contains markup only (no js or css), those should be provided in the client theme, loaded via the idfive Component Library:
+This module contains markup only (no js or css), those should be provided in the UMD Terp Theme:
 
- - [idfive Component Library](https://bitbucket.org/idfivellc/idfive-component-library)
- - [idfive Component Library D8 Theme](https://bitbucket.org/idfivellc/idfive-component-library-d8-theme)
+ - [UMD Terp Theme](https://github.com/UMD-Digital/umd_terp)
 
 ## Configuration
 The following fields are available on this KS widget:
+
  - Style: Light or Dark
  - Title: Sets the title in the header bar. Defaults to "News".
  - View All Link: Sets the link at the bottom of the feed to a specific page on umd.today, if needed.

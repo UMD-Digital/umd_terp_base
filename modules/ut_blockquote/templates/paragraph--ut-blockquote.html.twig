@@ -10,7 +10,7 @@
     <footer class="blockquote-footer">
       {% if content.field_ut_blockquote_image|field_value %}
         <div class="blockquote-portrait">
-          <img src="{{ file_url(content.field_ut_blockquote_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="Portrait of Firstname Lastname ’19">
+          <img src="{{ file_url(content.field_ut_blockquote_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_blockquote_image[0]['#media'].field_media_image.alt }}">
         </div>
       {% endif %}
       {% if content.field_ut_blockquote_author|field_value or content.field_ut_blockquote_source|field_value %}
