@@ -50,6 +50,12 @@ Install as you normally would any drupal 8 module.
 
 ## Development
 
+### Versioning
+Semantic tagging must take place in github for the updates to be able to be pulled via composer. When ready to deploy, create a tag in github up one version from previous, with the starting version being 8.1.0:
+
+ - Minor versions (non breaking changes): 8.1.1, 8.1.2, etc.
+ - Major versions (breaking changes): 8.2.0, 8.3.0, etc.
+
 ### Core (base) module issues, patches, etc:
 All edits, requests, etc should be submitted to the github repo for the [UMD Terp Base Module](https://github.com/UMD-Digital/umd_terp_base). Please add issues to the [issues queue](https://github.com/UMD-Digital/umd_terp_base/issues). Patches will be reviewed on a merit and resources available basis.
 
