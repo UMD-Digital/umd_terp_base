@@ -13,15 +13,13 @@
             "role": "Maintainer"
         },
         {
-            "name": "Nick Rigby",
-            "homepage": "https://www.drupal.org/u/nickrigby",
-            "role": "Maintainer"
-        },
-        {
             "name": "Dan Rogers",
             "homepage": "https://www.drupal.org/u/dan_rogers",
             "role": "Maintainer"
         }
-    ]
-
-  }
+    ],
+    "support": {
+        "issues": "https://github.com/UMD-Digital/umd_terp_base/issues",
+        "source": "https://github.com/UMD-Digital/umd_terp_base/"
+    }
+}

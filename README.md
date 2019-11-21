@@ -10,7 +10,7 @@ Install as you normally would any drupal 8 module.
 
 ### Via Composer:
 
- - `composer require umd_digital/umd_terp_base`
+ - `composer require umd_digital/umd_terp_base --prefer-dist`
  - `drush en umd_terp_base` or enable via admin UI
  - Enable all desired sub modules
 
