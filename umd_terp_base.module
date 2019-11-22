@@ -50,6 +50,11 @@ function umd_terp_base_toolbar() {
         'title' => t('Local tasks'),
         'class' => ['toolbar-icon', 'toolbar-icon-edit'],
       ],
+      '#cache' => [
+        'contexts' => [
+          'url.path',
+        ],
+      ],
     ],
     'tray' => [
       '#heading' => t('Local tasks'),
