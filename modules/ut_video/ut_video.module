@@ -33,6 +33,7 @@ function ut_video_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * Implements hook_theme().
+ *
  * Lets us define our paragraphs templates in this module.
  */
 function ut_video_theme($existing, $type, $theme, $path) {

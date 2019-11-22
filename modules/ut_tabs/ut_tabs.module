@@ -33,6 +33,7 @@ function ut_tabs_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * Implements hook_theme().
+ *
  * Lets us define our paragraphs templates in this module.
  */
 function ut_tabs_theme($existing, $type, $theme, $path) {
@@ -57,7 +58,6 @@ function ut_tabs_field_widget_paragraphs_form_alter(&$element, &$form_state, $co
     $markup .= '<li><strong>Minimize embedded images and tables.</strong> If you’re adding a lot of content to a tab, consider using a different widget. </li>';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_tabs">Tabs Module Help</a></li>';
     $markup .= '</ul>';
-
     $element['ut_tabs_tips'] = [
       '#type' => 'details',
       '#title' => t('Tabs Content Tips'),

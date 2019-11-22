@@ -33,6 +33,7 @@ function ut_stats_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * Implements hook_theme().
+ *
  * Lets us define our paragraphs templates in this module.
  */
 function ut_stats_theme($existing, $type, $theme, $path) {
@@ -62,7 +63,6 @@ function ut_stats_field_widget_paragraphs_form_alter(&$element, &$form_state, $c
     $markup .= '<li>Limit the description to a brief phrase or sentence.</li>';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_stats">Stats Module Help</a></li>';
     $markup .= '</ul>';
-
     $element['ut_stats_tips'] = [
       '#type' => 'details',
       '#title' => t('Stats Notes'),

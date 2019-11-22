@@ -33,6 +33,7 @@ function ut_text_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * Implements hook_theme().
+ *
  * Lets us define our paragraphs templates in this module.
  */
 function ut_text_theme($existing, $type, $theme, $path) {
@@ -83,7 +84,6 @@ function ut_text_field_widget_paragraphs_form_alter(&$element, &$form_state, $co
     $markup .= '<li>Avoid embedding images in the columns.</li> Images may not display well on small screens.';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_text">Text Help</a></li>';
     $markup .= '</ul>';
-
     $element['ut_text_column_tips'] = [
       '#type' => 'details',
       '#title' => t('HTML/Text (Columned) Content Tips'),

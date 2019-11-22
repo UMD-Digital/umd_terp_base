@@ -33,6 +33,7 @@ function ut_slideshow_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * Implements hook_theme().
+ *
  * Lets us define our paragraphs templates in this module.
  */
 function ut_slideshow_theme($existing, $type, $theme, $path) {
@@ -49,7 +50,6 @@ function ut_slideshow_theme($existing, $type, $theme, $path) {
 /**
  * Implements hook_preprocess_paragraph().
  *
- * @param $variables
  *   This sets the total number of slides.
  */
 function ut_slideshow_preprocess_paragraph__ut_slideshow(&$variables) {
@@ -72,7 +72,6 @@ function ut_slideshow_field_widget_paragraphs_form_alter(&$element, &$form_state
     $markup .= '<li><strong>Use plain text.</strong> The Caption, Title, and Text should not have styles (bold, italics, etc.).</li>';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_slideshow">Slideshow Help</a></li>';
     $markup .= '</ul>';
-
     $element['ut_slideshow_tips'] = [
       '#type' => 'details',
       '#title' => t('Slideshow Notes'),

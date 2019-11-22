@@ -34,7 +34,8 @@ function ut_sidebar_menu_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  *
- * This hook defines the template, also need to reference this in hook_block_view()
+ * This hook defines the template.
+ * also need to reference this in hook_block_view()
  */
 function ut_sidebar_menu_theme($existing, $type, $theme, $path) {
   $theme = [];

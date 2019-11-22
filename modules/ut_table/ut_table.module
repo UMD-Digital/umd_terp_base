@@ -33,6 +33,7 @@ function ut_table_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * Implements hook_theme().
+ *
  * Lets us define our paragraphs templates in this module.
  */
 function ut_table_theme($existing, $type, $theme, $path) {
@@ -57,7 +58,6 @@ function ut_table_field_widget_paragraphs_form_alter(&$element, &$form_state, $c
     $markup .= '<li>Add a caption to describe the content in the table.</li>';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_table">Table Module Help</a></li>';
     $markup .= '</ul>';
-
     $element['ut_table_tips'] = [
       '#type' => 'details',
       '#title' => t('Table Content Tips'),

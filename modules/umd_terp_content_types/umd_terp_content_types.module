@@ -2,18 +2,14 @@
 
 /**
  * @file
+ * Module file for umd_content_types module.
  */
 
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * @file
- * Module file for umd_content_types module.
- */
-
-/**
- * Implements hook_preprocess_node.
+ * Implements hook_preprocess_node().
  *
  * Add Does some preproccessing on different umd terp content types.
  */
@@ -93,7 +89,8 @@ function umd_terp_content_types_form_views_exposed_form_alter(&$form, FormStateI
     $nodes = _umd_terp_content_types_get_people();
     $i = 1;
     foreach ($nodes as $node) {
-      $options[$node->id()] = t($node->getTitle());
+      $title = $node->getTitle();
+      $options[$node->id()] = $title;
       $i++;
     }
     $form['field_umdt_ct_article_author']['#options'] = $options;

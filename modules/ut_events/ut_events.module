@@ -34,7 +34,6 @@ function ut_events_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_preprocess_paragraph().
  *
- * @param $variables
  *   This sets variables for getting events, and then gets events, and displays.
  */
 function ut_events_preprocess_paragraph__ut_events(&$variables) {
@@ -86,6 +85,7 @@ function ut_events_preprocess_paragraph__ut_events(&$variables) {
 
 /**
  * Implements hook_theme().
+ *
  * Lets us define our paragraphs templates in this module.
  */
 function ut_events_theme($existing, $type, $theme, $path) {
@@ -175,6 +175,3 @@ function _ut_events_get_events(
     }
   }
 }
-
-// UPDATES
-// .
