@@ -1,0 +1,18 @@
+uuid: dbbd80e4-d7ce-4c35-8fb4-186204cf74ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.umd_terp_person
+id: node.umd_terp_person.title
+field_name: title
+entity_type: node
+bundle: umd_terp_person
+label: 'Display Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

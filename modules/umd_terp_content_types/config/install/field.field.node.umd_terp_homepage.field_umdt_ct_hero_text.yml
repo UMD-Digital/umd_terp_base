@@ -1,0 +1,19 @@
+uuid: 9c7ad7c8-cf90-4ea1-90f0-909ce8a4aaa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_hero_text
+    - node.type.umd_terp_homepage
+id: node.umd_terp_homepage.field_umdt_ct_hero_text
+field_name: field_umdt_ct_hero_text
+entity_type: node
+bundle: umd_terp_homepage
+label: 'Hero Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

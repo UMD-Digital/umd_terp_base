@@ -1,0 +1,20 @@
+uuid: 9bd2b504-d1f0-4a5e-ba39-d9554f5c0810
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_umdt_ct_article_categories
+field_name: field_umdt_ct_article_categories
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

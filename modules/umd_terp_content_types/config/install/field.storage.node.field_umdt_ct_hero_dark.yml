@@ -1,0 +1,18 @@
+uuid: 1f128a04-95f5-4908-8938-21ab48ca2650
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_umdt_ct_hero_dark
+field_name: field_umdt_ct_hero_dark
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

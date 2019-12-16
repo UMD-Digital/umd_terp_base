@@ -1,0 +1,75 @@
+uuid: 3abfcb97-c2e5-4086-a2b1-40ce6aa79706
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.umd_terp_person.field_umdt_ct_hero_image
+    - field.field.node.umd_terp_person.field_umdt_ct_person_bio
+    - field.field.node.umd_terp_person.field_umdt_ct_person_departments
+    - field.field.node.umd_terp_person.field_umdt_ct_person_email
+    - field.field.node.umd_terp_person.field_umdt_ct_person_first_name
+    - field.field.node.umd_terp_person.field_umdt_ct_person_last_name
+    - field.field.node.umd_terp_person.field_umdt_ct_person_location
+    - field.field.node.umd_terp_person.field_umdt_ct_person_phone
+    - field.field.node.umd_terp_person.field_umdt_ct_person_phone_ext
+    - field.field.node.umd_terp_person.field_umdt_ct_person_photo
+    - field.field.node.umd_terp_person.field_umdt_ct_person_title
+    - field.field.node.umd_terp_person.field_umdt_ct_person_website
+    - node.type.umd_terp_person
+  module:
+    - image
+    - user
+id: node.umd_terp_person.teaser
+targetEntityType: node
+bundle: umd_terp_person
+mode: teaser
+content:
+  field_umdt_ct_person_phone:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_umdt_ct_person_phone_ext:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_umdt_ct_person_photo:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_umdt_ct_person_title:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_umdt_ct_hero_image: true
+  field_umdt_ct_person_bio: true
+  field_umdt_ct_person_departments: true
+  field_umdt_ct_person_email: true
+  field_umdt_ct_person_first_name: true
+  field_umdt_ct_person_last_name: true
+  field_umdt_ct_person_location: true
+  field_umdt_ct_person_website: true
+  search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: b7f6dd9b-5964-41ba-af9e-502a9467abcf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: umd_terp_articles
+label: 'UMD Terp Articles'
+type: 'canonical_entities:node'
+pattern: 'articles/[node:title]'
+selection_criteria:
+  0e43fd7c-db00-45e1-9528-ca7bf6580c4e:
+    id: node_type
+    bundles:
+      umd_terp_article: umd_terp_article
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 0e43fd7c-db00-45e1-9528-ca7bf6580c4e
+selection_logic: and
+weight: -5
+relationships: {  }

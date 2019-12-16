@@ -1,0 +1,22 @@
+uuid: 8738e48a-72e7-4fff-a28b-3dfff20427d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.umd_terp_article
+  module:
+    - text
+id: node.umd_terp_article.body
+field_name: body
+entity_type: node
+bundle: umd_terp_article
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

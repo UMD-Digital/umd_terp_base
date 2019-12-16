@@ -1,0 +1,21 @@
+uuid: c928f573-835a-4474-9243-7a9cd627ee59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_person_bio
+    - node.type.umd_terp_person
+  module:
+    - text
+id: node.umd_terp_person.field_umdt_ct_person_bio
+field_name: field_umdt_ct_person_bio
+entity_type: node
+bundle: umd_terp_person
+label: Bio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

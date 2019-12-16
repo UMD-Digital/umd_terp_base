@@ -1,0 +1,22 @@
+uuid: d2a6beb7-f251-4de1-a3e7-24ff606ae16f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.umd_terp_basic_page
+  module:
+    - text
+id: node.umd_terp_basic_page.body
+field_name: body
+entity_type: node
+bundle: umd_terp_basic_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,22 @@
+uuid: a337915a-8dfe-4927-9eda-108396ee6b0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.umd_terp_person
+  module:
+    - text
+id: node.umd_terp_person.body
+field_name: body
+entity_type: node
+bundle: umd_terp_person
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

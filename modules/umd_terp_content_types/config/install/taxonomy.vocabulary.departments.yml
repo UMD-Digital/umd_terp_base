@@ -1,0 +1,8 @@
+uuid: 815d9bf1-b264-47f6-9296-e5dc8d1e3ffa
+langcode: en
+status: true
+dependencies: {  }
+name: Departments
+vid: departments
+description: 'This taxonomy holds departments for the UMD Terp Person content.'
+weight: 0

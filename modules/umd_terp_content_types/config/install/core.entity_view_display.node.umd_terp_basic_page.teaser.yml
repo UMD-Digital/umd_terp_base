@@ -1,0 +1,30 @@
+uuid: 76b73cc6-1bfb-4843-8472-210cf5731452
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.umd_terp_basic_page.body
+    - node.type.umd_terp_basic_page
+  module:
+    - text
+    - user
+id: node.umd_terp_basic_page.teaser
+targetEntityType: node
+bundle: umd_terp_basic_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

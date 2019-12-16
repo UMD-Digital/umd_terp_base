@@ -1,0 +1,28 @@
+uuid: 26a36446-257d-4a6f-8499-53600898323c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_hero_image
+    - media.type.image
+    - node.type.umd_terp_homepage
+id: node.umd_terp_homepage.field_umdt_ct_hero_image
+field_name: field_umdt_ct_hero_image
+entity_type: node
+bundle: umd_terp_homepage
+label: 'Hero Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

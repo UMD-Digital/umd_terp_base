@@ -1,0 +1,19 @@
+uuid: 37cd65ba-a9d8-4d0b-936a-93d5ce7ba93f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_person_title
+    - node.type.umd_terp_person
+id: node.umd_terp_person.field_umdt_ct_person_title
+field_name: field_umdt_ct_person_title
+entity_type: node
+bundle: umd_terp_person
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

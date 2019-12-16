@@ -1,0 +1,23 @@
+uuid: 1e097c59-1410-41f0-8484-138e9f36f164
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_hero_style
+    - node.type.umd_terp_homepage
+  module:
+    - options
+id: node.umd_terp_homepage.field_umdt_ct_hero_style
+field_name: field_umdt_ct_hero_style
+entity_type: node
+bundle: umd_terp_homepage
+label: 'Hero Style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: home-hero-default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

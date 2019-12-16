@@ -1,0 +1,24 @@
+uuid: 36a8981c-e7de-469d-bbd5-f4115285581a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_article_date
+    - node.type.umd_terp_article
+  module:
+    - datetime
+id: node.umd_terp_article.field_umdt_ct_article_date
+field_name: field_umdt_ct_article_date
+entity_type: node
+bundle: umd_terp_article
+label: Date
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,197 @@
+uuid: cecb36d1-1c41-43da-8021-9ea26d48d713
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_cta
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_dark
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_image
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_style
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_subtitle
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_text
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_title
+    - field.field.node.umd_terp_homepage.field_umdt_ct_metatags
+    - field.field.node.umd_terp_homepage.field_umdt_ct_sections
+    - node.type.umd_terp_homepage
+  module:
+    - field_group
+    - link_attributes
+    - media_library
+    - metatag
+    - paragraphs
+    - path
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_hero
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Content
+    group_hero:
+      children:
+        - title
+        - field_umdt_ct_hero_style
+        - field_umdt_ct_hero_dark
+        - field_umdt_ct_hero_image
+        - field_umdt_ct_hero_title
+        - field_umdt_ct_hero_subtitle
+        - field_umdt_ct_hero_text
+        - field_umdt_ct_hero_cta
+      parent_name: group_content
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Hero
+id: node.umd_terp_homepage.default
+targetEntityType: node
+bundle: umd_terp_homepage
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_umdt_ct_hero_cta:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_umdt_ct_hero_dark:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_umdt_ct_hero_image:
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_umdt_ct_hero_style:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_umdt_ct_hero_subtitle:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_umdt_ct_hero_text:
+    weight: 6
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_umdt_ct_hero_title:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_umdt_ct_metatags:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_umdt_ct_sections:
+    weight: 2
+    settings:
+      title: Section
+      title_plural: Sections
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

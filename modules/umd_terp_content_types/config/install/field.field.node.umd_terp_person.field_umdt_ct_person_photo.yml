@@ -1,0 +1,38 @@
+uuid: b80f904c-594c-40ac-ab65-c06ab5a187b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_person_photo
+    - node.type.umd_terp_person
+  module:
+    - image
+id: node.umd_terp_person.field_umdt_ct_person_photo
+field_name: field_umdt_ct_person_photo
+entity_type: node
+bundle: umd_terp_person
+label: Photo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: people
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

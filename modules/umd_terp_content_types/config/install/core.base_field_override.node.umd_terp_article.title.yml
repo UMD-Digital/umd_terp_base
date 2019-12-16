@@ -1,0 +1,18 @@
+uuid: 9115ec1f-c051-4eac-9444-df39930c33cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.umd_terp_article
+id: node.umd_terp_article.title
+field_name: title
+entity_type: node
+bundle: umd_terp_article
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 28124a2d-52df-4107-8f2e-a68ff7e7d022
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: umd_terp_basic_page
+label: 'UMD Terp Basic Page'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  a4a4d534-6cfb-4eae-a37e-e32625253093:
+    id: node_type
+    bundles:
+      umd_terp_basic_page: umd_terp_basic_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a4a4d534-6cfb-4eae-a37e-e32625253093
+selection_logic: and
+weight: -5
+relationships: {  }

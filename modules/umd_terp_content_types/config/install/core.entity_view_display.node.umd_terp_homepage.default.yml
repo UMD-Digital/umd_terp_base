@@ -1,0 +1,110 @@
+uuid: c3b62c3c-a850-42d2-95bc-1f685ed94483
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_cta
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_dark
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_image
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_style
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_subtitle
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_text
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_title
+    - field.field.node.umd_terp_homepage.field_umdt_ct_metatags
+    - field.field.node.umd_terp_homepage.field_umdt_ct_sections
+    - node.type.umd_terp_homepage
+  module:
+    - entity_reference_revisions
+    - link
+    - metatag
+    - options
+    - user
+id: node.umd_terp_homepage.default
+targetEntityType: node
+bundle: umd_terp_homepage
+mode: default
+content:
+  field_umdt_ct_hero_cta:
+    weight: 103
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_umdt_ct_hero_dark:
+    weight: 109
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_umdt_ct_hero_image:
+    weight: 105
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_umdt_ct_hero_style:
+    weight: 110
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_umdt_ct_hero_subtitle:
+    weight: 108
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_umdt_ct_hero_text:
+    weight: 102
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_umdt_ct_hero_title:
+    weight: 107
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_umdt_ct_metatags:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_umdt_ct_sections:
+    weight: 104
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

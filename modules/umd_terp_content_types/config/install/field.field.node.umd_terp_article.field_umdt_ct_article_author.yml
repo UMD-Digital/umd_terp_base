@@ -1,0 +1,28 @@
+uuid: c33d7c2a-9771-401d-a023-27b3670cd814
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_article_author
+    - node.type.umd_terp_article
+    - node.type.umd_terp_person
+id: node.umd_terp_article.field_umdt_ct_article_author
+field_name: field_umdt_ct_article_author
+entity_type: node
+bundle: umd_terp_article
+label: Author
+description: 'Please choose the Author for this article. This references "UMD Terp Person" in the system, so you will need to add them there, if this is desired.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      umd_terp_person: umd_terp_person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

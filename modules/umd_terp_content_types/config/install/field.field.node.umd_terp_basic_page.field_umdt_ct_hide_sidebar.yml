@@ -1,0 +1,23 @@
+uuid: 7bbca01d-0f0f-45a4-b241-db859e44c844
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_hide_sidebar
+    - node.type.umd_terp_basic_page
+id: node.umd_terp_basic_page.field_umdt_ct_hide_sidebar
+field_name: field_umdt_ct_hide_sidebar
+entity_type: node
+bundle: umd_terp_basic_page
+label: 'Hide Sidebar'
+description: 'By choosing this option, the sidebar menu on this page will be hidden, making this page act more like a landing page (full width).'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

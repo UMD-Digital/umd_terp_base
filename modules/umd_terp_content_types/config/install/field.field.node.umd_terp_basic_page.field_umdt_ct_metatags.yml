@@ -1,0 +1,21 @@
+uuid: b052712b-1715-4797-8090-0a6fc62bd4c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_metatags
+    - node.type.umd_terp_basic_page
+  module:
+    - metatag
+id: node.umd_terp_basic_page.field_umdt_ct_metatags
+field_name: field_umdt_ct_metatags
+entity_type: node
+bundle: umd_terp_basic_page
+label: Metatags
+description: 'Admin Only. You may override metatags on a per content basis here.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

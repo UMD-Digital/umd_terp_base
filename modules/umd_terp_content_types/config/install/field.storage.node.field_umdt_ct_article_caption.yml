@@ -1,0 +1,19 @@
+uuid: aefd6425-8665-41f9-81ad-3586e3f26231
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_umdt_ct_article_caption
+field_name: field_umdt_ct_article_caption
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

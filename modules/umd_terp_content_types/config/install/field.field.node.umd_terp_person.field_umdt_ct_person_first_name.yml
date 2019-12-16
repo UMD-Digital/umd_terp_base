@@ -1,0 +1,19 @@
+uuid: 2ba15569-9570-4e25-881d-0678baa7df6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_person_first_name
+    - node.type.umd_terp_person
+id: node.umd_terp_person.field_umdt_ct_person_first_name
+field_name: field_umdt_ct_person_first_name
+entity_type: node
+bundle: umd_terp_person
+label: 'First Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

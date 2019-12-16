@@ -1,0 +1,22 @@
+uuid: 3ea9cd09-916f-4d56-a0e6-aae606a0fc99
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: umd_terp_person
+label: 'UMD Terp Person'
+type: 'canonical_entities:node'
+pattern: 'directory/[node:title]'
+selection_criteria:
+  b0c3d47d-63b9-4c89-830d-56d82ecaaf6c:
+    id: node_type
+    bundles:
+      umd_terp_person: umd_terp_person
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b0c3d47d-63b9-4c89-830d-56d82ecaaf6c
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,23 @@
+uuid: a38ec2b5-3113-458b-aa9a-f980388450fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.umd_terp_homepage
+  module:
+    - user
+id: node.umd_terp_homepage.teaser
+targetEntityType: node
+bundle: umd_terp_homepage
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_umdt_ct_hero_cta: true
+  field_umdt_ct_hero_text: true
+  field_umdt_ct_subtitle: true

@@ -1,0 +1,72 @@
+uuid: a7a3ae23-dc7d-4e7d-90b1-3dc6d42ab92d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_article_author
+    - field.storage.node.field_umdt_ct_article_categories
+    - search_api.server.local_database
+  module:
+    - node
+    - search_api
+id: umd_terp_articles_index
+name: 'UMD Terp Articles Index'
+description: ''
+read_only: false
+field_settings:
+  field_umdt_ct_article_author:
+    label: Author
+    datasource_id: 'entity:node'
+    property_path: field_umdt_ct_article_author
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_umdt_ct_article_author
+  field_umdt_ct_article_categories:
+    label: Categories
+    datasource_id: 'entity:node'
+    property_path: field_umdt_ct_article_categories
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_umdt_ct_article_categories
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          umd_terp_basic_page: ''
+          umd_terp_homepage: ''
+          umd_terp_person: ''
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - umd_terp_article
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_database

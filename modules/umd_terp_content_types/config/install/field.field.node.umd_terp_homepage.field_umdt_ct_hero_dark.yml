@@ -1,0 +1,23 @@
+uuid: beb43b37-66e3-4ad9-977d-a9efa90f96f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_hero_dark
+    - node.type.umd_terp_homepage
+id: node.umd_terp_homepage.field_umdt_ct_hero_dark
+field_name: field_umdt_ct_hero_dark
+entity_type: node
+bundle: umd_terp_homepage
+label: 'Hero Dark'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
