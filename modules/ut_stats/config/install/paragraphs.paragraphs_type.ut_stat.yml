@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_stat
+label: Stat
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding an individual statistic into a group.'
+behavior_plugins: {  }

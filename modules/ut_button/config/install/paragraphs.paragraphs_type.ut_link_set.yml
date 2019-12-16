@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_link_set
+label: 'Link Set'
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding link groups as a Kitchen Sink Widget.'
+behavior_plugins: {  }

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_blockquote_style
+    - paragraphs.paragraphs_type.ut_blockquote
+  module:
+    - options
+id: paragraph.ut_blockquote.field_ut_blockquote_style
+field_name: field_ut_blockquote_style
+entity_type: paragraph
+bundle: ut_blockquote
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

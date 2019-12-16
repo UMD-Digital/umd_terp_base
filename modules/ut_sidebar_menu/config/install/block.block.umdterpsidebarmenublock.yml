@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - ut_sidebar_menu
+  theme:
+    - umd_terp
+id: umdterpsidebarmenublock
+theme: umd_terp
+region: sidebar
+weight: 0
+provider: null
+plugin: umd_terp_sidebar_menu
+settings:
+  id: umd_terp_sidebar_menu
+  label: 'UMD Terp Sidebar Menu Block'
+  provider: ut_sidebar_menu
+  label_display: '0'
+  menu_name: main
+  show_parent: 1
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      umd_terp_article: umd_terp_article
+      umd_terp_homepage: umd_terp_homepage
+      umd_terp_person: umd_terp_person
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_card
+label: Card
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding individual cards within a group.'
+behavior_plugins: {  }

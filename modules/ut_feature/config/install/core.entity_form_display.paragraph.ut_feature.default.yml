@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_feature.field_ut_feature_color
+    - field.field.paragraph.ut_feature.field_ut_feature_image
+    - field.field.paragraph.ut_feature.field_ut_feature_reverse
+    - field.field.paragraph.ut_feature.field_ut_feature_style
+    - field.field.paragraph.ut_feature.field_ut_feature_text
+    - field.field.paragraph.ut_feature.field_ut_feature_title
+    - paragraphs.paragraphs_type.ut_feature
+  module:
+    - media_library
+id: paragraph.ut_feature.default
+targetEntityType: paragraph
+bundle: ut_feature
+mode: default
+content:
+  field_ut_feature_color:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ut_feature_image:
+    type: media_library_widget
+    weight: 4
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_ut_feature_reverse:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_ut_feature_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ut_feature_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  field_ut_feature_text: true
+  status: true

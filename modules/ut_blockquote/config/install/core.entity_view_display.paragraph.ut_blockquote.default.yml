@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_author
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_image
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_source
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_style
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_text
+    - paragraphs.paragraphs_type.ut_blockquote
+  module:
+    - options
+    - text
+id: paragraph.ut_blockquote.default
+targetEntityType: paragraph
+bundle: ut_blockquote
+mode: default
+content:
+  field_ut_blockquote_author:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ut_blockquote_image:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_ut_blockquote_source:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ut_blockquote_style:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ut_blockquote_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }
