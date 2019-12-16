@@ -7,6 +7,31 @@
 
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function umd_terp_content_types_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.umd_terp_content_types':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
 
 /**
  * Implements hook_preprocess_node().
@@ -25,21 +50,9 @@ function umd_terp_content_types_preprocess_node(&$variables) {
   if ($view_mode !== 'full') {
     $variables['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $nid);
   }
-
-  if ($bundle == 'umd_terp_homepage') {
-    // Homepage.
-  }
-  elseif ($bundle == 'umd_terp_basic_page') {
-    // Basic Page
-    // Full.
-    if ($view_mode == 'full') {
-
-    }
-
-  }
-  elseif ($bundle == 'umd_terp_article') {
-    // Article
-    // Full.
+  // Content type specific overrides.
+  if ($bundle == 'umd_terp_article') {
+    // Article.
     if ($view_mode == 'full') {
       $categories = $node->field_umdt_ct_article_categories->getValue();
       if (!empty($categories)) {
@@ -47,11 +60,9 @@ function umd_terp_content_types_preprocess_node(&$variables) {
         $variables['categories'] = $categories_formatted;
       }
     }
-
   }
   elseif ($bundle == 'umd_terp_person') {
-    // Person
-    // Full.
+    // Person.
     if ($view_mode == 'full') {
       $departments = $node->field_umdt_ct_person_departments->getValue();
       if (!empty($departments)) {
@@ -67,7 +78,6 @@ function umd_terp_content_types_preprocess_node(&$variables) {
         $variables['phone_link'] .= ' ' . preg_replace('/[^0-9]/', '', $variables['phone_ext']);
       }
     }
-
   }
 
 }
