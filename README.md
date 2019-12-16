@@ -71,7 +71,7 @@ All CSS, JS, etc are based in the [UMD Terp Theme](https://github.com/UMD-Digita
 - THIS MODULE SHOULD NEVER BE MODIFIED DIRECTLY.
 - All customizations should go into a custom module.
 
-All Configuration for each module is created on install. Technically, you can modify these, though we do not reccomend it. Any future updates for modules will come with a hook to re-install config for that module, so better to leave any config as is. Changes to configuration are better done via form_alter hooks, leaving default config in place.
+All Configuration for each module is created on install. Technically, you can modify these, though we do not reccomend it. Any future updates for modules will come with a hook to re-install config for that module, so better to leave any existing module config as is. Changes to existing configuration are better done via form_alter hooks, leaving default config in place.
 
 #### Nodes
 
