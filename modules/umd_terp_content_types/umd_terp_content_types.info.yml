@@ -1,5 +1,8 @@
 name: 'UMD Terp Content Types'
 type: module
 description: 'Provides various customizations and configurations for content types used in the "UMD Terp" theme.'
-package: UMD.EDU
 core: '8.x'
+package: UMD.EDU
+dependencies:
+  - entity_reference_revisions
+  - umd_terp_base
