@@ -3,8 +3,14 @@ type: module
 description: Provides a paragraphs bundle for embedding tabs as a Kitchen Sink Widget.
 version: '8.x-1.0'
 core: '8.x'
-
 package: UMD.EDU
 dependencies:
   - paragraphs
   - umd_terp_base
+  - ut_blockquote
+  - ut_button
+  - ut_divider
+  - ut_table
+  - ut_text
+  - ut_view
+  - ut_webform
