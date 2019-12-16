@@ -5,6 +5,6 @@ version: '8.x-1.0'
 core: '8.x'
 package: UMD.EDU
 dependencies:
-  - entity_reference_revisions
+  - paragraphs
   - umd_terp_base
   - link_attributes
