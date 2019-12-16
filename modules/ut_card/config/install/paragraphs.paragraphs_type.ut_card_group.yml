@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_card_group
+label: 'Card Group'
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding cards as a Kitchen Sink Widget.'
+behavior_plugins: {  }

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_events
+label: 'Events Feed'
+icon_uuid: null
+description: 'This widget provides an events feed from the UMD HUB.'
+behavior_plugins: {  }

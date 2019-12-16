@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_stat.field_ut_stat_text
+    - field.field.paragraph.ut_stat.field_ut_stat_value
+    - paragraphs.paragraphs_type.ut_stat
+id: paragraph.ut_stat.default
+targetEntityType: paragraph
+bundle: ut_stat
+mode: default
+content:
+  field_ut_stat_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_ut_stat_value:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

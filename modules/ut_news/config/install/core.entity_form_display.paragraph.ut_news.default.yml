@@ -1,0 +1,95 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_news.field_ut_news_audience
+    - field.field.paragraph.ut_news.field_ut_news_colleges_schools
+    - field.field.paragraph.ut_news.field_ut_news_destination
+    - field.field.paragraph.ut_news.field_ut_news_link
+    - field.field.paragraph.ut_news.field_ut_news_messaging_area
+    - field.field.paragraph.ut_news.field_ut_news_priorities
+    - field.field.paragraph.ut_news.field_ut_news_style
+    - field.field.paragraph.ut_news.field_ut_news_title
+    - field.field.paragraph.ut_news.field_ut_news_topics
+    - paragraphs.paragraphs_type.ut_news
+  module:
+    - external_data_source
+    - link
+id: paragraph.ut_news.default
+targetEntityType: paragraph
+bundle: ut_news
+mode: default
+content:
+  field_ut_news_audience:
+    weight: 4
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_news_colleges_schools:
+    weight: 5
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_news_destination:
+    weight: 3
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_news_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_ut_news_messaging_area:
+    weight: 6
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_news_priorities:
+    weight: 7
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_news_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ut_news_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ut_news_topics:
+    weight: 8
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+hidden:
+  created: true
+  status: true

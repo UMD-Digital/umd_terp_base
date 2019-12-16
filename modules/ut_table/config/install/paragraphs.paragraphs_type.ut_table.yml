@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_table
+label: Table
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding a responsive table as a Kitchen Sink Widget.'
+behavior_plugins: {  }

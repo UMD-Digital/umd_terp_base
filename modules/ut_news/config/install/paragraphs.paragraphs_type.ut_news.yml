@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_news
+label: 'News Feed'
+icon_uuid: null
+description: 'This widget provides a news feed from the UMD HUB.'
+behavior_plugins: {  }

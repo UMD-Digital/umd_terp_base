@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_card_group.field_ut_card_group_cards
+    - field.field.paragraph.ut_card_group.field_ut_card_group_style
+    - paragraphs.paragraphs_type.ut_card_group
+  module:
+    - paragraphs
+id: paragraph.ut_card_group.default
+targetEntityType: paragraph
+bundle: ut_card_group
+mode: default
+content:
+  field_ut_card_group_cards:
+    type: paragraphs
+    weight: 1
+    settings:
+      title: Card
+      title_plural: Cards
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ut_card
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_ut_card_group_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
