@@ -31,7 +31,7 @@ Install as you normally would any drupal 8 module.
 - ut_accordion: Paragraphs integration of accordions for UMD projects. This module provides a way to add an accordion to Kitchen Sink Pages.
 - ut_blockquote: Paragraphs integration of blockquote for UMD projects. This module provides a way to add a blockquote to Kitchen Sink Pages.
 - ut_button: Paragraphs integration of buttons and links for UMD projects. This module provides a way to add buttons to Kitchen Sink Pages.
-- ut_card: Paragraphs integration of a cards for UMD projects. This module provides a way to add a cards to Kitchen Sink Pages.
+- ut_card: Paragraphs integration of cards for UMD projects. This module provides a way to add a cards to Kitchen Sink Pages.
 - ut_carousel: Paragraphs integration of a carousel for UMD projects. This module provides a way to add a carousel to Kitchen Sink Pages.
 - ut_divider: Paragraphs integration of a Horizontal Rule for UMD projects. This module provides a way to add a Horizontal Rule to Kitchen Sink Pages.
 - ut_events: Paragraphs integration of an Events Feed (from calendar.umd.edu) for UMD projects. Essentially, this module pulls a feed of upcoming events from hub.umd.edu, with optional filter paramaters available, in order to highlight relevant events.
@@ -64,7 +64,7 @@ All edits, requests, etc should be submitted to the github repo for the [UMD Ter
 
 ### Frontend
 
-All CSS, JS, etc are based in the [UMD Terp Theme](https://github.com/UMD-Digital/umd_terp). This module contain no frontend styles for any widgets/etc.
+All CSS, JS, etc are based in the [UMD Terp Theme](https://github.com/UMD-Digital/umd_terp). This module contains no frontend styles for any widgets/etc.
 
 ### Customization
 
@@ -90,7 +90,7 @@ function YOUR_CUSTOM_MODULE_form_alter(&$form, FormStateInterface $form_state, $
 
 #### Paragraphs
 
-Use `hook_field_WIDGET_TYPE_paragraphs_form_alter()`. For example, to remove the "style (light or dark) from a them that does not need/want it, in YOUR_CUSTOM_MODULE do the following:
+Use `hook_field_WIDGET_TYPE_paragraphs_form_alter()`. For example, to remove the "style (light or dark) from a theme that does not need/want it, in YOUR_CUSTOM_MODULE do the following:
 
 ```php
 function YOUR_CUSTOM_MODULE_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
