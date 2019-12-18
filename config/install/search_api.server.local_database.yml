@@ -1,0 +1,17 @@
+uuid: 5532dc69-7a7b-4dd7-b7d0-a0153bd51b28
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: local_database
+name: 'Local Database'
+description: 'This searches local content on the D8 install.'
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: partial
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true

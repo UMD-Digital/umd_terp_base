@@ -23,6 +23,8 @@
         "drupal/link_attributes": "*",
         "drupal/paragraphs": "*",
         "drupal/pathauto": "*",
+        "drupal/field_group": "*",
+        "drupal/metatag": "*",
         "drupal/search_api": "*",
         "drupal/tablefield": "*",
         "drupal/viewsreference": "*",

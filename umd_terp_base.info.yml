@@ -5,6 +5,12 @@ core: '8.x'
 package: UMD.EDU
 dependencies:
   - paragraphs
+  - pathauto
+  - search_api
+  - search_api_db
+  - field_group
+  - media_library
+  - metatag
   - ut_accordion
   - ut_blockquote
   - ut_button
