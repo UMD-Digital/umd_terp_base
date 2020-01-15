@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\umd_terp_base\UmdTerpBase;
 
 /**
  * Implements hook_help().
@@ -164,7 +165,7 @@ function _ut_events_get_events(
     }
 
     $query .= ' ) { data { title slug all_day start_date { formatted_short time } end_date { time } campus_location { name } }}';
-    $result = _umd_terp_base_middleware_get($query);
+    $result = UmdTerpBase::middleware_get($query);
     $result = $result['data']['adv_events']['data'];
     if ($result) {
       \Drupal::cache()->set('ut_events--' . $id, $result, time() + 7200);

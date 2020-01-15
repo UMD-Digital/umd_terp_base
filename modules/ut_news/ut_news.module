@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\umd_terp_base\UmdTerpBase;
 
 /**
  * Implements hook_help().
@@ -174,7 +175,7 @@ function _ut_news_get_news(
     }
 
     $query .= ' ) { data { title slug id summary hero_image { url_600_338 alt } }}';
-    $result = _umd_terp_base_middleware_get($query);
+    $result = UmdTerpBase::middleware_get($query);
     $result = $result['data']['articles']['data'];
     if ($result) {
       \Drupal::cache()->set('ut_news--' . $id, $result, time() + 7200);
@@ -185,6 +186,3 @@ function _ut_news_get_news(
     }
   }
 }
-
-// UPDATES
-// .

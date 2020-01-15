@@ -4,6 +4,7 @@ namespace Drupal\umd_terp_base\Plugin\ExternalDataSource;
 
 use Drupal\external_data_source\Plugin\ExternalDataSourceBase;
 use Symfony\Component\HttpFoundation\Request;
+use Drupal\umd_terp_base\UmdTerpBase;
 
 /**
  * Provides a 'Audience' ExternalDataSource.
@@ -59,7 +60,7 @@ class Audience extends ExternalDataSourceBase {
    * @return array
    */
   public function getResponse() {
-    $data = _umd_terp_base_middleware_taxonomy('audience');
+    $data = UmdTerpBase::middleware_get_taxonomy('audience');
     return $this->formatResponse($data);
   }
 
@@ -73,7 +74,7 @@ class Audience extends ExternalDataSourceBase {
    * @return array $collection
    */
   public function formatResponse(array $response) {
-    $collection = _umd_terp_base_middleware_format_taxonomy($response);
+    $collection = UmdTerpBase::middleware_format_taxonomy($response);
     return $collection;
   }
 
