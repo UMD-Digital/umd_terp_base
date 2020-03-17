@@ -150,7 +150,7 @@ function _ut_news_get_news(
     return $cache->data;
   }
   else {
-    $query = 'articles(sort: {field: "authorship_date", direction: DESC}, page: {limit: ' . $range . ', offset: 0}';
+    $query = 'articles(sort: {field: \"authorship_date\", direction: DESC}, page: {limit: ' . $range . ', offset: 0}';
     if (isset($destination) || isset($colleges_schools) || isset($audience) || isset($messaging_area) || isset($priorities) || isset($topic)) {
       $query .= ',filter: {';
       if (isset($destination)) {
