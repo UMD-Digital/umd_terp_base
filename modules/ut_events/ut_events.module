@@ -168,7 +168,7 @@ function _ut_events_get_events(
     $result = UmdTerpBase::middleware_get($query);
     $result = $result['data']['adv_events']['data'];
     if ($result) {
-      \Drupal::cache()->set('ut_events--' . $id, $result, time() + 7200);
+      \Drupal::cache()->set('ut_events--' . $id, $result, time() + 900);
       return $result;
     }
     else {

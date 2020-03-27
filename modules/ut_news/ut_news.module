@@ -178,7 +178,7 @@ function _ut_news_get_news(
     $result = UmdTerpBase::middleware_get($query);
     $result = $result['data']['articles']['data'];
     if ($result) {
-      \Drupal::cache()->set('ut_news--' . $id, $result, time() + 7200);
+      \Drupal::cache()->set('ut_news--' . $id, $result, time() + 900);
       return $result;
     }
     else {
