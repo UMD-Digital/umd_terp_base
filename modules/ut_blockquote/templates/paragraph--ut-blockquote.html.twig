@@ -18,8 +18,19 @@
           {% if content.field_ut_blockquote_author|field_value %}
             <span class="blockquote-author">{{ content.field_ut_blockquote_author|field_value }}</span>
           {% endif %}
+          {% if content.field_ut_blockquote_title|field_value %}
+            <span class="blockquote-title">{{ content.field_ut_blockquote_title|field_value }}</span>
+          {% endif %}
           {% if content.field_ut_blockquote_source|field_value %}
-            <span class="blockquote-title">{{ content.field_ut_blockquote_source|field_value }}</span>
+            <cite class="blockquote-source">
+              {% if content.field_ut_blockquote_source_url|field_value %}
+                <a href="{{ content.field_ut_blockquote_source_url.0['#url'] }}" target="{{ content.field_ut_blockquote_source_url.0['#options'].attributes.target|default('_self') }}">
+                  {{ content.field_ut_blockquote_source|field_value }}
+                </a>
+              {% else %}
+                {{ content.field_ut_blockquote_source|field_value }}
+              {% endif %}
+            </cite>
           {% endif %}
         </div>
       {% endif %}
