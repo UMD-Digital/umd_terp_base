@@ -1,6 +1,6 @@
 8.1.12
 ======
-- Removing carousel functionality on mobile from card group component
+- Removing carousel navs from card group components after removing carousel functionality on mobile in umd_terp theme
 
 8.1.11
 ======
