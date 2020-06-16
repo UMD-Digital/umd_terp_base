@@ -72,6 +72,12 @@ function ut_events_preprocess_paragraph__ut_events(&$variables) {
     $priorities = $variables['elements']['#paragraph']->field_ut_events_priorities->value;
   }
 
+  // Check on Count.
+  $count = 3;
+  if (isset($variables['elements']['#paragraph']->field_ut_events_count->value)) {
+    $count = $variables['elements']['#paragraph']->field_ut_events_count->value;
+  }
+
   // Get events.
   $variables['ut_events_list'] = _ut_events_get_events(
         $destination,
@@ -79,7 +85,7 @@ function ut_events_preprocess_paragraph__ut_events(&$variables) {
         $event_type,
         $messaging_area,
         $priorities,
-        3,
+        $count,
         $uuid
     );
 }
@@ -106,6 +112,7 @@ function ut_events_field_widget_paragraphs_form_alter(&$element, &$form_state, $
   if ($element['#paragraph_type'] == 'ut_events') {
     // Tips text.
     $markup = '<ul>';
+    $markup .= '<li><strong>Limit the count shown.</strong> We strongly recommend limiting to Three, or Six.</li>';
     $markup .= '<li><strong>More filters may mean fewer results.</strong> Filters are additive. Each event must meet all filtered requirements. Apply filters selectively.</li>';
     $markup .= '<li><strong>Clear your caches after saving a new filter combination.</strong> Calls to the HUB API are cached for efficiency. To view updated results, clear the cache every time you update this widget.</li>';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_events">Events Feed Module Help</a></li>';

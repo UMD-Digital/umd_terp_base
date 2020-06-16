@@ -1,3 +1,8 @@
+8.1.13
+======
+- Adjust priorities and initiatives machine name
+- Add count for events feed module
+
 8.1.12
 ======
 - Removing carousel navs from card group components after removing carousel functionality on mobile in umd_terp theme
