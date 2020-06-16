@@ -4,7 +4,7 @@
     paragraph.field_ut_carousel_style.value ? paragraph.field_ut_carousel_style.value|clean_class,
   ]
 %}
-<div class="{{ classes|join(' ') }}">
+<div class="{{ classes|join(' ') }}" id="umd_terp_paragraph--{{ paragraph.id() }}">
   <div class="carousel-nav">
     <button class="carousel-nav-button carousel-nav-prev" aria-label="Previous slide">
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 23"><path d="M11.738 2.104a.909.909 0 000-1.277.887.887 0 00-1.263 0L.262 11.143a.909.909 0 000 1.277l10.213 10.315a.886.886 0 001.263 0 .909.909 0 000-1.276L2.424 11.78l9.314-9.677z" fill-rule="evenodd"/></svg>

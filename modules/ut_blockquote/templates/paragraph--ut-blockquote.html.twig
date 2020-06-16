@@ -4,7 +4,7 @@
     paragraph.field_ut_blockquote_style.value ? paragraph.field_ut_blockquote_style.value|clean_class,
   ]
 %}
-<blockquote class="{{ classes|join(' ') }}">
+<blockquote class="{{ classes|join(' ') }}" id="umd_terp_paragraph--{{ paragraph.id() }}">
   {{ content.field_ut_blockquote_text|field_value }}
   {% if content.field_ut_blockquote_image|field_value or content.field_ut_blockquote_author|field_value or content.field_ut_blockquote_source|field_value %}
     <footer class="blockquote-footer">

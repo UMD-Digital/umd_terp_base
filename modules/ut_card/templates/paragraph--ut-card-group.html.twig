@@ -4,6 +4,6 @@
     paragraph.field_ut_card_group_style.value ? paragraph.field_ut_card_group_style.value|clean_class,
   ]
 %}
-<div class="{{ classes|join(' ') }}">
+<div class="{{ classes|join(' ') }}" id="umd_terp_paragraph--{{ paragraph.id() }}">
   {{ content.field_ut_card_group_cards }}
 </div>

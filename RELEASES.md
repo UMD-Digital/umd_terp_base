@@ -1,3 +1,7 @@
+8.1.15
+======
+- Adjust paragraphs templates to add ID, so that could be anchor linked to potentially
+
 8.1.14
 ======
 - Adjust taxonomy display to use theme provided variables

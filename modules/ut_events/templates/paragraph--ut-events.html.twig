@@ -4,14 +4,12 @@
     paragraph.field_ut_events_style.value ? paragraph.field_ut_events_style.value|clean_class,
   ]
 %}
-<div class="{{ classes|join(' ') }}">
-
+<div class="{{ classes|join(' ') }}" id="umd_terp_paragraph--{{ paragraph.id() }}">
   {% if content.field_ut_events_title|field_value %}
     <h2 class="widget-heading h3">{{ content.field_ut_events_title|field_value }}</h2>
   {% else %}
     <h2 class="widget-heading h3">Events</h2>
   {% endif %}
-
   {% if ut_events_list[0] %}
     <div class="events">
       {% for evnt in ut_events_list %}
@@ -36,16 +34,14 @@
         </div>
       {% endfor %}
     </div>
-  {% else %}  
+  {% else %}
     <div class="text-center">
       <p>Sorry, no events available.</p>
     </div>
-  {% endif %}   
-  
+  {% endif %}
   <div class="text-center">
     {% if content.field_ut_events_link.0 %}
         {% include directory ~ '/templates/helpers/link.html.twig' with {'link': content.field_ut_events_link.0, 'classes': 'events-calendar-cta fancy-link' } %}
     {% endif %}
   </div>
-
 </div>

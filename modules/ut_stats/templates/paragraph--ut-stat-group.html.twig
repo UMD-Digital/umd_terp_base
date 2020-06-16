@@ -4,7 +4,7 @@
     paragraph.field_ut_stat_group_style.value ? paragraph.field_ut_stat_group_style.value|clean_class,
   ]
 %}
-<div class="{{ classes|join(' ') }}">
+<div class="{{ classes|join(' ') }}" id="umd_terp_paragraph--{{ paragraph.id() }}">
   {{ content.field_ut_stat_group_stats }}
   <div class="stat-group-nav">
     <button class="stat-group-nav-button stat-group-nav-prev" aria-label="View previous stat">

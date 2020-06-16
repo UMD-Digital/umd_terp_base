@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs" role="tablist">
+<ul class="nav nav-tabs" role="tablist" id="umd_terp_paragraph--{{ paragraph.id() }}">
   {% for key, item in content.field_ut_tabs_items if key|first != '#' %}
     <li class="nav-item">
       <a class="nav-link{% if loop.first %} active{% endif %}" id="tabs-{{ paragraph.id() }}-tab-{{ loop.index }}" data-toggle="tab" href="#tabs-{{ paragraph.id() }}-pane-{{ loop.index }}" role="tab" aria-controls="tabs-{{ paragraph.id() }}-pane-{{ loop.index }}"{% if loop.first %} aria-selected="true"{% endif %}>
