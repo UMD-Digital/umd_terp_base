@@ -1,3 +1,7 @@
+8.1.14
+======
+- Adjust taxonomy display to use theme provided variables
+
 8.1.13
 ======
 - Adjust priorities and initiatives machine name
