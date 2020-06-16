@@ -17,7 +17,7 @@ Install as you normally would any drupal 8 module.
 
 ### Manually
 
-- Download this repo into /themes/contrib/umd_terp
+- Download this repo into /modules/contrib/umd_terp_base
 - `drush en umd_terp_base` or enable via admin UI
 - Enable all desired sub modules
 

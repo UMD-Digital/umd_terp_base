@@ -1,0 +1,19 @@
+uuid: ec326591-9a41-4b00-881e-2a692393d877
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_ut_blockquote_source_url
+field_name: field_ut_blockquote_source_url
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
