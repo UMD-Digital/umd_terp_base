@@ -1,0 +1,13 @@
+{%
+  set classes = [
+    'alerts',
+  ]
+%}
+<div class="{{ classes|join(' ') }}" id="umd_terp_paragraph--{{ paragraph.id() }}">
+  <div class="jumbotron">
+    {% if content.field_ut_alerts_title|field_value %}
+      <h2>{{ content.field_ut_alerts_title|field_value }}</h2>
+    {% endif %}
+    {{ content.field_ut_alerts}}
+  </div>
+</div>
