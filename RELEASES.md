@@ -1,3 +1,7 @@
+8.1.19
+======
+- Correct accordion behavior
+
 8.1.18
 ======
 - Adjust event slugs
