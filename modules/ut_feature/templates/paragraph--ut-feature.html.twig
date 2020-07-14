@@ -1,3 +1,10 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Feature Paragraph.
+ */
+#}
+
 {%
   set classes = [
     'feature',
@@ -6,23 +13,29 @@
     paragraph.field_ut_feature_color.value ? paragraph.field_ut_feature_color.value|clean_class,
   ]
 %}
-<div class="{{ classes|join(' ') }}" id="umd_terp_paragraph--{{ paragraph.id() }}">
-  <div class="feature-media">
-    <img src="{{ file_url(content.field_ut_feature_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_feature_image[0]['#media'].field_media_image.alt }}">
-  </div>
-  <div class="feature-content">
-    <div class="outer-pad">
-      <div class="editor-content">
-        {% if content.field_ut_feature_title|field_value %}
-          <h2>{{ content.field_ut_feature_title|field_value }}</h2>
-        {% endif %}
-        {% if content.field_ut_feature_text|field_value %}
-          <p>{{ content.field_ut_feature_text|field_value }}</p>
-        {% endif %}
-        {% if content.field_ut_feature_link.0 %}
-          {% include directory ~ '/templates/helpers/link.html.twig' with {'link': content.field_ut_feature_link.0, 'classes': 'btn' } %}
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			<div class="feature-media">
+				<img src="{{ file_url(content.field_ut_feature_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_feature_image[0]['#media'].field_media_image.alt }}">
+			</div>
+			<div class="feature-content">
+				<div class="outer-pad">
+					<div class="editor-content">
+						{% if content.field_ut_feature_title|field_value %}
+							<h2>{{ content.field_ut_feature_title|field_value }}</h2>
+						{% endif %}
+						{% if content.field_ut_feature_text|field_value %}
+							<p>{{ content.field_ut_feature_text|field_value }}</p>
+						{% endif %}
+						{% if content.field_ut_feature_link.0 %}
+							{% include directory ~ '/templates/helpers/link.html.twig' with {'link': content.field_ut_feature_link.0, 'classes': 'btn' } %}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			{{ content|without('field_ut_feature_title', 'field_ut_feature_text', 'field_ut_feature_link', 'field_ut_feature_image', 'field_ut_feature_reverse', 'field_ut_feature_style', 'field_ut_feature_color') }}
+		{% endblock %}
+	</div>
+{% endblock paragraph %}

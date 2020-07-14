@@ -1,3 +1,12 @@
+8.1.18
+======
+- Adjust event slugs
+- Adjust templates to be able to use quickedit
+
+8.1.17
+======
+- Target correct webform field
+
 8.1.16
 ======
 - Adding UT Alerts module, account for more fields in feature module

@@ -1,3 +1,10 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Image Paragraph.
+ */
+#}
+
 {%
   set classes = [
     'image-bg',
@@ -5,15 +12,21 @@
   ]
 %}
 
-<div class="{{ classes|join(' ') }}" id="umd_terp_paragraph--{{ paragraph.id() }}">
-  <figure>
-    <div class="image-media">
-      <img src="{{ file_url(content.field_ut_image_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_image_image[0]['#media'].field_media_image.alt }}" />
-    </div>
-    {% if content.field_ut_image_caption|field_value %}
-      <figcaption>
-        {{ content.field_ut_image_caption|field_value }}
-      </figcaption>
-    {% endif %}
-  </figure>
-</div>
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			<figure>
+				<div class="image-media">
+					<img src="{{ file_url(content.field_ut_image_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_image_image[0]['#media'].field_media_image.alt }}"/>
+				</div>
+				{% if content.field_ut_image_caption|field_value %}
+					<figcaption>
+						{{ content.field_ut_image_caption|field_value }}
+					</figcaption>
+				{% endif %}
+			</figure>
+		{% endblock %}
+		{{ content|without('field_ut_image_caption', 'field_ut_image_image', 'field_ut_image_style') }}
+	</div>
+{% endblock paragraph %}
+

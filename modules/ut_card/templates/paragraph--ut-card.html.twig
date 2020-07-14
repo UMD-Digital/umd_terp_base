@@ -1,18 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Card Paragraph.
+ */
+#}
+
 <div class="card" id="umd_terp_paragraph--{{ paragraph.id() }}">
-  {% if content.field_ut_card_image|field_value %}
-    <div class="card-img-top card-img">
-      <img src="{{ file_url(content.field_ut_card_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_card_image[0]['#media'].field_media_image.alt }}">
-    </div>
-  {% endif %}
-  <div class="card-body">
-      {% if content.field_ut_card_title|field_value %}
-        <div class="card-title">{{ content.field_ut_card_title|field_value }}</div>
-      {% endif %}
-      {% if content.field_ut_card_text|field_value %}
-        <div class="card-text">{{ content.field_ut_card_text|field_value }}</div>
-      {% endif %}
-      {% if content.field_ut_card_link.0 %}
-        {% include directory ~ '/templates/helpers/link.html.twig' with {'link': content.field_ut_card_link.0, 'classes': 'card-cta fancy-link' } %}
-      {% endif %}
-  </div>
+	{% if content.field_ut_card_image|field_value %}
+		<div class="card-img-top card-img">
+			<img src="{{ file_url(content.field_ut_card_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_card_image[0]['#media'].field_media_image.alt }}">
+		</div>
+	{% endif %}
+	<div class="card-body">
+		{% if content.field_ut_card_title|field_value %}
+			<div class="card-title">{{ content.field_ut_card_title|field_value }}</div>
+		{% endif %}
+		{% if content.field_ut_card_text|field_value %}
+			<div class="card-text">{{ content.field_ut_card_text|field_value }}</div>
+		{% endif %}
+		{% if content.field_ut_card_link.0 %}
+			{% include directory ~ '/templates/helpers/link.html.twig' with {'link': content.field_ut_card_link.0, 'classes': 'card-cta fancy-link' } %}
+		{% endif %}
+	</div>
 </div>

@@ -1,14 +1,27 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Two column text Paragraph.
+ */
+#}
 
-{% if content.field_ut_text_2_columns_title|field_value %}
-  <h2>{{ content.field_ut_text_2_columns_title|field_value }}</h2>
-{% endif %}
-<div class="container-fluid p-0 editor-content" id="umd_terp_paragraph--{{ paragraph.id() }}">
-  <div class="row">
-    <div class="col-800">
-      {{ content.field_ut_text_2_columns_column_1|field_value }}
-    </div>
-    <div class="col-800">
-      {{ content.field_ut_text_2_columns_column_2|field_value }}
-    </div>
-  </div>
-</div>
+{% block paragraph %}
+	<div{{attributes}}>
+		{% block content %}
+			{% if content.field_ut_text_2_columns_title|field_value %}
+				<h2>{{ content.field_ut_text_2_columns_title|field_value }}</h2>
+			{% endif %}
+			<div class="container-fluid p-0 editor-content" id="umd_terp_paragraph--{{ paragraph.id() }}">
+				<div class="row">
+					<div class="col-800">
+						{{ content.field_ut_text_2_columns_column_1|field_value }}
+					</div>
+					<div class="col-800">
+						{{ content.field_ut_text_2_columns_column_2|field_value }}
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+		{{ content|without('field_ut_text_2_columns_title', 'field_ut_text_2_columns_column_1', 'field_ut_text_2_columns_column_2') }}
+	</div>
+{% endblock paragraph %}

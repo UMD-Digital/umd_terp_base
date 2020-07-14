@@ -1,3 +1,21 @@
-<div class="btn-set" id="umd_terp_paragraph--{{ paragraph.id() }}">
-  {{ content.field_ut_button_set_buttons|field_value }}
-</div>
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Button set Paragraph.
+ */
+#}
+
+{%
+  set classes = [
+    'btn-set',
+  ]
+%}
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			{{ content.field_ut_button_set_buttons|field_value }}
+		{% endblock %}
+		{{ content|without('field_ut_button_set_buttons') }}
+	</div>
+{% endblock paragraph %}

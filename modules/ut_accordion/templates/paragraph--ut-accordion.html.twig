@@ -1,16 +1,34 @@
-<div id="accordion-{{ paragraph.id() }}" class="accordion">
-  {% for key, item in content.field_ut_accordion_items if key|first != '#' %}
-    <div class="card">
-      <div class="card-header" id="accordion-{{ paragraph.id() }}-header-{{ loop.index }}">
-        <button class="btn" data-toggle="collapse" data-target="#accordion-{{ paragraph.id() }}-content-{{ loop.index }}" aria-expanded="false" aria-controls="accordion-{{ paragraph.id() }}-content-{{ loop.index }}">
-          {{ item['#paragraph'].field_ut_accordion_item_title.value }}
-        </button>
-      </div>
-      <div id="accordion-{{ paragraph.id() }}-content-{{ loop.index }}" class="collapse" aria-labelledby="accordion-{{ paragraph.id() }}-header-{{ loop.index }}">
-        <div class="card-body">
-          {% include directory ~ '/templates/helpers/paragraph-content.html.twig' with { 'item': item, 'content': item['#paragraph'].field_ut_accordion_item_content } %}
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Accordion Paragraph.
+ */
+#}
+
+{%
+  set classes = [
+    'accordion',
+  ]
+%}
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','accordion-'~paragraph.id())}}>
+		{% block content %}
+			{% for key, item in content.field_ut_accordion_items if key|first != '#' %}
+				<div class="card">
+					<div class="card-header" id="accordion-{{ paragraph.id() }}-header-{{ loop.index }}">
+						<button class="btn" data-toggle="collapse" data-target="#accordion-{{ paragraph.id() }}-content-{{ loop.index }}" aria-expanded="false" aria-controls="accordion-{{ paragraph.id() }}-content-{{ loop.index }}">
+							{{ item['#paragraph'].field_ut_accordion_item_title.value }}
+						</button>
+					</div>
+					<div id="accordion-{{ paragraph.id() }}-content-{{ loop.index }}" class="collapse" aria-labelledby="accordion-{{ paragraph.id() }}-header-{{ loop.index }}">
+						<div class="card-body">
+							{% include directory ~ '/templates/helpers/paragraph-content.html.twig' with { 'item': item, 'content': item['#paragraph'].field_ut_accordion_item_content } %}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		{% endblock %}
+	</div>
+	{{ content|without('field_ut_accordion_items', 'field_ut_accordion_open_first', 'field_ut_accordion_open_multiple') }}
+{% endblock paragraph %}

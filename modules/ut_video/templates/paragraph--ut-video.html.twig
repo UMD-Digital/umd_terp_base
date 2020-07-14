@@ -1,17 +1,29 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Video Paragraph.
+ */
+#}
+
 {%
   set classes = [
     'embed-bg',
     paragraph.field_ut_video_style.value ? paragraph.field_ut_video_style.value|clean_class,
   ]
 %}
-<div class="{{ classes|join(' ') }}" id="umd_terp_paragraph--{{ paragraph.id() }}">
-  <figure>
-    <div class="embed-responsive embed-responsive-2by1">
-      <iframe class="embed-responsive-item" title="{{ content.field_ut_video_title|field_value }}" src="{{ content.field_ut_video_url|field_value }}" allowfullscreen></iframe>
-    </div>
-    {% if content.field_ut_video_caption|field_value %}
-      <figcaption>{{ content.field_ut_video_caption|field_value }}</figcaption>
-    {% endif %}
-  </figure>
-</div>
 
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			<figure>
+				<div class="embed-responsive embed-responsive-2by1">
+					<iframe class="embed-responsive-item" title="{{ content.field_ut_video_title|field_value }}" src="{{ content.field_ut_video_url|field_value }}" allowfullscreen></iframe>
+				</div>
+				{% if content.field_ut_video_caption|field_value %}
+					<figcaption>{{ content.field_ut_video_caption|field_value }}</figcaption>
+				{% endif %}
+			</figure>
+		{% endblock %}
+		{{ content|without('field_ut_video_caption', 'field_ut_video_style', 'field_ut_video_title', 'field_ut_video_url') }}
+	</div>
+{% endblock paragraph %}

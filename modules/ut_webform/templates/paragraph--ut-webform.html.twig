@@ -1,4 +1,18 @@
-{% if content.field_ut_webform_title|field_value %}
-  <h2>{{ content.field_ut_webform_title|field_value }}</h2>
-{% endif %}
-{{ content.field_ut_webform_webform|field_value }}
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Webform Paragraph.
+ */
+#}
+
+{% block paragraph %}
+	<div{{attributes}}>
+		{% block content %}
+			{% if content.field_ut_webform_title|field_value %}
+				<h2>{{ content.field_ut_webform_title|field_value }}</h2>
+			{% endif %}
+			{{ content.field_ut_webform_form|field_value }}
+		{% endblock %}
+		{{ content|without('field_ut_webform_form', 'field_ut_webform_title') }}
+	</div>
+{% endblock paragraph %}
