@@ -28,7 +28,9 @@
                   <span>{{ evnt.campus_location.name }}</span>
                 {% endif %}
               </div>
-              <a href="https://calendar.umd.com/{{ evnt.slug }}" class="card-cta event-cta btn">View Event <span class="sr-only">{{ evnt.title|raw }}</span></a>
+              <a href="https://calendar.umd.edu/{{ evnt.slug }}/{{ evnt.event_id }}/{{ evnt.id }}" class="card-cta event-cta btn">View Event
+                <span class="sr-only">{{ evnt.title|raw }}</span>
+              </a>
             </div>
           </div>
         </div>

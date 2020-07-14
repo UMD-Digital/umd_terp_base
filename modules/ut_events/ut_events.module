@@ -171,7 +171,7 @@ function _ut_events_get_events(
       $query .= '}';
     }
 
-    $query .= ' ) { data { title slug all_day start_date { formatted_short time } end_date { time } campus_location { name } }}';
+    $query .= ' ) { data { title id event_id slug all_day start_date { formatted_short time } end_date { time } campus_location { name } }}';
     $result = UmdTerpBase::middleware_get($query);
     $result = $result['data']['adv_events']['data'];
     if ($result) {
