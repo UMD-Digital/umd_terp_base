@@ -60,7 +60,7 @@ class PrioritiesInitiatives extends ExternalDataSourceBase {
    * @return array
    */
   public function getResponse() {
-    $data = UmdTerpBase::middleware_get_taxonomy('priorities_and_initiatives');
+    $data = UmdTerpBase::middleware_get_taxonomy('priorities_and_initiatives_');
     return $this->formatResponse($data);
   }
 

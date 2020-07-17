@@ -1,39 +1,52 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Blockquotes Paragraph.
+ */
+#}
+
 {%
   set classes = [
     'blockquote',
     paragraph.field_ut_blockquote_style.value ? paragraph.field_ut_blockquote_style.value|clean_class,
   ]
 %}
-<blockquote class="{{ classes|join(' ') }}">
-  {{ content.field_ut_blockquote_text|field_value }}
-  {% if content.field_ut_blockquote_image|field_value or content.field_ut_blockquote_author|field_value or content.field_ut_blockquote_source|field_value %}
-    <footer class="blockquote-footer">
-      {% if content.field_ut_blockquote_image|field_value %}
-        <div class="blockquote-portrait">
-          <img src="{{ file_url(content.field_ut_blockquote_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_blockquote_image[0]['#media'].field_media_image.alt }}">
-        </div>
-      {% endif %}
-      {% if content.field_ut_blockquote_author|field_value or content.field_ut_blockquote_source|field_value %}
-        <div class="blockquote-attribution">
-          {% if content.field_ut_blockquote_author|field_value %}
-            <span class="blockquote-author">{{ content.field_ut_blockquote_author|field_value }}</span>
-          {% endif %}
-          {% if content.field_ut_blockquote_title|field_value %}
-            <span class="blockquote-title">{{ content.field_ut_blockquote_title|field_value }}</span>
-          {% endif %}
-          {% if content.field_ut_blockquote_source|field_value %}
-            <cite class="blockquote-source">
-              {% if content.field_ut_blockquote_source_url|field_value %}
-                <a href="{{ content.field_ut_blockquote_source_url.0['#url'] }}" target="{{ content.field_ut_blockquote_source_url.0['#options'].attributes.target|default('_self') }}">
-                  {{ content.field_ut_blockquote_source|field_value }}
-                </a>
-              {% else %}
-                {{ content.field_ut_blockquote_source|field_value }}
-              {% endif %}
-            </cite>
-          {% endif %}
-        </div>
-      {% endif %}
-    </footer>
-  {% endif %}
-</blockquote>
+
+{% block paragraph %}
+	<blockquote{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			{{ content.field_ut_blockquote_text|field_value }}
+			{% if content.field_ut_blockquote_image|field_value or content.field_ut_blockquote_author|field_value or content.field_ut_blockquote_source|field_value %}
+				<footer class="blockquote-footer">
+					{% if content.field_ut_blockquote_image|field_value %}
+						<div class="blockquote-portrait">
+							<img src="{{ file_url(content.field_ut_blockquote_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_blockquote_image[0]['#media'].field_media_image.alt }}">
+						</div>
+					{% endif %}
+					{% if content.field_ut_blockquote_author|field_value or content.field_ut_blockquote_source|field_value %}
+						<div class="blockquote-attribution">
+							{% if content.field_ut_blockquote_author|field_value %}
+								<span class="blockquote-author">{{ content.field_ut_blockquote_author|field_value }}</span>
+							{% endif %}
+							{% if content.field_ut_blockquote_title|field_value %}
+								<span class="blockquote-title">{{ content.field_ut_blockquote_title|field_value }}</span>
+							{% endif %}
+							{% if content.field_ut_blockquote_source|field_value %}
+								<cite class="blockquote-source">
+									{% if content.field_ut_blockquote_source_url|field_value %}
+										<a href="{{ content.field_ut_blockquote_source_url.0['#url'] }}" target="{{ content.field_ut_blockquote_source_url.0['#options'].attributes.target|default('_self') }}">
+											{{ content.field_ut_blockquote_source|field_value }}
+										</a>
+									{% else %}
+										{{ content.field_ut_blockquote_source|field_value }}
+									{% endif %}
+								</cite>
+							{% endif %}
+						</div>
+					{% endif %}
+				</footer>
+			{% endif %}
+		{% endblock %}
+		{{ content|without('field_ut_blockquote_author', 'field_ut_blockquote_image', 'field_ut_blockquote_source', 'field_ut_blockquote_source_url', 'field_ut_blockquote_style', 'field_ut_blockquote_text', 'field_ut_blockquote_title') }}
+	</blockquote>
+{% endblock paragraph %}

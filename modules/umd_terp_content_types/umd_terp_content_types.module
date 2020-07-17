@@ -55,8 +55,14 @@ function umd_terp_content_types_preprocess_node(&$variables) {
     // Article.
     if ($view_mode == 'full') {
       $categories = $node->field_umdt_ct_article_categories->getValue();
+      // See if the articles path was overwritten in theme settings.
+      $articles_url = '/articles';
+      $articles_theme_url = theme_get_setting('umd_terp_articles_path');
+      if($articles_theme_url !== '') {
+        $articles_url = $articles_theme_url;
+      }
       if (!empty($categories)) {
-        $categories_formatted = _umd_terp_content_types_format_term_links($categories, '/articles?field_umdt_ct_article_categories=');
+        $categories_formatted = _umd_terp_content_types_format_term_links($categories, $articles_url . '?field_umdt_ct_article_categories=');
         $variables['categories'] = $categories_formatted;
       }
     }
@@ -66,7 +72,8 @@ function umd_terp_content_types_preprocess_node(&$variables) {
     if ($view_mode == 'full') {
       $departments = $node->field_umdt_ct_person_departments->getValue();
       if (!empty($departments)) {
-        $departments_formatted = _umd_terp_content_types_format_term_links($departments, '/LINK_TO_PROFILE_VIEW?field_umdt_ct_DEPARTMENT=');
+        // Keep link empty for now, as there is anot yet a view based by department.
+        $departments_formatted = _umd_terp_content_types_format_term_links($departments, NULL);
         $variables['departments'] = $departments_formatted;
       }
     }
@@ -88,8 +95,7 @@ function umd_terp_content_types_preprocess_node(&$variables) {
  * Alters the some filter options on views pages.
  */
 function umd_terp_content_types_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form['#id'] == 'views-exposed-form-articles-block-1') {
-
+  if ($form['#id'] == 'views-exposed-form-articles-with-filters') {
     $form['field_umdt_ct_article_author']['#type'] = 'select';
     $form['field_umdt_ct_article_author']['#multiple'] = FALSE;
     $form['field_umdt_ct_article_author']['#empty_option'] = t('- Any -');
@@ -120,9 +126,13 @@ function _umd_terp_content_types_format_term_links(&$terms, $link) {
     foreach ($terms as $key => $item) {
       $tid = $item['target_id'];
       $term = Term::load($tid);
+      $adj_link = NULL;
+      if($link !== NULL) {
+        $adj_link = $link . $tid;
+      }
       $cat = [
         'title' => $term->getName(),
-        'link'  => $link . $tid,
+        'link'  => $adj_link,
       ];
       $formatted[] = $cat;
     }

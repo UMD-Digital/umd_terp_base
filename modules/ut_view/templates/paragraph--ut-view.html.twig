@@ -1,4 +1,18 @@
-{% if content.field_ut_view_title|field_value %}
-  <h2>{{ content.field_ut_view_title|field_value }}</h2>
-{% endif %}
-{{ content.field_ut_view_view|field_value }}
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Views Paragraph.
+ */
+#}
+
+{% block paragraph %}
+	<div{{attributes}}>
+		{% block content %}
+			{% if content.field_ut_view_title|field_value %}
+				<h2>{{ content.field_ut_view_title|field_value }}</h2>
+			{% endif %}
+			{{ content.field_ut_view_view|field_value }}
+		{% endblock %}
+		{{ content|without('field_ut_view_view', 'field_ut_view_title') }}
+	</div>
+{% endblock paragraph %}

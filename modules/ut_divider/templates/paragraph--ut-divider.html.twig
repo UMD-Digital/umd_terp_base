@@ -1,7 +1,22 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Divider Paragraph.
+ */
+#}
+
 {%
   set classes = [
     'divider',
     paragraph.field_ut_divider_size.value ? paragraph.field_ut_divider_size.value|clean_class,
   ]
 %}
-<hr {{ attributes.addClass(classes) }}>
+
+{% block paragraph %}
+	<div{{attributes}}>
+		{% block content %}
+			<hr {{ attributes.addClass(classes) }} id="umd_terp_paragraph--{{ paragraph.id() }}">
+			{{ content|without('field_ut_divider_size') }}
+		{% endblock %}
+	</div>
+{% endblock paragraph %}

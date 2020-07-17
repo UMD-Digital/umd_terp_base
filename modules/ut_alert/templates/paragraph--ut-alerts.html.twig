@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Alerts Paragraph.
+ */
+#}
+
+{%
+  set classes = [
+    'alerts',
+  ]
+%}
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			<div class="jumbotron">
+				{% if content.field_ut_alerts_title|field_value %}
+					<h2>{{ content.field_ut_alerts_title|field_value }}</h2>
+				{% endif %}
+				{{ content.field_ut_alerts}}
+			</div>
+		{% endblock %}
+		{{ content|without('field_ut_alerts_title', 'field_ut_alerts') }}
+	</div>
+{% endblock paragraph %}

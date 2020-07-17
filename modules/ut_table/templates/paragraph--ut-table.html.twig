@@ -1,3 +1,10 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Table Paragraph.
+ */
+#}
+
 {%
   set classes = [
     'table',
@@ -7,27 +14,34 @@
   ]
 %}
 
-{% for key, item in content.field_ut_table_table if key|first != '#' %}
-  <table{{ attributes.addClass(classes).setAttribute('data-tablesaw-mode', 'stack') }}>
-    {% if item.tablefield['#header'] %}
-      <thead>
-        <tr>
-          {% for col in item.tablefield['#header'] %}
-            <th>{{ col.data }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-    {% endif %}
-    {% if item.tablefield['#rows'] %}
-      <tbody>
-        {% for row in item.tablefield['#rows'] %}
-          <tr>
-            {% for col in row %}
-            <td>{{ col.data }}</td>
-          {% endfor %}
-          </tr>
-        {% endfor %}
-      </tbody>
-    {% endif %}
-  </table>
-{% endfor %}
+{% block paragraph %}
+	<div{{attributes}}>
+		{% for key, item in content.field_ut_table_table if key|first != '#' %}
+			{% block content %}
+				<table class="{{ classes|join(' ') }}" data-tablesaw-mode="stack" id="umd_terp_paragraph--{{ paragraph.id() }}">
+					{% if item.tablefield['#header'] %}
+						<thead>
+							<tr>
+								{% for col in item.tablefield['#header'] %}
+									<th>{{ col.data }}</th>
+								{% endfor %}
+							</tr>
+						</thead>
+					{% endif %}
+					{% if item.tablefield['#rows'] %}
+						<tbody>
+							{% for row in item.tablefield['#rows'] %}
+								<tr>
+									{% for col in row %}
+										<td>{{ col.data }}</td>
+									{% endfor %}
+								</tr>
+							{% endfor %}
+						</tbody>
+					{% endif %}
+				</table>
+			{% endblock %}
+		{% endfor %}
+		{{ content|without('field_ut_table_style', 'field_ut_table_table') }}
+	</div>
+{% endblock paragraph %}

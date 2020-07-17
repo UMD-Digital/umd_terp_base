@@ -1,3 +1,37 @@
+8.1.20
+======
+- Correct bug in ut_text template
+
+8.1.19
+======
+- Correct accordion behavior
+
+8.1.18
+======
+- Adjust event slugs
+- Adjust templates to be able to use quickedit
+
+8.1.17
+======
+- Target correct webform field
+
+8.1.16
+======
+- Adding UT Alerts module, account for more fields in feature module
+
+8.1.15
+======
+- Adjust paragraphs templates to add ID, so that could be anchor linked to potentially
+
+8.1.14
+======
+- Adjust taxonomy display to use theme provided variables
+
+8.1.13
+======
+- Adjust priorities and initiatives machine name
+- Add count for events feed module
+
 8.1.12
 ======
 - Removing carousel navs from card group components after removing carousel functionality on mobile in umd_terp theme

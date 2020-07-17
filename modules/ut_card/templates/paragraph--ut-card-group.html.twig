@@ -1,9 +1,22 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Card Group Paragraph.
+ */
+#}
+
 {%
   set classes = [
     'card-group-bg',
     paragraph.field_ut_card_group_style.value ? paragraph.field_ut_card_group_style.value|clean_class,
   ]
 %}
-<div class="{{ classes|join(' ') }}">
-  {{ content.field_ut_card_group_cards }}
-</div>
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			{{ content.field_ut_card_group_cards }}
+		{% endblock %}
+		{{ content|without('field_ut_card_group_cards', 'field_ut_card_group_style') }}
+	</div>
+{% endblock paragraph %}
