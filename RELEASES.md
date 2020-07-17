@@ -1,3 +1,7 @@
+8.1.20
+======
+- Correct bug in ut_text template
+
 8.1.19
 ======
 - Correct accordion behavior
