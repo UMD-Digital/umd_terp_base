@@ -54,7 +54,8 @@ function ut_divider_field_widget_paragraphs_form_alter(&$element, &$form_state, 
     // Tips text.
     $markup = '<ul>';
     $markup .= '<li><strong>Visually separate content with a horizontal rule.</strong></li>';
-    $markup .= '<li>Select the thickness of the line (1 to 8 pixels).</li>';
+    $markup .= '<li>Select the height of the space (Small, Medium, Large, Xlarge).</li>';
+    $markup .= '<li>Select the thickness of the rule, if one is desired (Small, Medium, Large, Xlarge).</li>';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_divider">Divider Help</a></li>';
     $markup .= '</ul>';
 

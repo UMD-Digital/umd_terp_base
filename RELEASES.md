@@ -1,3 +1,7 @@
+8.1.22
+======
+- Global spacing adjustments (https://trello.com/c/zIpw2RwL/50-global-spacing-adjustments)
+
 8.1.21
 ======
 - Add ability to center links (https://trello.com/c/0QACoNud/67-create-a-class-to-make-buttons-centered-or-even)
