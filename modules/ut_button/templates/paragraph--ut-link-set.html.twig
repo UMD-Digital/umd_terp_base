@@ -8,14 +8,15 @@
 {%
   set classes = [
     'link-set',
+		paragraph.field_ut_button_set_alignment.value ? paragraph.field_ut_button_set_alignment.value|clean_class : 'text-left',
   ]
 %}
 
 {% block paragraph %}
 	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
 		{% block content %}
-			{{ content.field_ut_button_set_links|field_value }}
+			{{ content.field_ut_link_set_links|field_value }}
 		{% endblock %}
-		{{ content|without('field_ut_button_set_links') }}
+		{{ content|without('field_ut_link_set_links', 'field_ut_button_set_alignment') }}
 	</div>
 {% endblock paragraph %}

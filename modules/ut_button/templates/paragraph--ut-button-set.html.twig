@@ -8,6 +8,7 @@
 {%
   set classes = [
     'btn-set',
+		paragraph.field_ut_button_set_alignment.value ? paragraph.field_ut_button_set_alignment.value|clean_class : 'text-left',
   ]
 %}
 
@@ -16,6 +17,6 @@
 		{% block content %}
 			{{ content.field_ut_button_set_buttons|field_value }}
 		{% endblock %}
-		{{ content|without('field_ut_button_set_buttons') }}
+		{{ content|without('field_ut_button_set_buttons', 'field_ut_button_set_alignment') }}
 	</div>
 {% endblock paragraph %}

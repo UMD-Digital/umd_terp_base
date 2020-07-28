@@ -1,3 +1,7 @@
+8.1.21
+======
+- Add ability to center links (https://trello.com/c/0QACoNud/67-create-a-class-to-make-buttons-centered-or-even)
+
 8.1.20
 ======
 - Correct bug in ut_text template
