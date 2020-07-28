@@ -12,7 +12,7 @@ Provides both the "Button Set" and "Button" paragraphs, as well as the the "Link
 
 The following fields are available on the Button Set KS widget:
 
-- Alignment: Left, Center, Right
+- Center: Boolean
 
 The following fields are available on the Button KS widget:
 
@@ -21,7 +21,7 @@ The following fields are available on the Button KS widget:
 
 The following fields are available on the Link Set KS widget:
 
-- Alignment: Left, Center, Right
+- Center: Boolean
 
 The following fields are available on the Link KS widget:
 
