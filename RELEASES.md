@@ -1,3 +1,11 @@
+8.1.24
+======
+- Add version to .info
+
+8.1.23
+======
+- Adjust button/link cenetered styles
+
 8.1.22
 ======
 - Global spacing adjustments (https://trello.com/c/zIpw2RwL/50-global-spacing-adjustments)
