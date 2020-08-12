@@ -10,12 +10,20 @@ This module contains markup only (no js or css), those should be provided in the
 
 Provides both the "Button Set" and "Button" paragraphs, as well as the the "Link Set" and "Link" paragraphs. Button set and Link Set are wrappers for the respective individual elements, and should always be added first.
 
+The following fields are available on the Button Set KS widget:
+
+- Center: Boolean
+
 The following fields are available on the Button KS widget:
 
 - Style: Primary, Secondary, Success, Danger, Warning, Info, Light, Dark, Link
 - Link: URL, Text, and target.
 
-The following fields are available on the Button KS widget:
+The following fields are available on the Link Set KS widget:
+
+- Center: Boolean
+
+The following fields are available on the Link KS widget:
 
 - Link: URL, Text, and target.
 

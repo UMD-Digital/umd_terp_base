@@ -1,3 +1,27 @@
+8.1.26
+======
+- Fixes https://github.com/UMD-Digital/umd_terp/issues/8, hidden span in active menu for sidebar.
+
+8.1.25
+======
+- Updating alerts markup to use standard Bootstrap implementation
+
+8.1.24
+======
+- Add version to .info
+
+8.1.23
+======
+- Adjust button/link cenetered styles
+
+8.1.22
+======
+- Global spacing adjustments (https://trello.com/c/zIpw2RwL/50-global-spacing-adjustments)
+
+8.1.21
+======
+- Add ability to center links (https://trello.com/c/0QACoNud/67-create-a-class-to-make-buttons-centered-or-even)
+
 8.1.20
 ======
 - Correct bug in ut_text template

@@ -12,7 +12,8 @@ Provides the "Divider" paragraph.
 
 The following fields are available on the Divider KS widget:
 
-- Size: Default, Medium, Large, Xlarge
+- Spacing: Small, Medium, Large, Xlarge
+- Rule: Small, Medium, Large, Xlarge, None
 
 ## Markup Overrides
 
