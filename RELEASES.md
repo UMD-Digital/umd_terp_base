@@ -1,3 +1,7 @@
+8.1.25
+======
+- Updating alerts markup to use standard Bootstrap implementation
+
 8.1.24
 ======
 - Add version to .info
