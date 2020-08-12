@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_link_set.field_ut_link_set_links
+    - paragraphs.paragraphs_type.ut_link_set
+  module:
+    - entity_reference_revisions
+id: paragraph.ut_link_set.default
+targetEntityType: paragraph
+bundle: ut_link_set
+mode: default
+content:
+  field_ut_link_set_links:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

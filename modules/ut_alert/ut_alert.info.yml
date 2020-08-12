@@ -1,0 +1,10 @@
+name: 'UMD Terp Paragraphs: Alerts'
+type: module
+description: Provides a paragraphs bundle for embedding static alerts as a Kitchen Sink Widget.
+version: '8.x-1.0'
+core: '8.x'
+
+package: UMD.EDU
+dependencies:
+  - paragraphs
+  - umd_terp_base

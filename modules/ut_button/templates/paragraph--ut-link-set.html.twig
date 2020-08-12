@@ -1,3 +1,21 @@
-<div class="link-set">
-  {{ content.field_ut_link_set_links|field_value }}
-</div>
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Link set Paragraph.
+ */
+#}
+
+{%
+  set classes = [
+    'link-set',
+  ]
+%}
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			{{ content.field_ut_button_set_links|field_value }}
+		{% endblock %}
+		{{ content|without('field_ut_button_set_links') }}
+	</div>
+{% endblock paragraph %}

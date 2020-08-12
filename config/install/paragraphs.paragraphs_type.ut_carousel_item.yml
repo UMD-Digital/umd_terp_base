@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_carousel_item
+label: 'Carousel Item'
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding an individual carousel item to a group.'
+behavior_plugins: {  }

@@ -1,9 +1,27 @@
-<div class="editor-content">
-  <figure aria-label="image with caption" role="group" class="align-left">
-    <img src="{{ file_url(content.field_ut_image_with_text_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_image_with_text_image[0]['#media'].field_media_image.alt }}">
-    {% if content.field_ut_image_with_text_caption|field_value %}
-      <figcaption>{{ content.field_ut_image_with_text_caption|field_value }}</figcaption>
-    {% endif %}
-  </figure>
-  {{ content.field_ut_image_with_text_text|field_value }}
-</div>
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Text with Image Paragraph.
+ */
+#}
+
+{%
+  set classes = [
+    'editor-content',
+  ]
+%}
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			<figure aria-label="image with caption" role="group" class="{{ content.field_ut_image_with_text_align|field_value }}">
+				<img src="{{ file_url(content.field_ut_image_with_text_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="{{ content.field_ut_image_with_text_image[0]['#media'].field_media_image.alt }}">
+				{% if content.field_ut_image_with_text_caption|field_value %}
+					<figcaption>{{ content.field_ut_image_with_text_caption|field_value }}</figcaption>
+				{% endif %}
+			</figure>
+			{{ content.field_ut_image_with_text_text|field_value }}
+		{% endblock %}
+		{{ content|without('field_ut_image_with_text_align', 'field_ut_image_with_text_caption', 'field_ut_image_with_text_image', 'field_ut_image_with_text_text') }}
+	</div>
+{% endblock paragraph %}

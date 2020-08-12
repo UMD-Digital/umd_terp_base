@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_image
+label: Image
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding an image as a Kitchen Sink Widget.'
+behavior_plugins: {  }

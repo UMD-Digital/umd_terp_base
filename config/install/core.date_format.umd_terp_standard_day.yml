@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: umd_terp_standard_day
+label: 'UMD Terp Standard Day'
+locked: false
+pattern: 'F d, Y'

@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Ut_alert module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function ut_alert_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.ut_alert':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * Lets us define our paragraphs templates in this module.
+ */
+function ut_alert_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__ut_alert' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__ut_alerts' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
+ *
+ * Adds "Content Tips" helper text to the paragraph.
+ */
+function ut_alert_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+  if ($element['#paragraph_type'] == 'ut_alerts') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>Limit to one alert if possible.</strong> Multiple alerts may be added, but for clarity, best to limit when possible.</li>';
+    $markup .= '<li><strong>Use the link field.</strong> Rather than adding links in the WYSIWYG editor.</li>';
+    $markup .= '<li><a target="_blank" href="/admin/help/ut_alert">Alert Module Help</a></li>';
+    $markup .= '</ul>';
+
+    $element['ut_alert_tips'] = [
+      '#type' => 'details',
+      '#title' => t('Alert Content Tips'),
+      '#weight' => -1000,
+    ];
+    $element['ut_alert_tips']['#markup'] = $markup;
+  }
+}

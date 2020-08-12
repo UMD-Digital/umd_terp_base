@@ -17,7 +17,7 @@ Install as you normally would any drupal 8 module.
 
 ### Manually
 
-- Download this repo into /themes/contrib/umd_terp
+- Download this repo into /modules/contrib/umd_terp_base
 - `drush en umd_terp_base` or enable via admin UI
 - Enable all desired sub modules
 
@@ -31,7 +31,7 @@ Install as you normally would any drupal 8 module.
 - ut_accordion: Paragraphs integration of accordions for UMD projects. This module provides a way to add an accordion to Kitchen Sink Pages.
 - ut_blockquote: Paragraphs integration of blockquote for UMD projects. This module provides a way to add a blockquote to Kitchen Sink Pages.
 - ut_button: Paragraphs integration of buttons and links for UMD projects. This module provides a way to add buttons to Kitchen Sink Pages.
-- ut_card: Paragraphs integration of a cards for UMD projects. This module provides a way to add a cards to Kitchen Sink Pages.
+- ut_card: Paragraphs integration of cards for UMD projects. This module provides a way to add a cards to Kitchen Sink Pages.
 - ut_carousel: Paragraphs integration of a carousel for UMD projects. This module provides a way to add a carousel to Kitchen Sink Pages.
 - ut_divider: Paragraphs integration of a Horizontal Rule for UMD projects. This module provides a way to add a Horizontal Rule to Kitchen Sink Pages.
 - ut_events: Paragraphs integration of an Events Feed (from calendar.umd.edu) for UMD projects. Essentially, this module pulls a feed of upcoming events from hub.umd.edu, with optional filter paramaters available, in order to highlight relevant events.
@@ -64,14 +64,14 @@ All edits, requests, etc should be submitted to the github repo for the [UMD Ter
 
 ### Frontend
 
-All CSS, JS, etc are based in the [UMD Terp Theme](https://github.com/UMD-Digital/umd_terp). This module contain no frontend styles for any widgets/etc.
+All CSS, JS, etc are based in the [UMD Terp Theme](https://github.com/UMD-Digital/umd_terp). This module contains no frontend styles for any widgets/etc.
 
 ### Customization
 
 - THIS MODULE SHOULD NEVER BE MODIFIED DIRECTLY.
 - All customizations should go into a custom module.
 
-All Configuration for each module is created on install. Technically, you can modify these, though we do not reccomend it. Any future updates for modules will come with a hook to re-install config for that module, so better to leave any config as is. Changes to configuration are better done via form_alter hooks, leaving default config in place.
+All Configuration for each module is created on install. Technically, you can modify these, though we do not reccomend it. Any future updates for modules will come with a hook to re-install config for that module, so better to leave any existing module config as is. Changes to existing configuration are better done via form_alter hooks, leaving default config in place.
 
 #### Nodes
 
@@ -90,7 +90,7 @@ function YOUR_CUSTOM_MODULE_form_alter(&$form, FormStateInterface $form_state, $
 
 #### Paragraphs
 
-Use `hook_field_WIDGET_TYPE_paragraphs_form_alter()`. For example, to remove the "style (light or dark) from a them that does not need/want it, in YOUR_CUSTOM_MODULE do the following:
+Use `hook_field_WIDGET_TYPE_paragraphs_form_alter()`. For example, to remove the "style (light or dark) from a theme that does not need/want it, in YOUR_CUSTOM_MODULE do the following:
 
 ```php
 function YOUR_CUSTOM_MODULE_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {

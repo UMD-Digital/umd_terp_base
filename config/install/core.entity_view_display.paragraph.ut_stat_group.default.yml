@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_stat_group.field_ut_stat_group_stats
+    - field.field.paragraph.ut_stat_group.field_ut_stat_group_style
+    - paragraphs.paragraphs_type.ut_stat_group
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.ut_stat_group.default
+targetEntityType: paragraph
+bundle: ut_stat_group
+mode: default
+content:
+  field_ut_stat_group_stats:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_ut_stat_group_style:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

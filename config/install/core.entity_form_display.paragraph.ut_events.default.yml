@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_events.field_ut_events_colleges_schools
+    - field.field.paragraph.ut_events.field_ut_events_destination
+    - field.field.paragraph.ut_events.field_ut_events_event_types
+    - field.field.paragraph.ut_events.field_ut_events_link
+    - field.field.paragraph.ut_events.field_ut_events_messaging_area
+    - field.field.paragraph.ut_events.field_ut_events_priorities
+    - field.field.paragraph.ut_events.field_ut_events_style
+    - field.field.paragraph.ut_events.field_ut_events_title
+    - paragraphs.paragraphs_type.ut_events
+  module:
+    - external_data_source
+    - link
+id: paragraph.ut_events.default
+targetEntityType: paragraph
+bundle: ut_events
+mode: default
+content:
+  field_ut_events_colleges_schools:
+    weight: 5
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_destination:
+    weight: 3
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_event_types:
+    weight: 4
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_ut_events_messaging_area:
+    weight: 6
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_priorities:
+    weight: 7
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ut_events_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

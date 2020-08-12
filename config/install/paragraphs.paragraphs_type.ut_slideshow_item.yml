@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_slideshow_item
+label: 'Slideshow Item'
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding an individual slideshow item into a group.'
+behavior_plugins: {  }

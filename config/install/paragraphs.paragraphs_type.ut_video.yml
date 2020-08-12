@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_video
+label: Video
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding a video as a Kitchen Sink Widget.'
+behavior_plugins: {  }

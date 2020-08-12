@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_divider.field_ut_divider_size
+    - paragraphs.paragraphs_type.ut_divider
+id: paragraph.ut_divider.default
+targetEntityType: paragraph
+bundle: ut_divider
+mode: default
+content:
+  field_ut_divider_size:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

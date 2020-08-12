@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Departments
+vid: departments
+description: 'This taxonomy holds departments for the UMD Terp Person content.'
+weight: 0

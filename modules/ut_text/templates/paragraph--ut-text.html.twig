@@ -1,3 +1,17 @@
- <div class="editor-content">
-  {{ content.field_ut_text_text|field_value }}
- </div>
+{#
+/**
+ * @file
+ * Theme override to display a UMD Text Paragraph.
+ */
+#}
+
+{% block paragraph %}
+	<div{{attributes}}>
+		{% block content %}
+			<div class="editor-content" id="umd_terp_paragraph--{{ paragraph.id() }}">
+				{{ content.field_ut_text_text|field_value }}
+			</div>
+		{% endblock %}
+		{{ content|without('field_ut_text_text') }}
+	</div>
+{% endblock paragraph %}

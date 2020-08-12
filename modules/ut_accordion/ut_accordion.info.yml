@@ -6,5 +6,12 @@ core: '8.x'
 
 package: UMD.EDU
 dependencies:
-  - entity_reference_revisions
+  - paragraphs
   - umd_terp_base
+  - ut_blockquote
+  - ut_button
+  - ut_divider
+  - ut_table
+  - ut_text
+  - ut_view
+  - ut_webform

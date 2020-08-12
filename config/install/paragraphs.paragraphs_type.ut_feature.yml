@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_feature
+label: Feature
+icon_uuid: null
+description: 'Provides a paragraphs bundle for embedding a feature as a Kitchen Sink Widget.'
+behavior_plugins: {  }

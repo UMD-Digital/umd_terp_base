@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: categories
+description: 'This taxonomy holds categories for the UMD Terp Article content.'
+weight: 0

@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the UMD Terp Base module.
+ */
+
+ /**
+  * Add support for blockquote link
+  */
+ function umd_terp_base_update_8001() {
+   \Drupal::service('config.installer')->installDefaultConfig('module', 'umd_terp_base');
+ }

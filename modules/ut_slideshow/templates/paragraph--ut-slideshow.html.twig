@@ -1,3 +1,10 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Slideshow Paragraph.
+ */
+#}
+
 {%
   set classes = [
     'slideshow-bg',
@@ -5,19 +12,28 @@
   ]
 %}
 
-<div class="{{ classes|join(' ') }}">
-  <div class="slideshow-nav">
-    <button class="slideshow-nav-control slideshow-control-prev" aria-label="Previous slide">
-      <span class="icon icon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Previous slide</span>
-    </button>
-    <span><span class="slideshow-nav-current-index">1</span> of {{ ut_slideshow_length }}</span>
-    <button class="slideshow-nav-control slideshow-control-next" aria-label="Next slide">
-      <span class="icon icon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next slide</span>
-    </button>
-  </div>
-  <div class="slideshow">
-    {{ content.field_ut_slideshow_items|field_value }}
-  </div>
-</div>
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+		{% block content %}
+			<div class="slideshow-nav">
+				<button class="slideshow-nav-control slideshow-control-prev" aria-label="Previous slide">
+					<span class="icon icon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Previous slide</span>
+				</button>
+				<span>
+					<span class="slideshow-nav-current-index">1</span>
+					of
+					{{ ut_slideshow_length }}</span>
+				<button class="slideshow-nav-control slideshow-control-next" aria-label="Next slide">
+					<span class="icon icon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next slide</span>
+				</button>
+			</div>
+			<div class="slideshow">
+				{{ content.field_ut_slideshow_items|field_value }}
+			</div>
+		{% endblock %}
+		{{ content|without('field_ut_slideshow_items', 'field_ut_slideshow_style') }}
+	</div>
+{% endblock paragraph %}
+

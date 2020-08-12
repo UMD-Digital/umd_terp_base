@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.local_database
+  module:
+    - search_api
+    - node
+id: umd_terp_people
+name: 'UMD Terp People Index'
+description: ''
+read_only: false
+field_settings: {  }
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - umd_terp_article
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_database

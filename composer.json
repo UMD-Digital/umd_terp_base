@@ -18,6 +18,18 @@
             "role": "Maintainer"
         }
     ],
+    "require": {
+        "drupal/external_data_source": "*",
+        "drupal/link_attributes": "*",
+        "drupal/paragraphs": "*",
+        "drupal/pathauto": "*",
+        "drupal/field_group": "*",
+        "drupal/metatag": "*",
+        "drupal/search_api": "*",
+        "drupal/tablefield": "*",
+        "drupal/viewsreference": "*",
+        "drupal/webform": "*"
+    },
     "support": {
         "issues": "https://github.com/UMD-Digital/umd_terp_base/issues",
         "source": "https://github.com/UMD-Digital/umd_terp_base/"

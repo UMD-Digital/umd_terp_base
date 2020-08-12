@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\umd_terp_base\UmdTerpBase;
 
 /**
  * Implements hook_help().
@@ -149,7 +150,7 @@ function _ut_news_get_news(
     return $cache->data;
   }
   else {
-    $query = 'articles(page: {limit: ' . $range . ', offset: 0}';
+    $query = 'articles(sort: {field: \"authorship_date\", direction: DESC}, page: {limit: ' . $range . ', offset: 0}';
     if (isset($destination) || isset($colleges_schools) || isset($audience) || isset($messaging_area) || isset($priorities) || isset($topic)) {
       $query .= ',filter: {';
       if (isset($destination)) {
@@ -174,10 +175,10 @@ function _ut_news_get_news(
     }
 
     $query .= ' ) { data { title slug id summary hero_image { url_600_338 alt } }}';
-    $result = _umd_terp_base_middleware_get($query);
+    $result = UmdTerpBase::middleware_get($query);
     $result = $result['data']['articles']['data'];
     if ($result) {
-      \Drupal::cache()->set('ut_news--' . $id, $result, time() + 7200);
+      \Drupal::cache()->set('ut_news--' . $id, $result, time() + 900);
       return $result;
     }
     else {
@@ -185,6 +186,3 @@ function _ut_news_get_news(
     }
   }
 }
-
-// UPDATES
-// .

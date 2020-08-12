@@ -6,6 +6,6 @@ core: '8.x'
 
 package: UMD.EDU
 dependencies:
-  - entity_reference_revisions
+  - paragraphs
   - umd_terp_base
   - external_data_source

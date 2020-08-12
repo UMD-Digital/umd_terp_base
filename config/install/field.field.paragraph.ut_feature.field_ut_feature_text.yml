@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_feature_text
+    - paragraphs.paragraphs_type.ut_feature
+  module:
+    - text
+id: paragraph.ut_feature.field_ut_feature_text
+field_name: field_ut_feature_text
+entity_type: paragraph
+bundle: ut_feature
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
