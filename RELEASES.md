@@ -1,3 +1,7 @@
+8.1.26
+======
+- Fixes https://github.com/UMD-Digital/umd_terp/issues/8, hidden span in active menu for sidebar.
+
 8.1.25
 ======
 - Updating alerts markup to use standard Bootstrap implementation

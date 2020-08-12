@@ -39,11 +39,12 @@
       {# {{ dump(item) }} #}
       <li{{ item.attributes }}>
         {% if item.in_active_trail %}
-          {{ link(item.title, item.url, { 'aria-current':'page'}) }}
+          {% set tmp = '<span class="visually-hidden">The Current Page is </span>'~item.title %}
+          {% set link_text %}{{ tmp|raw }}{% endset %}
+          {{ link(link_text, item.url, { 'aria-current':'page'}) }}
         {% else %}
           {{ link(item.title, item.url) }}
         {% endif %}
-
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
