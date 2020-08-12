@@ -5,12 +5,16 @@
  */
 #}
 
-{% if content.field_ut_alert_title|field_value %}
-	<h3>{{ content.field_ut_alert_title }}</h3>
-{% endif %}
-{% if content.field_ut_alert_text|field_value %}
-	{{ content.field_ut_alert_text }}
-{% endif %}
-{% if content.field_ut_alert_link.0 %}
-	{% include directory ~ '/templates/helpers/link.html.twig' with {'link': content.field_ut_alert_link.0, 'classes': 'btn btn-primary' } %}
-{% endif %}
+<div class="alert" role="alert">
+	{% if content.field_ut_alert_title|field_value %}
+		<h3 class="alert-heading">{{ content.field_ut_alert_title }}</h3>
+	{% endif %}
+	<div class="alert-content">
+		{% if content.field_ut_alert_text|field_value %}
+			{{ content.field_ut_alert_text }}
+		{% endif %}
+		{% if content.field_ut_alert_link.0 %}
+			{% include directory ~ '/templates/helpers/link.html.twig' with {'link': content.field_ut_alert_link.0, 'classes': 'alert-cta btn' } %}
+		{% endif %}
+	</div>
+</div>
