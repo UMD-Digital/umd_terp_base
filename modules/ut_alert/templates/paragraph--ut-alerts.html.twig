@@ -8,6 +8,7 @@
 {%
   set classes = [
     'alerts',
+		paragraph.field_ut_alerts_style.value ? paragraph.field_ut_alerts_style.value|clean_class : 'bg-yellow',
   ]
 %}
 
@@ -19,6 +20,6 @@
 			{% endif %}
 			{{ content.field_ut_alerts}}
 		{% endblock %}
-		{{ content|without('field_ut_alerts_title', 'field_ut_alerts') }}
+		{{ content|without('field_ut_alerts_title', 'field_ut_alerts', 'field_ut_alerts_style') }}
 	</div>
 {% endblock paragraph %}
