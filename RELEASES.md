@@ -1,3 +1,7 @@
+8.1.28
+======
+- Add ability to hide dark mode options.
+
 8.1.27
 ======
 - Adjust for new styles option in static alert.
