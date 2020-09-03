@@ -1,3 +1,7 @@
+8.1.27
+======
+- Adjust for new styles option in static alert.
+
 8.1.26
 ======
 - Fixes https://github.com/UMD-Digital/umd_terp/issues/8, hidden span in active menu for sidebar.
