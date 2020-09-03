@@ -67,3 +67,101 @@ function umd_terp_base_toolbar() {
   ];
   return $items;
 }
+
+/**
+ * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
+ */
+function umd_terp_base_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+  $default_theme = \Drupal::config('system.theme')->get('default');
+  if (theme_get_setting('umd_terp_disable_dark_mode_options', $default_theme)) {
+    // Remove light/dark choice from some widgets.
+    _umd_terp_base_disable_dark_mode_widget_paragraphs($element);
+  }
+
+}
+
+/**
+ * Removes style settings for dark mode options.
+ */
+function _umd_terp_base_disable_dark_mode_widget_paragraphs(&$element) {
+  // UT Blockquote.
+  if ($element['#paragraph_type'] == 'ut_blockquote') {
+    if (isset($element['subform']['field_ut_blockquote_style'])) {
+      $element['subform']['field_ut_blockquote_style']['#access'] = FALSE;
+      $element['subform']['field_ut_blockquote_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_blockquote_style']['widget']['#default_value'][0] = 'blockquote-default';
+    }
+  }
+  // UT Table.
+  if ($element['#paragraph_type'] == 'ut_table') {
+    if (isset($element['subform']['field_ut_table_style'])) {
+      $element['subform']['field_ut_table_style']['#access'] = FALSE;
+      $element['subform']['field_ut_table_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_table_style']['widget']['#default_value'][0] = 'table-default';
+    }
+  }
+  // UT Video.
+  if ($element['#paragraph_type'] == 'ut_video') {
+    if (isset($element['subform']['field_ut_video_style'])) {
+      $element['subform']['field_ut_video_style']['#access'] = FALSE;
+      $element['subform']['field_ut_video_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_video_style']['widget']['#default_value'][0] = 'embed-bg-default';
+    }
+  }
+  // UT Carousel.
+  if ($element['#paragraph_type'] == 'ut_carousel') {
+    if (isset($element['subform']['field_ut_carousel_style'])) {
+      $element['subform']['field_ut_carousel_style']['#access'] = FALSE;
+      $element['subform']['field_ut_carousel_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_carousel_style']['widget']['#default_value'][0] = 'carousel-bg-default';
+    }
+  }
+  // UT Slideshow.
+  if ($element['#paragraph_type'] == 'ut_slideshow') {
+    if (isset($element['subform']['field_ut_slideshow_style'])) {
+      $element['subform']['field_ut_slideshow_style']['#access'] = FALSE;
+      $element['subform']['field_ut_slideshow_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_slideshow_style']['widget']['#default_value'][0] = 'slideshow-bg-default';
+    }
+  }
+  // UT Card Group.
+  if ($element['#paragraph_type'] == 'ut_card_group') {
+    if (isset($element['subform']['field_ut_card_group_style'])) {
+      $element['subform']['field_ut_card_group_style']['#access'] = FALSE;
+      $element['subform']['field_ut_card_group_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_card_group_style']['widget']['#default_value'][0] = 'card-group-bg-default';
+    }
+  }
+  // UT Image.
+  if ($element['#paragraph_type'] == 'ut_image') {
+    if (isset($element['subform']['field_ut_image_style'])) {
+      $element['subform']['field_ut_image_style']['#access'] = FALSE;
+      $element['subform']['field_ut_image_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_image_style']['widget']['#default_value'][0] = 'image-bg-default';
+    }
+  }
+  // UT Stat Group.
+  if ($element['#paragraph_type'] == 'ut_stat_group') {
+    if (isset($element['subform']['field_ut_stat_group_style'])) {
+      $element['subform']['field_ut_stat_group_style']['#access'] = FALSE;
+      $element['subform']['field_ut_stat_group_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_stat_group_style']['widget']['#default_value'][0] = 'stat-group-bg-default';
+    }
+  }
+  // UT News.
+  if ($element['#paragraph_type'] == 'ut_news') {
+    if (isset($element['subform']['field_ut_news_style'])) {
+      $element['subform']['field_ut_news_style']['#access'] = FALSE;
+      $element['subform']['field_ut_news_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_news_style']['widget']['#default_value'][0] = 'card-group-bg-default';
+    }
+  }
+  // UT Events.
+  if ($element['#paragraph_type'] == 'ut_events') {
+    if (isset($element['subform']['field_ut_events_style'])) {
+      $element['subform']['field_ut_events_style']['#access'] = FALSE;
+      $element['subform']['field_ut_events_style']['widget']['#required'] = 0;
+      $element['subform']['field_ut_events_style']['widget']['#default_value'][0] = 'events-bg-default';
+    }
+  }
+}
