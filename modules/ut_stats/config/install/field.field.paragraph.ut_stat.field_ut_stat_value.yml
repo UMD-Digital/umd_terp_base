@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_stat_value
+    - paragraphs.paragraphs_type.ut_stat
+_core:
+  default_config_hash: PrpUDVVXkRa0344ljx12ccHNcGzG5ly42o5rzdE8uDw
+id: paragraph.ut_stat.field_ut_stat_value
+field_name: field_ut_stat_value
+entity_type: paragraph
+bundle: ut_stat
+label: Value
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_hero_image
+    - media.type.image
+    - node.type.umd_terp_homepage
+_core:
+  default_config_hash: RYWCDp5FoM2xFonUmgHAU213RN5jkAEyhY4Yi5Y7Ul8
+id: node.umd_terp_homepage.field_umdt_ct_hero_image
+field_name: field_umdt_ct_hero_image
+entity_type: node
+bundle: umd_terp_homepage
+label: 'Hero Image'
+description: "<p>Image Guidelines:</p>\r\n<ul>\r\n<li><strong>Dimensions:</strong> 1920px x 1080px</li>\r\n<li><strong>Aspect ratio:</strong> 16:9</li>\r\n<li><strong>Focal point:</strong> \r\n<ul>\r\n<li>\"Default\" version: centered.</li>\r\n<li>\"Background\" version: to the right.</li>\r\n</ul>\r\n</ul>"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_link_set.field_ut_button_center
+    - field.field.paragraph.ut_link_set.field_ut_link_set_links
+    - paragraphs.paragraphs_type.ut_link_set
+  module:
+    - paragraphs
+_core:
+  default_config_hash: z6zD3njVcL7xPo9ALmpWaYahrfrtvvIFYqIbrGZ9RUw
+id: paragraph.ut_link_set.default
+targetEntityType: paragraph
+bundle: ut_link_set
+mode: default
+content:
+  field_ut_button_center:
+    weight: 0
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_ut_link_set_links:
+    type: paragraphs
+    weight: 1
+    settings:
+      title: Link
+      title_plural: Links
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ut_link
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

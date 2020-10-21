@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: gwZejj2lN1PhqHpevYs07zMMLkqTLuJKZKmbVaZ7BGo
+id: ut_text_2_columns
+label: 'Text - 2 Columns'
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding HTML/text in two columns as a Kitchen Sink Widgets.'
+behavior_plugins: {  }

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_events_style
+    - paragraphs.paragraphs_type.ut_events
+  module:
+    - options
+_core:
+  default_config_hash: g899emsAsflDcaK5KwxaiLdRT1qtSR77AkvuM9IbJRw
+id: paragraph.ut_events.field_ut_events_style
+field_name: field_ut_events_style
+entity_type: paragraph
+bundle: ut_events
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: events-bg-default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

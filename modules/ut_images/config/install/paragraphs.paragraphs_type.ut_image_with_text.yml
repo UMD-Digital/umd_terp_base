@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xk1zB8UCdqbTZ3d1UfmyGQhUK7Tjc6t-G9fK_sp9x5k
+id: ut_image_with_text
+label: 'Image with Text'
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding an image with text as a Kitchen Sink Widget.'
+behavior_plugins: {  }

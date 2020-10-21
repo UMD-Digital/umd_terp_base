@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: 4CuWJKmit-WuodyB79av9lzA6Bt1kEeu38wMF_JZwHQ
+id: paragraph.field_ut_events_title
+field_name: field_ut_events_title
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: kT9mHpnYDc1tvSsubDmK8TmpRbSb_xRSzerg7Y4JkeI
+id: paragraph.field_ut_video_caption
+field_name: field_ut_video_caption
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

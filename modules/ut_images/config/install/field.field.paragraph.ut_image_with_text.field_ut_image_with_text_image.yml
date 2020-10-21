@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_image_with_text_image
+    - media.type.image
+    - paragraphs.paragraphs_type.ut_image_with_text
+_core:
+  default_config_hash: 8JfKIE26RBPlPLZrE8kDCCYVY6L49y_S3c6yXt0r0Z4
+id: paragraph.ut_image_with_text.field_ut_image_with_text_image
+field_name: field_ut_image_with_text_image
+entity_type: paragraph
+bundle: ut_image_with_text
+label: Image
+description: "<p>Image Guidelines:</p>\r\n<ul>\r\n<li><strong>Dimensions:</strong> At least 1200px wide.</li>\r\n<li><strong>Aspect ratio:</strong> Horizontal or square. Images with portrait/vertical aspect ratios will take up too much vertical space on smaller screens or tablets.</li>\r\n<li><strong>Focal point:</strong> Any </li>\r\n</ul>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

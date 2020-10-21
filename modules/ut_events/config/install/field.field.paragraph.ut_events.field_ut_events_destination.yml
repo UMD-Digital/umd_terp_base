@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_events_destination
+    - paragraphs.paragraphs_type.ut_events
+  module:
+    - external_data_source
+_core:
+  default_config_hash: imgs5TbtnpVuN_tm-6XOcO5MtoFI9v4yCfOQ65ruoAg
+id: paragraph.ut_events.field_ut_events_destination
+field_name: field_ut_events_destination
+entity_type: paragraph
+bundle: ut_events
+label: Destination
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: external_data_source

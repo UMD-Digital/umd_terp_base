@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+_core:
+  default_config_hash: gR5bcUKFaGZ7tnhzIYnrJRnAJQkwCkbbaFN6BvKDokY
+id: paragraph.field_ut_tabs_items
+field_name: field_ut_tabs_items
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

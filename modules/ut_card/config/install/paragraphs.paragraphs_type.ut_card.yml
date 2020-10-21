@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 50xR5kEbKZiLxeMWpu3msIrHXAH6CQZuAT1813dkSho
+id: ut_card
+label: Card
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding individual cards within a group.'
+behavior_plugins: {  }

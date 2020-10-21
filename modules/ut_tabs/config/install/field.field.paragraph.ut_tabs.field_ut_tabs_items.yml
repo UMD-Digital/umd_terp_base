@@ -1,0 +1,92 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_tabs_items
+    - paragraphs.paragraphs_type.ut_tabs
+    - paragraphs.paragraphs_type.ut_tabs_item
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: G_zPKsiwMsugW99VUQgq2-xhY4ev3sdg2HPAFfzj_Qo
+id: paragraph.ut_tabs.field_ut_tabs_items
+field_name: field_ut_tabs_items
+entity_type: paragraph
+bundle: ut_tabs
+label: 'Tabs Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ut_tabs_item: ut_tabs_item
+    target_bundles_drag_drop:
+      ut_tabs_item:
+        enabled: true
+        weight: -43
+      ut_accordion:
+        weight: -42
+        enabled: false
+      ut_accordion_item:
+        weight: -41
+        enabled: false
+      ut_blockquote:
+        weight: -40
+        enabled: false
+      ut_button:
+        weight: -39
+        enabled: false
+      ut_card:
+        weight: -38
+        enabled: false
+      ut_card_group:
+        weight: -37
+        enabled: false
+      ut_divider:
+        weight: -36
+        enabled: false
+      ut_events:
+        weight: -35
+        enabled: false
+      ut_gallery:
+        weight: -34
+        enabled: false
+      ut_gallery_item:
+        weight: -33
+        enabled: false
+      ut_image:
+        weight: -32
+        enabled: false
+      ut_news:
+        weight: -31
+        enabled: false
+      ut_stat:
+        weight: -30
+        enabled: false
+      ut_stat_group:
+        weight: -29
+        enabled: false
+      ut_table:
+        weight: -28
+        enabled: false
+      ut_tabs:
+        weight: -27
+        enabled: false
+      ut_text:
+        weight: -26
+        enabled: false
+      ut_text_2_columns:
+        weight: -25
+        enabled: false
+      ut_text_3_columns:
+        weight: -24
+        enabled: false
+      ut_webform:
+        weight: -23
+        enabled: false
+field_type: entity_reference_revisions

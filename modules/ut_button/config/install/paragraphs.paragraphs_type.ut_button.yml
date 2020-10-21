@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4V9rrim6u255xLdfc6aaFpy27JcKxK4FECvQ-ln5jdo
+id: ut_button
+label: Button
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding individual buttons within a group.'
+behavior_plugins: {  }

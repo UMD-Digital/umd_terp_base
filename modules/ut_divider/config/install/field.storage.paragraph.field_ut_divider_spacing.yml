@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_ut_divider_spacing
+field_name: field_ut_divider_spacing
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: spacing-small
+      label: Small
+    -
+      value: spacing-medium
+      label: Medium
+    -
+      value: spacing-large
+      label: Large
+    -
+      value: spacing-xlarge
+      label: XLarge
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

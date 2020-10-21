@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_carousel_item_text
+    - paragraphs.paragraphs_type.ut_carousel_item
+_core:
+  default_config_hash: lPKCnommNn4zxu4l1oStm61EWuOlsH880O1vrn4OOpM
+id: paragraph.ut_carousel_item.field_ut_carousel_item_text
+field_name: field_ut_carousel_item_text
+entity_type: paragraph
+bundle: ut_carousel_item
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_image_style
+    - paragraphs.paragraphs_type.ut_image
+  module:
+    - options
+_core:
+  default_config_hash: _aT_7EZHxE30yeU7U5F_T8F9vGkat5bDd0AgNGKSCSM
+id: paragraph.ut_image.field_ut_image_style
+field_name: field_ut_image_style
+entity_type: paragraph
+bundle: ut_image
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: image-bg-default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

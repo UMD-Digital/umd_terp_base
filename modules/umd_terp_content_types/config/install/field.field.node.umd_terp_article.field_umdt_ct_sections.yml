@@ -1,0 +1,158 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_sections
+    - node.type.umd_terp_article
+    - paragraphs.paragraphs_type.ut_accordion
+    - paragraphs.paragraphs_type.ut_blockquote
+    - paragraphs.paragraphs_type.ut_button_set
+    - paragraphs.paragraphs_type.ut_card_group
+    - paragraphs.paragraphs_type.ut_carousel
+    - paragraphs.paragraphs_type.ut_divider
+    - paragraphs.paragraphs_type.ut_events
+    - paragraphs.paragraphs_type.ut_image
+    - paragraphs.paragraphs_type.ut_image_with_text
+    - paragraphs.paragraphs_type.ut_news
+    - paragraphs.paragraphs_type.ut_slideshow
+    - paragraphs.paragraphs_type.ut_stat_group
+    - paragraphs.paragraphs_type.ut_table
+    - paragraphs.paragraphs_type.ut_tabs
+    - paragraphs.paragraphs_type.ut_text
+    - paragraphs.paragraphs_type.ut_text_2_columns
+    - paragraphs.paragraphs_type.ut_text_3_columns
+    - paragraphs.paragraphs_type.ut_video
+    - paragraphs.paragraphs_type.ut_view
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: Pp_k7knj0DAVckpqiyS5wEVMlo_ux1AONFPnXnJ36RA
+id: node.umd_terp_article.field_umdt_ct_sections
+field_name: field_umdt_ct_sections
+entity_type: node
+bundle: umd_terp_article
+label: Sections
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ut_accordion: ut_accordion
+      ut_blockquote: ut_blockquote
+      ut_button_set: ut_button_set
+      ut_card_group: ut_card_group
+      ut_carousel: ut_carousel
+      ut_divider: ut_divider
+      ut_events: ut_events
+      ut_image: ut_image
+      ut_image_with_text: ut_image_with_text
+      ut_news: ut_news
+      ut_slideshow: ut_slideshow
+      ut_stat_group: ut_stat_group
+      ut_table: ut_table
+      ut_tabs: ut_tabs
+      ut_text: ut_text
+      ut_text_2_columns: ut_text_2_columns
+      ut_text_3_columns: ut_text_3_columns
+      ut_video: ut_video
+      ut_view: ut_view
+    target_bundles_drag_drop:
+      ut_accordion:
+        enabled: true
+        weight: 32
+      ut_accordion_item:
+        weight: 33
+        enabled: false
+      ut_blockquote:
+        enabled: true
+        weight: 34
+      ut_button:
+        weight: 35
+        enabled: false
+      ut_button_set:
+        enabled: true
+        weight: 36
+      ut_card:
+        weight: 37
+        enabled: false
+      ut_card_group:
+        enabled: true
+        weight: 38
+      ut_carousel:
+        enabled: true
+        weight: 39
+      ut_carousel_item:
+        weight: 40
+        enabled: false
+      ut_divider:
+        enabled: true
+        weight: 41
+      ut_events:
+        enabled: true
+        weight: 42
+      ut_feature:
+        weight: 43
+        enabled: false
+      ut_image:
+        enabled: true
+        weight: 44
+      ut_image_with_text:
+        enabled: true
+        weight: 45
+      ut_link:
+        weight: 46
+        enabled: false
+      ut_link_set:
+        weight: 47
+        enabled: false
+      ut_news:
+        enabled: true
+        weight: 48
+      ut_people:
+        weight: 49
+        enabled: false
+      ut_slideshow:
+        enabled: true
+        weight: 50
+      ut_slideshow_item:
+        weight: 51
+        enabled: false
+      ut_stat:
+        weight: 52
+        enabled: false
+      ut_stat_group:
+        enabled: true
+        weight: 53
+      ut_table:
+        enabled: true
+        weight: 54
+      ut_tabs:
+        enabled: true
+        weight: 55
+      ut_tabs_item:
+        weight: 56
+        enabled: false
+      ut_text:
+        enabled: true
+        weight: 57
+      ut_text_2_columns:
+        enabled: true
+        weight: 58
+      ut_text_3_columns:
+        enabled: true
+        weight: 59
+      ut_video:
+        enabled: true
+        weight: 60
+      ut_view:
+        enabled: true
+        weight: 61
+      ut_webform:
+        weight: 62
+        enabled: false
+field_type: entity_reference_revisions

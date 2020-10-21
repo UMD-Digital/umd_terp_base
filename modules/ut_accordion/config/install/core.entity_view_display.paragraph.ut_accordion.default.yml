@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_accordion.field_ut_accordion_items
+    - field.field.paragraph.ut_accordion.field_ut_accordion_open_first
+    - field.field.paragraph.ut_accordion.field_ut_accordion_open_multiple
+    - paragraphs.paragraphs_type.ut_accordion
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 8pr5hCBnWgqmobB-i91U4Di0G-bDMATcB-EyWOlMdxQ
+id: paragraph.ut_accordion.default
+targetEntityType: paragraph
+bundle: ut_accordion
+mode: default
+content:
+  field_ut_accordion_items:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_ut_accordion_open_first:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ut_accordion_open_multiple:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden:
+  search_api_excerpt: true

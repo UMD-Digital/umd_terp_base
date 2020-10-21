@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: njxCPkKnjYUyLEoNHlVdAyJbD7FYUxDTHTc54UhTs1o
+id: paragraph.field_ut_news_style
+field_name: field_ut_news_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: card-group-bg-default
+      label: 'Default (light)'
+    -
+      value: card-group-bg-dark
+      label: Dark
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

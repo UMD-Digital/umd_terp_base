@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ctg4-I4sNHzvHBxYW2NElaAkyA55jCM29pmsPNo0Uh4
+id: ut_divider
+label: Divider
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding a divider (HR) as a Kitchen Sink Widget.'
+behavior_plugins: {  }

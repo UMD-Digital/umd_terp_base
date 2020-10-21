@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_card_image
+    - media.type.image
+    - paragraphs.paragraphs_type.ut_card
+_core:
+  default_config_hash: eha5E9H9aPGZwoahCJaU2Cb-vyfAvri8MFQLjnH9Gc0
+id: paragraph.ut_card.field_ut_card_image
+field_name: field_ut_card_image
+entity_type: paragraph
+bundle: ut_card
+label: Image
+description: "<p>Image Guidelines:</p>\r\n<ul>\r\n<li><strong>Dimensions:</strong> 800px x 530px</li>\r\n<li><strong>Aspect ratio:</strong> 3:2</li>\r\n<li><strong>Focal point:</strong> Any </li>\r\n</ul>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_slideshow_item_caption
+    - paragraphs.paragraphs_type.ut_slideshow_item
+_core:
+  default_config_hash: sM4u508rtLkxe5XjolmQL4Aq4llXxmRsynegstw3Q7c
+id: paragraph.ut_slideshow_item.field_ut_slideshow_item_caption
+field_name: field_ut_slideshow_item_caption
+entity_type: paragraph
+bundle: ut_slideshow_item
+label: Caption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: D_yySWPdKGlVkozkMIabcJ9JXLG3-HxgqkAWasH5O20
+id: ut_button_set
+label: 'Button Set'
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding button groups as a Kitchen Sink Widget.'
+behavior_plugins: {  }

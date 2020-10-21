@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_divider_rule
+    - paragraphs.paragraphs_type.ut_divider
+  module:
+    - options
+id: paragraph.ut_divider.field_ut_divider_rule
+field_name: field_ut_divider_rule
+entity_type: paragraph
+bundle: ut_divider
+label: Rule
+description: 'Please choose if a visual rule should be present.'
+required: false
+translatable: false
+default_value:
+  -
+    value: rule-none
+default_value_callback: ''
+settings: {  }
+field_type: list_string

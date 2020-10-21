@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_feature.field_ut_feature_color
+    - field.field.paragraph.ut_feature.field_ut_feature_image
+    - field.field.paragraph.ut_feature.field_ut_feature_link
+    - field.field.paragraph.ut_feature.field_ut_feature_reverse
+    - field.field.paragraph.ut_feature.field_ut_feature_style
+    - field.field.paragraph.ut_feature.field_ut_feature_text
+    - field.field.paragraph.ut_feature.field_ut_feature_title
+    - paragraphs.paragraphs_type.ut_feature
+  module:
+    - link
+    - options
+_core:
+  default_config_hash: htpEecGRDnzmAPm1WOkAVNhyVY2Lxfs60CFnHGpybKk
+id: paragraph.ut_feature.default
+targetEntityType: paragraph
+bundle: ut_feature
+mode: default
+content:
+  field_ut_feature_color:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ut_feature_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_ut_feature_link:
+    weight: 8
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_ut_feature_reverse:
+    weight: 6
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ut_feature_style:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ut_feature_text:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_ut_feature_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

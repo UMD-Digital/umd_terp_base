@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_button.field_ut_button_link
+    - field.field.paragraph.ut_button.field_ut_button_style
+    - paragraphs.paragraphs_type.ut_button
+  module:
+    - link
+    - options
+_core:
+  default_config_hash: K_KRvtk9g1OKug1B9ZozvEWDBtejy8jeLsPSmyDQCyg
+id: paragraph.ut_button.default
+targetEntityType: paragraph
+bundle: ut_button
+mode: default
+content:
+  field_ut_button_link:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_ut_button_style:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  search_api_excerpt: true

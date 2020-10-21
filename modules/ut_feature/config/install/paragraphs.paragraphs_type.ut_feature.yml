@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Ej0VPydcMfs2bjShZwa11ljXG1usiyiKRE8DbywkL74
+id: ut_feature
+label: Feature
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding a feature as a Kitchen Sink Widget.'
+behavior_plugins: {  }

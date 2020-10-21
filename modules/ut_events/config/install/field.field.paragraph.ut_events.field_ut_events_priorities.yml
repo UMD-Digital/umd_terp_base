@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_events_priorities
+    - paragraphs.paragraphs_type.ut_events
+  module:
+    - external_data_source
+_core:
+  default_config_hash: EmAryuAoncnPuxEhFZ95P7KK5lDipDUdh82F7dl9pwc
+id: paragraph.ut_events.field_ut_events_priorities
+field_name: field_ut_events_priorities
+entity_type: paragraph
+bundle: ut_events
+label: 'Priorities and Initiatives'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: external_data_source

@@ -1,0 +1,84 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_author
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_image
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_source
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_source_url
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_style
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_text
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_title
+    - paragraphs.paragraphs_type.ut_blockquote
+  module:
+    - link
+    - options
+    - text
+_core:
+  default_config_hash: zGjBjnNjsbvL2YE83b18zIf-p7NqJM0GgmoWd1tN6WI
+id: paragraph.ut_blockquote.default
+targetEntityType: paragraph
+bundle: ut_blockquote
+mode: default
+content:
+  field_ut_blockquote_author:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ut_blockquote_image:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_ut_blockquote_source:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ut_blockquote_source_url:
+    weight: 6
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_ut_blockquote_style:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ut_blockquote_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ut_blockquote_title:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

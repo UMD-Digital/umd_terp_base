@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.umd_terp_basic_page.body
+    - field.field.node.umd_terp_basic_page.field_umdt_ct_hero_image
+    - field.field.node.umd_terp_basic_page.field_umdt_ct_hide_sidebar
+    - field.field.node.umd_terp_basic_page.field_umdt_ct_metatags
+    - field.field.node.umd_terp_basic_page.field_umdt_ct_sections
+    - node.type.umd_terp_basic_page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: P4RFOwRTBEX5p_t1k-jATYhAWL7mAHdWcRkL_TiuHD4
+id: node.umd_terp_basic_page.teaser
+targetEntityType: node
+bundle: umd_terp_basic_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_umdt_ct_hero_image: true
+  field_umdt_ct_hide_sidebar: true
+  field_umdt_ct_metatags: true
+  field_umdt_ct_sections: true
+  search_api_excerpt: true

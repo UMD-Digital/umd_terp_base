@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: 5WivUWeB1O5NFpR7gtwJY_7AdOgh-wv3RB5fRjoaD1Y
+id: paragraph.field_ut_table_style
+field_name: field_ut_table_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: table-default
+      label: 'Default (light)'
+    -
+      value: table-dark
+      label: Dark
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

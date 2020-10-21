@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_text_text
+    - paragraphs.paragraphs_type.ut_text
+  module:
+    - text
+_core:
+  default_config_hash: 4xcAfKJpAEoW_LIHXTydQipLRyEjALKVu_T3Og1IM-o
+id: paragraph.ut_text.field_ut_text_text
+field_name: field_ut_text_text
+entity_type: paragraph
+bundle: ut_text
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

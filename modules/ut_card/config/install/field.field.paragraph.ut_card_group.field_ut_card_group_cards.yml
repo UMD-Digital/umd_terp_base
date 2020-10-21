@@ -1,0 +1,95 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_card_group_cards
+    - paragraphs.paragraphs_type.ut_card
+    - paragraphs.paragraphs_type.ut_card_group
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: rLoEYmLKSlhbSmdx1lwUxXbsK9k13YDZ_6_i4W8HSSM
+id: paragraph.ut_card_group.field_ut_card_group_cards
+field_name: field_ut_card_group_cards
+entity_type: paragraph
+bundle: ut_card_group
+label: Cards
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ut_card: ut_card
+    target_bundles_drag_drop:
+      ut_card:
+        enabled: true
+        weight: -45
+      ut_accordion:
+        weight: -44
+        enabled: false
+      ut_accordion_item:
+        weight: -43
+        enabled: false
+      ut_blockquote:
+        weight: -42
+        enabled: false
+      ut_button:
+        weight: -41
+        enabled: false
+      ut_card_group:
+        weight: -40
+        enabled: false
+      ut_carousel:
+        weight: -39
+        enabled: false
+      ut_divider:
+        weight: -38
+        enabled: false
+      ut_events:
+        weight: -37
+        enabled: false
+      ut_image_with_caption:
+        weight: -36
+        enabled: false
+      ut_news:
+        weight: -35
+        enabled: false
+      ut_slideshow:
+        weight: -34
+        enabled: false
+      ut_slideshow_slide:
+        weight: -33
+        enabled: false
+      ut_stat:
+        weight: -32
+        enabled: false
+      ut_stat_group:
+        weight: -31
+        enabled: false
+      ut_table:
+        weight: -30
+        enabled: false
+      ut_tabs:
+        weight: -29
+        enabled: false
+      ut_tabs_item:
+        weight: -28
+        enabled: false
+      ut_text:
+        weight: -27
+        enabled: false
+      ut_text_three_columns:
+        weight: -26
+        enabled: false
+      ut_text_two_columns:
+        weight: -25
+        enabled: false
+      ut_webform:
+        weight: -24
+        enabled: false
+field_type: entity_reference_revisions

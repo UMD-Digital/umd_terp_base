@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_table.field_ut_table_style
+    - field.field.paragraph.ut_table.field_ut_table_table
+    - paragraphs.paragraphs_type.ut_table
+  module:
+    - options
+    - tablefield
+_core:
+  default_config_hash: ir-t5nXXT7KLmr1TZpQbAnsmiFdWs4LXkrJ0Xa-oeM0
+id: paragraph.ut_table.default
+targetEntityType: paragraph
+bundle: ut_table
+mode: default
+content:
+  field_ut_table_style:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ut_table_table:
+    weight: 0
+    label: hidden
+    settings:
+      row_header: 1
+      column_header: 0
+    third_party_settings: {  }
+    type: tablefield
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: HAsMaXSmoKQ6GO7ui_aUc0Jj9--YTvR8yWc43IzjGuU
+id: paragraph.field_ut_image_style
+field_name: field_ut_image_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: image-bg-default
+      label: 'Default (light)'
+    -
+      value: image-bg-dark
+      label: Dark
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

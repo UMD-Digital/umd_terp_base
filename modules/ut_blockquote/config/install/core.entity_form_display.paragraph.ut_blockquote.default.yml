@@ -1,0 +1,88 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_author
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_image
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_source
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_source_url
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_style
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_text
+    - field.field.paragraph.ut_blockquote.field_ut_blockquote_title
+    - paragraphs.paragraphs_type.ut_blockquote
+  module:
+    - link_attributes
+    - media_library
+    - text
+_core:
+  default_config_hash: iw3aYVBZZ8643-Jau_SX0_FBOESHiF3iuaEyd3nm1rE
+id: paragraph.ut_blockquote.default
+targetEntityType: paragraph
+bundle: ut_blockquote
+mode: default
+content:
+  field_ut_blockquote_author:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ut_blockquote_image:
+    type: media_library_widget
+    weight: 6
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_ut_blockquote_source:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ut_blockquote_source_url:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_ut_blockquote_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ut_blockquote_text:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_ut_blockquote_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

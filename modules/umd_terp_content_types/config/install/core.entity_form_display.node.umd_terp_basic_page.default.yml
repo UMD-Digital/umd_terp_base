@@ -1,0 +1,161 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.umd_terp_basic_page.body
+    - field.field.node.umd_terp_basic_page.field_umdt_ct_hero_image
+    - field.field.node.umd_terp_basic_page.field_umdt_ct_hide_sidebar
+    - field.field.node.umd_terp_basic_page.field_umdt_ct_metatags
+    - field.field.node.umd_terp_basic_page.field_umdt_ct_sections
+    - node.type.umd_terp_basic_page
+  module:
+    - field_group
+    - media_library
+    - metatag
+    - paragraphs
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_general:
+      children:
+        - title
+        - field_umdt_ct_hide_sidebar
+        - field_umdt_ct_hero_image
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        label: General
+        open: true
+        required_fields: true
+        id: ''
+        classes: ''
+      label: General
+    group_sections:
+      children:
+        - body
+        - field_umdt_ct_sections
+      parent_name: ''
+      weight: 4
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        open: false
+        required_fields: true
+      label: Sections
+_core:
+  default_config_hash: tELvPCDrlxehFSrrs1hdEtvQ5z4J99l-PkntGQQbvHg
+id: node.umd_terp_basic_page.default
+targetEntityType: node
+bundle: umd_terp_basic_page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 12
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_umdt_ct_hero_image:
+    type: media_library_widget
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_umdt_ct_hide_sidebar:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_umdt_ct_metatags:
+    weight: 14
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_umdt_ct_sections:
+    type: paragraphs
+    weight: 13
+    settings:
+      title: Section
+      title_plural: Sections
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 11
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mvNHQ_TjboKoZoySLOzjevrkmqq8Lgh-60Cuqx6XRGE
+id: ut_webform
+label: Webform
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding a webform as a Kitchen Sink Widget.'
+behavior_plugins: {  }

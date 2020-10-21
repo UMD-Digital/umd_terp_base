@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_people_people
+    - node.type.umd_terp_person
+    - paragraphs.paragraphs_type.ut_people
+_core:
+  default_config_hash: to5jfVp5LV6nhBYgdpyWRLzhZD2MMjn3i4udg7-n_yA
+id: paragraph.ut_people.field_ut_people_people
+field_name: field_ut_people_people
+entity_type: paragraph
+bundle: ut_people
+label: People
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      umd_terp_person: umd_terp_person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

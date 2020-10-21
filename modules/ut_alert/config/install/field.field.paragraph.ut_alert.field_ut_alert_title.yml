@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_alert_title
+    - paragraphs.paragraphs_type.ut_alert
+id: paragraph.ut_alert.field_ut_alert_title
+field_name: field_ut_alert_title
+entity_type: paragraph
+bundle: ut_alert
+label: 'Alert Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

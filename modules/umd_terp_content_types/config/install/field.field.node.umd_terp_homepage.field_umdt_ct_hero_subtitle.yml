@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_hero_subtitle
+    - node.type.umd_terp_homepage
+_core:
+  default_config_hash: prKtlZEItn3jCoymdhf3TMQ1MwYzn3JLyGMX5TRf47w
+id: node.umd_terp_homepage.field_umdt_ct_hero_subtitle
+field_name: field_umdt_ct_hero_subtitle
+entity_type: node
+bundle: umd_terp_homepage
+label: 'Hero Subtitle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

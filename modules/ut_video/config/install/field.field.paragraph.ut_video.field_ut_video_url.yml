@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_video_url
+    - paragraphs.paragraphs_type.ut_video
+_core:
+  default_config_hash: Ix0S2VLoEABZScghLUl3QOJIvfSBRGwWluoCIB5IpgM
+id: paragraph.ut_video.field_ut_video_url
+field_name: field_ut_video_url
+entity_type: paragraph
+bundle: ut_video
+label: URL
+description: 'In the following format https://www.youtube.com/embed/W0LHTWG-UmQ where your youtube id is W0LHTWG-UmQ is replaced by the id of your video.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

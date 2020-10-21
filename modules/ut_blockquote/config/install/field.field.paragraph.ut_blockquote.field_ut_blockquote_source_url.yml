@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_blockquote_source_url
+    - paragraphs.paragraphs_type.ut_blockquote
+  module:
+    - link
+_core:
+  default_config_hash: LCvxQAq3ldzbG-iy5RwSeMxkgUPLcJvP08Urxge8n3I
+id: paragraph.ut_blockquote.field_ut_blockquote_source_url
+field_name: field_ut_blockquote_source_url
+entity_type: paragraph
+bundle: ut_blockquote
+label: 'Source URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

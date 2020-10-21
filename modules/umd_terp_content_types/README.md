@@ -31,7 +31,7 @@ The following fields are available on the UMD Terp Article:
 - Title
 - Subtitle: Optional subtitle.
 - Author: Entity reference to UMD terp Person, for attributing authorship.
-- Image: The main image asscociated with the article.
+- Image: The main image associated with the article.
 - Caption: A caption for the added image.
 - Date: The desired publication date, for display purposes.
 - Categories: Entity reference to the "Categories" vocabulary.
@@ -45,7 +45,7 @@ The following fields are available on the UMD Terp Basic Page:
 
 - Title
 - Body: The main body text.
-- Hero Image: The main image asscociated with the article.
+- Hero Image: The main image associated with the article.
 - Hide Sidebar: Option to hide sidebar so that the page can act more like a full width landing page.
 - Sections: Optional kitchen sink widgets.
 - Metatags: You may use these fields to fine tune metatags, if desired.
@@ -56,9 +56,9 @@ The following fields are available on the UMD Terp Homepage:
 
 - Title
 - Hero Style: Background or default.
-- Hero Image: The main image asscociated with the article.
+- Hero Image: The main image associated with the article.
 - Hero Title: Main title in hero.
-- Hero Subtitle: Subttitle in hero.
+- Hero Subtitle: Subtitle in hero.
 - Hero Text: Text in hero.
 - Hero CTA: Call to action link.
 - Sections: Optional kitchen sink widgets.
@@ -80,7 +80,7 @@ The following fields are available on the UMD Terp Person:
 - Email: Persons email.
 - Website: Persons website.
 - Location: Building name on campus.
-- Hero Image: Optional large image asscociated with the person.
+- Hero Image: Optional large image associated with the person.
 - Body: Optional, additional text.
 - Sections: Optional kitchen sink widgets.
 - Metatags: You may use these fields to fine tune metatags, if desired.

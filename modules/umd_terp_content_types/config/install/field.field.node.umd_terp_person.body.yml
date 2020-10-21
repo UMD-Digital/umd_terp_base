@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.umd_terp_person
+  module:
+    - text
+_core:
+  default_config_hash: J8RsZO9rrRDfBepheOH2DuGq2I936hH1K9w363_RupQ
+id: node.umd_terp_person.body
+field_name: body
+entity_type: node
+bundle: umd_terp_person
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

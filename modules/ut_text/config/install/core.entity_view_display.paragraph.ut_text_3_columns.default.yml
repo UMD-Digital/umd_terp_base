@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_text_3_columns.field_ut_text_3_columns_column_1
+    - field.field.paragraph.ut_text_3_columns.field_ut_text_3_columns_column_2
+    - field.field.paragraph.ut_text_3_columns.field_ut_text_3_columns_column_3
+    - field.field.paragraph.ut_text_3_columns.field_ut_text_3_columns_title
+    - paragraphs.paragraphs_type.ut_text_3_columns
+  module:
+    - text
+_core:
+  default_config_hash: K3winq93vTk-ZZA_ZK_nssBhS1Jvw_IhlmGpX1RDc6E
+id: paragraph.ut_text_3_columns.default
+targetEntityType: paragraph
+bundle: ut_text_3_columns
+mode: default
+content:
+  field_ut_text_3_columns_column_1:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ut_text_3_columns_column_2:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ut_text_3_columns_column_3:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_ut_text_3_columns_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

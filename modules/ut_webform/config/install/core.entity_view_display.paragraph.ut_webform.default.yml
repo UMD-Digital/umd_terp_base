@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_webform.field_ut_webform_title
+    - field.field.paragraph.ut_webform.field_ut_webform_webform
+    - paragraphs.paragraphs_type.ut_webform
+  module:
+    - webform
+_core:
+  default_config_hash: P6oj34mXo_Nf0BiMEFG3OyS9HAeirsVWRvKRPRh_yFE
+id: paragraph.ut_webform.default
+targetEntityType: paragraph
+bundle: ut_webform
+mode: default
+content:
+  field_ut_webform_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ut_webform_webform:
+    weight: 2
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

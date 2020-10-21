@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_carousel.field_ut_carousel_items
+    - field.field.paragraph.ut_carousel.field_ut_carousel_style
+    - paragraphs.paragraphs_type.ut_carousel
+  module:
+    - paragraphs
+_core:
+  default_config_hash: qDEY2Fzhg-RyIgt_CrSIb34Fhj8d2DqXIWdPT1wcg1M
+id: paragraph.ut_carousel.default
+targetEntityType: paragraph
+bundle: ut_carousel
+mode: default
+content:
+  field_ut_carousel_items:
+    type: paragraphs
+    weight: 1
+    settings:
+      title: Item
+      title_plural: Items
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ut_carousel_item
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_ut_carousel_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

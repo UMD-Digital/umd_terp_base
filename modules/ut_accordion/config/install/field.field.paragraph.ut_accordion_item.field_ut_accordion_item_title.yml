@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_accordion_item_title
+    - paragraphs.paragraphs_type.ut_accordion_item
+_core:
+  default_config_hash: irAP3CY3dGOmWr1nIkOiukNDlK8ElbO8j1PfRhsxJb0
+id: paragraph.ut_accordion_item.field_ut_accordion_item_title
+field_name: field_ut_accordion_item_title
+entity_type: paragraph
+bundle: ut_accordion_item
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

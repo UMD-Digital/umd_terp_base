@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_metatags
+    - node.type.umd_terp_person
+  module:
+    - metatag
+_core:
+  default_config_hash: vr1SPWMVYxLSST4QFAXJcYJs0ZFnpFiMQkZKA4ZFBtw
+id: node.umd_terp_person.field_umdt_ct_metatags
+field_name: field_umdt_ct_metatags
+entity_type: node
+bundle: umd_terp_person
+label: Metatags
+description: 'Admin Only. You may override metatags on a per content basis here.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

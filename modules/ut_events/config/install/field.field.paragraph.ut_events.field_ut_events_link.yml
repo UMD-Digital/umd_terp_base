@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_events_link
+    - paragraphs.paragraphs_type.ut_events
+  module:
+    - link
+_core:
+  default_config_hash: qFNuR6-jJ3Qtc-EJUxgdL4BF7MH0du7XR64f70n8BjM
+id: paragraph.ut_events.field_ut_events_link
+field_name: field_ut_events_link
+entity_type: paragraph
+bundle: ut_events
+label: 'View All Link'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://calendar.umd.edu/'
+    title: 'View Full Calendar'
+    options: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

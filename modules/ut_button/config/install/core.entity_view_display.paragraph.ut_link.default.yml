@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_link.field_ut_link_link
+    - paragraphs.paragraphs_type.ut_link
+  module:
+    - link
+_core:
+  default_config_hash: 9j2cRWy0Vpv7aXNCtEn04tKZe-xp-a9HIuN4aOvBVHo
+id: paragraph.ut_link.default
+targetEntityType: paragraph
+bundle: ut_link
+mode: default
+content:
+  field_ut_link_link:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  search_api_excerpt: true

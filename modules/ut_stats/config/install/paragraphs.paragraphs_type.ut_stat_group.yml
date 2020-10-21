@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: q3oZXM7m-k3D6a2dmeeZS51SjcuOIge0W60n9bx_kk4
+id: ut_stat_group
+label: 'Stat Group'
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding statistics as a Kitchen Sink Widget.'
+behavior_plugins: {  }

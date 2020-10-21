@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_webform_webform
+    - paragraphs.paragraphs_type.ut_webform
+  module:
+    - webform
+_core:
+  default_config_hash: xzWSiDOBX_ZRwfj65MLH2_c-54QXjwV6hlmYKaxC6qQ
+id: paragraph.ut_webform.field_ut_webform_webform
+field_name: field_ut_webform_webform
+entity_type: paragraph
+bundle: ut_webform
+label: Webform
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

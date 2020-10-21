@@ -1,0 +1,96 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_events.field_ut_events_colleges_schools
+    - field.field.paragraph.ut_events.field_ut_events_count
+    - field.field.paragraph.ut_events.field_ut_events_destination
+    - field.field.paragraph.ut_events.field_ut_events_event_types
+    - field.field.paragraph.ut_events.field_ut_events_link
+    - field.field.paragraph.ut_events.field_ut_events_messaging_area
+    - field.field.paragraph.ut_events.field_ut_events_priorities
+    - field.field.paragraph.ut_events.field_ut_events_style
+    - field.field.paragraph.ut_events.field_ut_events_title
+    - paragraphs.paragraphs_type.ut_events
+  module:
+    - external_data_source
+    - link
+    - options
+_core:
+  default_config_hash: '-4BcdRoKyKbld_ZzmWdG_CR8pd1PElzp2wQS_BR2q4U'
+id: paragraph.ut_events.default
+targetEntityType: paragraph
+bundle: ut_events
+mode: default
+content:
+  field_ut_events_colleges_schools:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: external_data_source_formatter
+    region: content
+  field_ut_events_count:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_ut_events_destination:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: external_data_source_formatter
+    region: content
+  field_ut_events_event_types:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: external_data_source_formatter
+    region: content
+  field_ut_events_link:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_ut_events_messaging_area:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: external_data_source_formatter
+    region: content
+  field_ut_events_priorities:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: external_data_source_formatter
+    region: content
+  field_ut_events_style:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ut_events_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

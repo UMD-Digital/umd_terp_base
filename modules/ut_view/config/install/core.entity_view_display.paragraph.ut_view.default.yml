@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_view.field_ut_view_title
+    - field.field.paragraph.ut_view.field_ut_view_view
+    - paragraphs.paragraphs_type.ut_view
+  module:
+    - viewsreference
+_core:
+  default_config_hash: 1fnSWdXb93T7kVuNhy5hdnXC126OoTOWInJJ7J7Yp4A
+id: paragraph.ut_view.default
+targetEntityType: paragraph
+bundle: ut_view
+mode: default
+content:
+  field_ut_view_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ut_view_view:
+    weight: 0
+    label: hidden
+    settings:
+      plugin_types:
+        default: default
+        block: block
+        embed: embed
+        page: 0
+        feed: 0
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+hidden:
+  search_api_excerpt: true

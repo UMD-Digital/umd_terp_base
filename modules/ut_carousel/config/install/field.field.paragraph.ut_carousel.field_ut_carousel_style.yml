@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_carousel_style
+    - paragraphs.paragraphs_type.ut_carousel
+  module:
+    - options
+_core:
+  default_config_hash: ZB0vReXa9ft6HcQdZXV-pypZksnbH-yTQITENgzLJfw
+id: paragraph.ut_carousel.field_ut_carousel_style
+field_name: field_ut_carousel_style
+entity_type: paragraph
+bundle: ut_carousel
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: carousel-bg-default
+default_value_callback: ''
+settings: {  }
+field_type: list_string
