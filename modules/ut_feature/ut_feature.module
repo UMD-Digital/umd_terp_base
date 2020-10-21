@@ -65,3 +65,10 @@ function ut_feature_field_widget_paragraphs_form_alter(&$element, &$form_state, 
     $element['ut_feature_tips']['#markup'] = $markup;
   }
 }
+
+/**
+ * Reset all content types to match standard config.
+ */
+function ut_feature_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_feature');
+}

@@ -80,3 +80,10 @@ function ut_slideshow_field_widget_paragraphs_form_alter(&$element, &$form_state
     $element['ut_slideshow_tips']['#markup'] = $markup;
   }
 }
+
+/**
+ * Reset all content types to match standard config.
+ */
+function ut_slideshow_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_slideshow');
+}
