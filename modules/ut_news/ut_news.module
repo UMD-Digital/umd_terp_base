@@ -186,10 +186,3 @@ function _ut_news_get_news(
     }
   }
 }
-
-/**
- * Reset all content types to match standard config.
- */
-function ut_news_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_news');
-}

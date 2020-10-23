@@ -183,10 +183,3 @@ function _ut_events_get_events(
     }
   }
 }
-
-/**
- * Reset all content types to match standard config.
- */
-function ut_events_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_events');
-}

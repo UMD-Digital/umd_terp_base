@@ -170,10 +170,3 @@ function _umd_terp_content_types_get_people() {
     }
   }
 }
-
-/**
- * Reset all content types to match standard config.
- */
-function umd_terp_content_types_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'umd_terp_content_types');
-}

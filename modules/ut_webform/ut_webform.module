@@ -65,10 +65,3 @@ function ut_webform_field_widget_paragraphs_form_alter(&$element, &$form_state, 
     $element['ut_webform_tips']['#markup'] = $markup;
   }
 }
-
-/**
- * Reset all content types to match standard config.
- */
-function ut_webform_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_webform');
-}

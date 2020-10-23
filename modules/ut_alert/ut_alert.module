@@ -69,10 +69,3 @@ function ut_alert_field_widget_paragraphs_form_alter(&$element, &$form_state, $c
     $element['ut_alert_tips']['#markup'] = $markup;
   }
 }
-
-/**
- * Reset all content types to match standard config.
- */
-function ut_alert_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_alert');
-}

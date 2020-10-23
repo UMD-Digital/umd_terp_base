@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Ut_accordion module install file.
+ */
+
+/**
+ * Reset all paragraph fields to match standard config.
+ */
+function ut_accordion_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_accordion');
+}

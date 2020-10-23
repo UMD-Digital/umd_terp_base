@@ -72,10 +72,3 @@ function ut_card_field_widget_paragraphs_form_alter(&$element, &$form_state, $co
     $element['ut_card_tips']['#markup'] = $markup;
   }
 }
-
-/**
- * Reset all content types to match standard config.
- */
-function ut_card_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_card');
-}

@@ -79,10 +79,3 @@ function ut_images_field_widget_paragraphs_form_alter(&$element, &$form_state, $
     $element['ut_image_wt_tips']['#markup'] = $markup;
   }
 }
-
-/**
- * Reset all content types to match standard config.
- */
-function ut_images_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_images');
-}

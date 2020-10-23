@@ -13,6 +13,7 @@ dependencies:
   - media_library
   - metatag
   - ut_accordion
+  - ut_alert
   - ut_blockquote
   - ut_button
   - ut_card

@@ -66,10 +66,3 @@ function ut_table_field_widget_paragraphs_form_alter(&$element, &$form_state, $c
     $element['ut_table_tips']['#markup'] = $markup;
   }
 }
-
-/**
- * Reset all content types to match standard config.
- */
-function ut_table_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_table');
-}
