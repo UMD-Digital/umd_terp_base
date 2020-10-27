@@ -13,9 +13,8 @@ use Drupal\field\Entity\FieldConfig;
  */
 function ut_divider_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_divider');
-  // Deleting old size field field storage and field.
-  if (FieldStorageConfig::loadByName('paragraph', 'field_ut_divider_size')) {
-    FieldStorageConfig::loadByName('paragraph', 'field_ut_divider_size')->delete();
+  // Deleting old size field.
+  if (FieldConfig::loadByName('paragraph', 'ut_divider', 'field_ut_divider_size') !== NULL ) {
     FieldConfig::loadByName('paragraph', 'ut_divider', 'field_ut_divider_size')->delete();
   }
 }
