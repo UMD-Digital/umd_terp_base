@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_alert_link
+    - paragraphs.paragraphs_type.ut_alert
+  module:
+    - link
+id: paragraph.ut_alert.field_ut_alert_link
+field_name: field_ut_alert_link
+entity_type: paragraph
+bundle: ut_alert
+label: 'Alert Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

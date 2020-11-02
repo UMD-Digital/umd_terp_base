@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_video.field_ut_video_caption
+    - field.field.paragraph.ut_video.field_ut_video_style
+    - field.field.paragraph.ut_video.field_ut_video_title
+    - field.field.paragraph.ut_video.field_ut_video_url
+    - paragraphs.paragraphs_type.ut_video
+  module:
+    - options
+_core:
+  default_config_hash: MYol2UJgs7gfo5QDAFCw2TkHWrqAgfJ50N7NGfhMorY
+id: paragraph.ut_video.default
+targetEntityType: paragraph
+bundle: ut_video
+mode: default
+content:
+  field_ut_video_caption:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_ut_video_style:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ut_video_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ut_video_url:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

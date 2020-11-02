@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: gPAREYJTr-YI3XBPJj8tyfGsXodWlQSgrCv-FjCyPnU
+id: paragraph.field_ut_events_style
+field_name: field_ut_events_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: events-bg-default
+      label: 'Default (light)'
+    -
+      value: events-bg-dark
+      label: Dark
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

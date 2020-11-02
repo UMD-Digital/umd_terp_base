@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_alerts
+label: Alerts
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding static alerts as a Kitchen Sink Widget.'
+behavior_plugins: {  }

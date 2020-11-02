@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: y_rff-NcbxmGh0rrMskki-LKS8zCW_qsxr1WnIsWxK4
+id: ut_text
+label: Text
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding HTML/text as a Kitchen Sink Widgets.'
+behavior_plugins: {  }

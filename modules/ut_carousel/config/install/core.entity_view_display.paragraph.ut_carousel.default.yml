@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_carousel.field_ut_carousel_items
+    - field.field.paragraph.ut_carousel.field_ut_carousel_style
+    - paragraphs.paragraphs_type.ut_carousel
+  module:
+    - entity_reference_revisions
+    - options
+_core:
+  default_config_hash: kAaR4f6w_ACek11mPtOwOSdeYSGmIoVPBSxclWb8Ufk
+id: paragraph.ut_carousel.default
+targetEntityType: paragraph
+bundle: ut_carousel
+mode: default
+content:
+  field_ut_carousel_items:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_ut_carousel_style:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  search_api_excerpt: true

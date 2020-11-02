@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: m8DeQqk0IyY5i6euyUyjsjstApHtII3U21aq_cJ8Lr4
+id: ut_stat
+label: Stat
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding an individual statistic into a group.'
+behavior_plugins: {  }

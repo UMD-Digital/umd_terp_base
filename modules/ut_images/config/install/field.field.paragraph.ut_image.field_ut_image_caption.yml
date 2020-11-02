@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_image_caption
+    - paragraphs.paragraphs_type.ut_image
+_core:
+  default_config_hash: r-_foQ75ycZX1VWYl6rzNA3uaDOvlYX3-VcGhtPF9fE
+id: paragraph.ut_image.field_ut_image_caption
+field_name: field_ut_image_caption
+entity_type: paragraph
+bundle: ut_image
+label: Caption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

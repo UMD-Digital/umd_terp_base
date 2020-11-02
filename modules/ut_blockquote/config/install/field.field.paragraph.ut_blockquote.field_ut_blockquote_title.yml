@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_blockquote_title
+    - paragraphs.paragraphs_type.ut_blockquote
+_core:
+  default_config_hash: CDBk_WZZTnNQUKmxN6xkjEWKybMX72_WvvU3hPyWNl4
+id: paragraph.ut_blockquote.field_ut_blockquote_title
+field_name: field_ut_blockquote_title
+entity_type: paragraph
+bundle: ut_blockquote
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

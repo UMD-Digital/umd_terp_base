@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: cRKAwfsK6f-WXZCrutWrLjBBs4f9Ga9aON2KaZGM9zw
+id: paragraph.field_ut_slideshow_item_text
+field_name: field_ut_slideshow_item_text
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

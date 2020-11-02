@@ -1,0 +1,95 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_events.field_ut_events_colleges_schools
+    - field.field.paragraph.ut_events.field_ut_events_count
+    - field.field.paragraph.ut_events.field_ut_events_destination
+    - field.field.paragraph.ut_events.field_ut_events_event_types
+    - field.field.paragraph.ut_events.field_ut_events_link
+    - field.field.paragraph.ut_events.field_ut_events_messaging_area
+    - field.field.paragraph.ut_events.field_ut_events_priorities
+    - field.field.paragraph.ut_events.field_ut_events_style
+    - field.field.paragraph.ut_events.field_ut_events_title
+    - paragraphs.paragraphs_type.ut_events
+  module:
+    - external_data_source
+    - link
+_core:
+  default_config_hash: 7sXD6Hh-VtbwKyKb_aKtnXN_N4o_zFhHDMSQhGLtqSw
+id: paragraph.ut_events.default
+targetEntityType: paragraph
+bundle: ut_events
+mode: default
+content:
+  field_ut_events_colleges_schools:
+    weight: 6
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_count:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ut_events_destination:
+    weight: 4
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_event_types:
+    weight: 5
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_ut_events_messaging_area:
+    weight: 7
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_priorities:
+    weight: 8
+    settings:
+      size: 1
+      placeholder: ''
+    third_party_settings: {  }
+    type: external_data_source_select_widget
+    region: content
+  field_ut_events_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ut_events_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

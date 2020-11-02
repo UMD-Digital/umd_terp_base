@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_feature_image
+    - media.type.image
+    - paragraphs.paragraphs_type.ut_feature
+_core:
+  default_config_hash: pN0fOraeSUaoR9EE7_bluHlqGbcs2gI8TbJXFCdVrnY
+id: paragraph.ut_feature.field_ut_feature_image
+field_name: field_ut_feature_image
+entity_type: paragraph
+bundle: ut_feature
+label: Image
+description: "<p>Image Guidelines:</p>\r\n <ul>\r\n    <li><strong>Default Version</strong></li>\r\n      <ul>\r\n        <li>Dimensions: 1920px x 1280px</li>\r\n        <li>Aspect ratio: 3:2</li>\r\n        <li>Focal point: Centered</li>\r\n      </ul>\r\n      <li><strong>Background Version</strong></li>\r\n<ul>\r\n        <li>Dimensions: 1920px x 1080px</li>\r\n        <li>Aspect ratio: 16:9</li>\r\n        <li>Focal point: On the right <em>or</em> left depending on text block placement.</li>\r\n      </ul>\r\n</ul>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

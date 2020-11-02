@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mZF3YF28ORnNnuYTWZFtbQOLLdcrEhhykyPyn9MWnh0
+id: ut_view
+label: View
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding a view as a Kitchen Sink Widget.'
+behavior_plugins: {  }

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_blockquote_image
+    - media.type.image
+    - paragraphs.paragraphs_type.ut_blockquote
+_core:
+  default_config_hash: dbLEOiBDh8kVKiQEP_KbsYGjvOpJ5VqIXTwMcma6BOI
+id: paragraph.ut_blockquote.field_ut_blockquote_image
+field_name: field_ut_blockquote_image
+entity_type: paragraph
+bundle: ut_blockquote
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

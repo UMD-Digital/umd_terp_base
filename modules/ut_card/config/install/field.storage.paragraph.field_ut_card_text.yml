@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+_core:
+  default_config_hash: 1zopZ3DqauAy71eYCsL3ZUmcAj-iHM9PfXVjwjg8sHA
+id: paragraph.field_ut_card_text
+field_name: field_ut_card_text
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

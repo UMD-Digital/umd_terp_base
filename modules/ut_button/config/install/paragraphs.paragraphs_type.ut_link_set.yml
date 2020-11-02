@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: FBf4Ieg7S795d14xRqMEDAxEi_ZkCL7MyVtHXS6m72Q
+id: ut_link_set
+label: 'Link Set'
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding link groups as a Kitchen Sink Widget.'
+behavior_plugins: {  }

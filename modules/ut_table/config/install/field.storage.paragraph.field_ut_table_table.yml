@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - tablefield
+_core:
+  default_config_hash: zv4asW0HDD36T9FuQjpO_SVnQn6r4C3XiOHk3VjWTOk
+id: paragraph.field_ut_table_table
+field_name: field_ut_table_table
+entity_type: paragraph
+type: tablefield
+settings: {  }
+module: tablefield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DvHyHH3Qsy9kd18NZ81S_uHBIfLybrgmqnEkO6cyOsM
+id: ut_accordion
+label: Accordion
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding accordions as a Kitchen Sink Widget.'
+behavior_plugins: {  }

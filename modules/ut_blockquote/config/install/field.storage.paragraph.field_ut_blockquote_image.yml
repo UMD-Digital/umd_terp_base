@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+_core:
+  default_config_hash: 9FnycH2f7ADnY44kAlLX0qI30jkT6FerTFFVQG0e6Vg
+id: paragraph.field_ut_blockquote_image
+field_name: field_ut_blockquote_image
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

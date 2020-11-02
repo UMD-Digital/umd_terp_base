@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_link.field_ut_link_link
+    - paragraphs.paragraphs_type.ut_link
+  module:
+    - link_attributes
+_core:
+  default_config_hash: E0MLPPyjk6wV22NbZ6WFwN6bYYbjFLG3lwiJkQ-OX7Q
+id: paragraph.ut_link.default
+targetEntityType: paragraph
+bundle: ut_link
+mode: default
+content:
+  field_ut_link_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+hidden:
+  created: true
+  status: true

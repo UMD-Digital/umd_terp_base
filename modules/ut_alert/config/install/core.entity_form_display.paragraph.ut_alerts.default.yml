@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_alerts.field_ut_alerts
+    - field.field.paragraph.ut_alerts.field_ut_alerts_style
+    - field.field.paragraph.ut_alerts.field_ut_alerts_title
+    - paragraphs.paragraphs_type.ut_alerts
+  module:
+    - paragraphs
+id: paragraph.ut_alerts.default
+targetEntityType: paragraph
+bundle: ut_alerts
+mode: default
+content:
+  field_ut_alerts:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_ut_alerts_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ut_alerts_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

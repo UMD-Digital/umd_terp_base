@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Ut_video module install file.
+ */
+
+/**
+ * Reset all paragraph fields to match standard config.
+ */
+function ut_video_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_video');
+}

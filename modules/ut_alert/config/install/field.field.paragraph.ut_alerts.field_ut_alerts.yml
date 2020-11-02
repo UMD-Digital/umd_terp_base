@@ -1,0 +1,126 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_alerts
+    - paragraphs.paragraphs_type.ut_alert
+    - paragraphs.paragraphs_type.ut_alerts
+  module:
+    - entity_reference_revisions
+id: paragraph.ut_alerts.field_ut_alerts
+field_name: field_ut_alerts
+entity_type: paragraph
+bundle: ut_alerts
+label: Alerts
+description: 'Please add the desired alerts. Multiple alerts may be added, but generally, its best to have only one.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ut_alert: ut_alert
+    target_bundles_drag_drop:
+      ut_accordion:
+        weight: 34
+        enabled: false
+      ut_accordion_item:
+        weight: 35
+        enabled: false
+      ut_alert:
+        enabled: true
+        weight: 36
+      ut_alerts:
+        weight: 37
+        enabled: false
+      ut_blockquote:
+        weight: 38
+        enabled: false
+      ut_button:
+        weight: 39
+        enabled: false
+      ut_button_set:
+        weight: 40
+        enabled: false
+      ut_card:
+        weight: 41
+        enabled: false
+      ut_card_group:
+        weight: 42
+        enabled: false
+      ut_carousel:
+        weight: 43
+        enabled: false
+      ut_carousel_item:
+        weight: 44
+        enabled: false
+      ut_divider:
+        weight: 45
+        enabled: false
+      ut_events:
+        weight: 46
+        enabled: false
+      ut_feature:
+        weight: 47
+        enabled: false
+      ut_image:
+        weight: 48
+        enabled: false
+      ut_image_with_text:
+        weight: 49
+        enabled: false
+      ut_link:
+        weight: 50
+        enabled: false
+      ut_link_set:
+        weight: 51
+        enabled: false
+      ut_news:
+        weight: 52
+        enabled: false
+      ut_people:
+        weight: 53
+        enabled: false
+      ut_slideshow:
+        weight: 54
+        enabled: false
+      ut_slideshow_item:
+        weight: 55
+        enabled: false
+      ut_stat:
+        weight: 56
+        enabled: false
+      ut_stat_group:
+        weight: 57
+        enabled: false
+      ut_table:
+        weight: 58
+        enabled: false
+      ut_tabs:
+        weight: 59
+        enabled: false
+      ut_tabs_item:
+        weight: 60
+        enabled: false
+      ut_text:
+        weight: 61
+        enabled: false
+      ut_text_2_columns:
+        weight: 62
+        enabled: false
+      ut_text_3_columns:
+        weight: 63
+        enabled: false
+      ut_video:
+        weight: 64
+        enabled: false
+      ut_view:
+        weight: 65
+        enabled: false
+      ut_webform:
+        weight: 66
+        enabled: false
+field_type: entity_reference_revisions

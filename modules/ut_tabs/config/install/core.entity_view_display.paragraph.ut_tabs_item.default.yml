@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_tabs_item.field_ut_tabs_item_content
+    - field.field.paragraph.ut_tabs_item.field_ut_tabs_item_title
+    - paragraphs.paragraphs_type.ut_tabs_item
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: bttMAo6MndNTBj4VOmycdX9yAXmmfLwsrULl1h4maeI
+id: paragraph.ut_tabs_item.default
+targetEntityType: paragraph
+bundle: ut_tabs_item
+mode: default
+content:
+  field_ut_tabs_item_content:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_ut_tabs_item_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

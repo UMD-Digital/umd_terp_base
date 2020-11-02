@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_news_destination
+    - paragraphs.paragraphs_type.ut_news
+  module:
+    - external_data_source
+_core:
+  default_config_hash: nqefsqwUsythzHeDcXCNnmWdkU5TKyEoJoWhsXaaxO0
+id: paragraph.ut_news.field_ut_news_destination
+field_name: field_ut_news_destination
+entity_type: paragraph
+bundle: ut_news
+label: Destination
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: external_data_source

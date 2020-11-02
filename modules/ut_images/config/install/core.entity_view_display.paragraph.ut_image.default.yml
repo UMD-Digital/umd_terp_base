@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_image.field_ut_image_caption
+    - field.field.paragraph.ut_image.field_ut_image_image
+    - field.field.paragraph.ut_image.field_ut_image_style
+    - paragraphs.paragraphs_type.ut_image
+  module:
+    - options
+_core:
+  default_config_hash: m0olkIlKXuaKs7feDBbyGyM1i7BjHi5X_PtksdcseBg
+id: paragraph.ut_image.default
+targetEntityType: paragraph
+bundle: ut_image
+mode: default
+content:
+  field_ut_image_caption:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_ut_image_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_ut_image_style:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  search_api_excerpt: true

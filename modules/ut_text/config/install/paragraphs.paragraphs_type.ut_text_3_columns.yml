@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bIfoW354804PgG3STQfz0hHr_ojXPTzzwy9oMFnkki8
+id: ut_text_3_columns
+label: 'Text - 3 Columns'
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding HTML/text in three columns as a Kitchen Sink Widgets.'
+behavior_plugins: {  }

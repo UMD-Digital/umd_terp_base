@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: Qt2OSE18mXNrDiMFDD4sx7aqR6A2EPgpWqrRuPtoy7M
+name: 'UMD Terp Person'
+type: umd_terp_person
+description: 'This is for creating staff and faculty Bios.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_news_link
+    - paragraphs.paragraphs_type.ut_news
+  module:
+    - link
+_core:
+  default_config_hash: _NE3OsQz03tdSWmlQ5FxJYgRikwpqFyGvwnUwHxYaBI
+id: paragraph.ut_news.field_ut_news_link
+field_name: field_ut_news_link
+entity_type: paragraph
+bundle: ut_news
+label: 'View All Link'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://today.umd.edu'
+    title: 'View All Articles'
+    options: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

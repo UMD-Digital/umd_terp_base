@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_text_3_columns_column_2
+    - paragraphs.paragraphs_type.ut_text_3_columns
+  module:
+    - text
+_core:
+  default_config_hash: oKDFo6bCOYOYjB-so0Bh_eAtFDFmm8LVVlhj6QZIcX0
+id: paragraph.ut_text_3_columns.field_ut_text_3_columns_column_2
+field_name: field_ut_text_3_columns_column_2
+entity_type: paragraph
+bundle: ut_text_3_columns
+label: 'Column 2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

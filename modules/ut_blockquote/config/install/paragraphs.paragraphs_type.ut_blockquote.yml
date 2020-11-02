@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: thVmymZkRKFKrxYQaH0B7Y4LyfYI4zd8C00At1PmxfM
+id: ut_blockquote
+label: Blockquote
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding a blockquote as a Kitchen Sink Widget.'
+behavior_plugins: {  }

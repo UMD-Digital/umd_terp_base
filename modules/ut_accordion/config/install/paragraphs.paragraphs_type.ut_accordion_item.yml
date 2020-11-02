@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 24pgIFuCNNZ6kc-y3aPZMQGNCoDkQes1n2hF35wIJrc
+id: ut_accordion_item
+label: 'Accordion Item'
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding individual accordions within the group.'
+behavior_plugins: {  }

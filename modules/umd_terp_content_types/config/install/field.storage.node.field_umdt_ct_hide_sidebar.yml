@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: eXQecHBK5Qe_SLGXLUJEtaMM3tEuxpz1ehhj_mFjD_Y
+id: node.field_umdt_ct_hide_sidebar
+field_name: field_umdt_ct_hide_sidebar
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

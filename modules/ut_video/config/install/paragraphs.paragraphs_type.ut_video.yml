@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Cgs48cLowAhkYLB0zB0QBQR2B7mglC5qsgTSZIFlHWE
+id: ut_video
+label: Video
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding a video as a Kitchen Sink Widget.'
+behavior_plugins: {  }

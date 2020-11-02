@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: rlpbJ1jtRcrTUJUp6513Q03cAPgaV1et_EiFutCqBrw
+id: paragraph.field_ut_image_with_text_align
+field_name: field_ut_image_with_text_align
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: align-left
+      label: Left
+    -
+      value: align-right
+      label: Right
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

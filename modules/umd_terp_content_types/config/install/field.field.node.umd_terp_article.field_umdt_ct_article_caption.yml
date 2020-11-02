@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_article_caption
+    - node.type.umd_terp_article
+_core:
+  default_config_hash: MS9Esgb5P2lT9eUSPExuq5lUv-4mIf5zYqhJdnKm5-I
+id: node.umd_terp_article.field_umdt_ct_article_caption
+field_name: field_umdt_ct_article_caption
+entity_type: node
+bundle: umd_terp_article
+label: Caption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

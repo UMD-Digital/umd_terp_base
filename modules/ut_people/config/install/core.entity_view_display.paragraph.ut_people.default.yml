@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_people.field_ut_people_people
+    - field.field.paragraph.ut_people.field_ut_people_title
+    - paragraphs.paragraphs_type.ut_people
+_core:
+  default_config_hash: GJHIs1TZ5Msp4To5Gr1ZthSy2GFlH64ynDwdxze1DAk
+id: paragraph.ut_people.default
+targetEntityType: paragraph
+bundle: ut_people
+mode: default
+content:
+  field_ut_people_people:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_ut_people_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

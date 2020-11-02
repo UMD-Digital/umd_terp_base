@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_slideshow_item_image
+    - media.type.image
+    - paragraphs.paragraphs_type.ut_slideshow_item
+_core:
+  default_config_hash: TwdJuoS7xMvx5cw5ghp7xkg-Tusl1H4UNfxspwYtnkU
+id: paragraph.ut_slideshow_item.field_ut_slideshow_item_image
+field_name: field_ut_slideshow_item_image
+entity_type: paragraph
+bundle: ut_slideshow_item
+label: Image
+description: "<p>Image Guidelines:</p>\r\n<ul>\r\n<li><strong>Dimensions:</strong> 1400px x 790px</li>\r\n<li><strong>Aspect ratio:</strong> 16:9</li>\r\n<li><strong>Focal point:</strong> Any </li>\r\n</ul>\r\n"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

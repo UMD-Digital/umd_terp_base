@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: QjdwyEqA8hzl95xmr1yBPA0MD5WaGnwUqXHIXcdpoE8
+id: ut_events
+label: 'Events Feed'
+icon_uuid: null
+icon_default: null
+description: 'This widget provides an events feed from the UMD HUB.'
+behavior_plugins: {  }

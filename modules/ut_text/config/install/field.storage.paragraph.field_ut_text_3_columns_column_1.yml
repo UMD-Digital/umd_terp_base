@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+_core:
+  default_config_hash: oGtDVG4G2ag7IN4pmTYhg1MMuU1lOl3lTc0U--Ux-jA
+id: paragraph.field_ut_text_3_columns_column_1
+field_name: field_ut_text_3_columns_column_1
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

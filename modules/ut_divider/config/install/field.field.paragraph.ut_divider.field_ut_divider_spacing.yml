@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_divider_spacing
+    - paragraphs.paragraphs_type.ut_divider
+  module:
+    - options
+id: paragraph.ut_divider.field_ut_divider_spacing
+field_name: field_ut_divider_spacing
+entity_type: paragraph
+bundle: ut_divider
+label: 'Spacing Size'
+description: 'Please choose the size of the space desired.'
+required: true
+translatable: false
+default_value:
+  -
+    value: spacing-small
+default_value_callback: ''
+settings: {  }
+field_type: list_string

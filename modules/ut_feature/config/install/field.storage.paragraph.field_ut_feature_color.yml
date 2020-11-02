@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: 3DYOUZgPRqADnrPsVqBjF4V9j9BAazlZPvCtk0cXHGE
+id: paragraph.field_ut_feature_color
+field_name: field_ut_feature_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: bg-white
+      label: 'White (default)'
+    -
+      value: bg-light-gray
+      label: 'Light Gray'
+    -
+      value: bg-dark-gray
+      label: Gray
+    -
+      value: bg-red
+      label: Red
+    -
+      value: bg-dark-red
+      label: 'Dark Red'
+    -
+      value: bg-yellow
+      label: Yellow
+    -
+      value: bg-black
+      label: Black
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_blockquote_text
+    - paragraphs.paragraphs_type.ut_blockquote
+  module:
+    - text
+_core:
+  default_config_hash: q8BFwKcHe_e3_khvnHjl9zHw8QlUxnrITg0L7pRz9RI
+id: paragraph.ut_blockquote.field_ut_blockquote_text
+field_name: field_ut_blockquote_text
+entity_type: paragraph
+bundle: ut_blockquote
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

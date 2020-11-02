@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+_core:
+  default_config_hash: QH9NB6koNsmDZHPlBDxIvV4Yn_1HVZU09Fs_8OiuQg8
+id: node.field_umdt_ct_article_image
+field_name: field_umdt_ct_article_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

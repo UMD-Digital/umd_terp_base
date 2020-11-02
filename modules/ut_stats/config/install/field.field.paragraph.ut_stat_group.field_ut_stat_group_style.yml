@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_stat_group_style
+    - paragraphs.paragraphs_type.ut_stat_group
+  module:
+    - options
+_core:
+  default_config_hash: UuXqt0y5BNK1AZPEyUulUzsYQ5sTDGGVl0T1eqBuMXs
+id: paragraph.ut_stat_group.field_ut_stat_group_style
+field_name: field_ut_stat_group_style
+entity_type: paragraph
+bundle: ut_stat_group
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: stat-group-bg-default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

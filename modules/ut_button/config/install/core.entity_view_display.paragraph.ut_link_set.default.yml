@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_link_set.field_ut_button_center
+    - field.field.paragraph.ut_link_set.field_ut_link_set_links
+    - paragraphs.paragraphs_type.ut_link_set
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 6yQ-Xk5nR3vpuklnhyGjCdysT8bVksHWgmBf7O811Oo
+id: paragraph.ut_link_set.default
+targetEntityType: paragraph
+bundle: ut_link_set
+mode: default
+content:
+  field_ut_button_center:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ut_link_set_links:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

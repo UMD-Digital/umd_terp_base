@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_table_table
+    - paragraphs.paragraphs_type.ut_table
+  module:
+    - tablefield
+    - tablefield_required
+third_party_settings:
+  tablefield_required:
+    required_rows: ''
+    required_cols: ''
+    multivalue_inherit: false
+_core:
+  default_config_hash: M0rNajsV7BrM6bS0dEVbi2d3w-QQQq6DvZc849P_sEQ
+id: paragraph.ut_table.field_ut_table_table
+field_name: field_ut_table_table
+entity_type: paragraph
+bundle: ut_table
+label: Table
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  export: 0
+  restrict_rebuild: 1
+  restrict_import: 1
+  lock_values: 0
+  cell_processing: '1'
+  empty_rules:
+    ignore_table_structure: 0
+    ignore_table_header: 0
+field_type: tablefield

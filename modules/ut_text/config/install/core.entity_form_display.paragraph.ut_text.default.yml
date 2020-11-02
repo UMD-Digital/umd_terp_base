@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_text.field_ut_text_text
+    - paragraphs.paragraphs_type.ut_text
+  module:
+    - text
+_core:
+  default_config_hash: wNVNvyYbCLp6AY8E1S6V72Ul4bkbN89zPpxhPZIXJAo
+id: paragraph.ut_text.default
+targetEntityType: paragraph
+bundle: ut_text
+mode: default
+content:
+  field_ut_text_text:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

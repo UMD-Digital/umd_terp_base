@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bUju451o9Znq5WT8ztrqAvJYGf1Wvy6LBwiFS_2Jcl4
+id: ut_tabs
+label: Tabs
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding tabs as a Kitchen Sink Widget.'
+behavior_plugins: {  }

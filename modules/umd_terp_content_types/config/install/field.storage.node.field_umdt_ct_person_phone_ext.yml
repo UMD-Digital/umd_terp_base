@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: YTyGIoZNW9y8Nm7IuY1oL5_8UP-B4RCTmGZt7oNGMcw
+id: node.field_umdt_ct_person_phone_ext
+field_name: field_umdt_ct_person_phone_ext
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

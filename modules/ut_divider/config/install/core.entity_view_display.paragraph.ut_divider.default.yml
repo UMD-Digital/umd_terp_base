@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_divider.field_ut_divider_rule
+    - field.field.paragraph.ut_divider.field_ut_divider_spacing
+    - paragraphs.paragraphs_type.ut_divider
+  module:
+    - options
+_core:
+  default_config_hash: hLOBmdEMzqlm8SlhjOpvvW20H8wjwAv0UVEBr6seSKI
+id: paragraph.ut_divider.default
+targetEntityType: paragraph
+bundle: ut_divider
+mode: default
+content:
+  field_ut_divider_rule:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ut_divider_spacing:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  search_api_excerpt: true

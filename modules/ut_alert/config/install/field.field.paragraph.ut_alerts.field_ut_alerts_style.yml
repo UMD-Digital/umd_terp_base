@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_alerts_style
+    - paragraphs.paragraphs_type.ut_alerts
+  module:
+    - options
+id: paragraph.ut_alerts.field_ut_alerts_style
+field_name: field_ut_alerts_style
+entity_type: paragraph
+bundle: ut_alerts
+label: Style
+description: 'Please choose the style/color of the static alerts.'
+required: true
+translatable: false
+default_value:
+  -
+    value: bg-yellow
+default_value_callback: ''
+settings: {  }
+field_type: list_string

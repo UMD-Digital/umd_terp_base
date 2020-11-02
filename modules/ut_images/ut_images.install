@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Ut_images module install file.
+ */
+
+/**
+ * Reset all paragraph fields to match standard config.
+ */
+function ut_images_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_images');
+}

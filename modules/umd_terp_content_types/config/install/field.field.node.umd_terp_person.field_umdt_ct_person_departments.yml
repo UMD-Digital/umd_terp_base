@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_person_departments
+    - node.type.umd_terp_person
+    - taxonomy.vocabulary.departments
+_core:
+  default_config_hash: kzcmASe4K1ujqbmIzA547ONO66PmHS0e0xYcnf4V6mM
+id: node.umd_terp_person.field_umdt_ct_person_departments
+field_name: field_umdt_ct_person_departments
+entity_type: node
+bundle: umd_terp_person
+label: Departments
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      departments: departments
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

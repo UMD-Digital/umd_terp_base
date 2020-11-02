@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hUz5o-R2oFDMmCJY24hZREc8DXnGjpB7D-cvGEYKyxY
+id: ut_news
+label: 'News Feed'
+icon_uuid: null
+icon_default: null
+description: 'This widget provides a news feed from the UMD HUB.'
+behavior_plugins: {  }

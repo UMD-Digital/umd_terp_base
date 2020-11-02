@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ut_alert
+label: 'Alert Item'
+icon_uuid: null
+icon_default: null
+description: 'Provides a paragraphs bundle for embedding individual alerts within the group'
+behavior_plugins: {  }

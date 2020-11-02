@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_events_messaging_area
+    - paragraphs.paragraphs_type.ut_events
+  module:
+    - external_data_source
+_core:
+  default_config_hash: _KbuAxCHziMxXRgOBc_7dknVcCCpShCY3qx1MCVHBMA
+id: paragraph.ut_events.field_ut_events_messaging_area
+field_name: field_ut_events_messaging_area
+entity_type: paragraph
+bundle: ut_events
+label: 'Messaging Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: external_data_source

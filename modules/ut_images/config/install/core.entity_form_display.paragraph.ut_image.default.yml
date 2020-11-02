@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_image.field_ut_image_caption
+    - field.field.paragraph.ut_image.field_ut_image_image
+    - field.field.paragraph.ut_image.field_ut_image_style
+    - paragraphs.paragraphs_type.ut_image
+  module:
+    - media_library
+_core:
+  default_config_hash: MW_xZQ9Q0PvphBhROUkDe1GGsaOyJc4k9k8QKs0jIEc
+id: paragraph.ut_image.default
+targetEntityType: paragraph
+bundle: ut_image
+mode: default
+content:
+  field_ut_image_caption:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_ut_image_image:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_ut_image_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

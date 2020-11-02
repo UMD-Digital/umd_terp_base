@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_hero_image
+    - media.type.image
+    - node.type.umd_terp_basic_page
+_core:
+  default_config_hash: 0nyfjz9D6Bs8vbMC-Qir6Oz8QFg0Ut105RrGbXD5zfk
+id: node.umd_terp_basic_page.field_umdt_ct_hero_image
+field_name: field_umdt_ct_hero_image
+entity_type: node
+bundle: umd_terp_basic_page
+label: 'Hero Image'
+description: "<p>Please choose a hero Image for this content, if desired.</p>\r\n<p>Image Guidelines:</p>\r\n<ul>\r\n<li><strong>Dimensions:</strong> 1920px x 640px</li>\r\n<li><strong>Aspect ratio:</strong> 3:1</li>\r\n<li><strong>Focal point:</strong> Centered. The image can be cut off on both top/bottom and left/right depending on the screen size.</li>\r\n<ul>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

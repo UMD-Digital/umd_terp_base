@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_person_phone_ext
+    - node.type.umd_terp_person
+_core:
+  default_config_hash: Mogmjb29gZbHlOtz-CdCooHWfP7sVghqmJVuV8B9xU0
+id: node.umd_terp_person.field_umdt_ct_person_phone_ext
+field_name: field_umdt_ct_person_phone_ext
+entity_type: node
+bundle: umd_terp_person
+label: 'Phone Ext.'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

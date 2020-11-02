@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_image_with_text.field_ut_image_with_text_align
+    - field.field.paragraph.ut_image_with_text.field_ut_image_with_text_caption
+    - field.field.paragraph.ut_image_with_text.field_ut_image_with_text_image
+    - field.field.paragraph.ut_image_with_text.field_ut_image_with_text_text
+    - paragraphs.paragraphs_type.ut_image_with_text
+  module:
+    - options
+    - text
+_core:
+  default_config_hash: IXLZIJi3b-P2CSw6qY_Pv71PMc4-9EDZ4A1rjL7S8-0
+id: paragraph.ut_image_with_text.default
+targetEntityType: paragraph
+bundle: ut_image_with_text
+mode: default
+content:
+  field_ut_image_with_text_align:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_ut_image_with_text_caption:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_ut_image_with_text_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_ut_image_with_text_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true

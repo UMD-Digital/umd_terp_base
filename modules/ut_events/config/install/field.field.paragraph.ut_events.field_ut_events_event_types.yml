@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_events_event_types
+    - paragraphs.paragraphs_type.ut_events
+  module:
+    - external_data_source
+_core:
+  default_config_hash: 9Ua1FRX7s8tv9xg7JhOa2Pm-pY2YqnDwEvGp6pO1p4Y
+id: paragraph.ut_events.field_ut_events_event_types
+field_name: field_ut_events_event_types
+entity_type: paragraph
+bundle: ut_events
+label: 'Event Types'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: external_data_source

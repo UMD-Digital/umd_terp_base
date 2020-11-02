@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ut_alert.field_ut_alert_link
+    - field.field.paragraph.ut_alert.field_ut_alert_text
+    - field.field.paragraph.ut_alert.field_ut_alert_title
+    - paragraphs.paragraphs_type.ut_alert
+  module:
+    - link
+    - text
+id: paragraph.ut_alert.default
+targetEntityType: paragraph
+bundle: ut_alert
+mode: default
+content:
+  field_ut_alert_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_ut_alert_text:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_ut_alert_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

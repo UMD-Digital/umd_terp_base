@@ -1,0 +1,101 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_carousel_items
+    - paragraphs.paragraphs_type.ut_carousel
+    - paragraphs.paragraphs_type.ut_carousel_item
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: GtSYBihAjgqOIV7xl8jYtYG1hQox8bC5J8gDKNO5zgw
+id: paragraph.ut_carousel.field_ut_carousel_items
+field_name: field_ut_carousel_items
+entity_type: paragraph
+bundle: ut_carousel
+label: Items
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ut_carousel_item: ut_carousel_item
+    target_bundles_drag_drop:
+      ut_carousel_item:
+        enabled: true
+        weight: 25
+      ut_accordion:
+        weight: 26
+        enabled: false
+      ut_accordion_item:
+        weight: 27
+        enabled: false
+      ut_blockquote:
+        weight: 28
+        enabled: false
+      ut_button:
+        weight: 29
+        enabled: false
+      ut_card:
+        weight: 30
+        enabled: false
+      ut_card_group:
+        weight: 31
+        enabled: false
+      ut_carousel:
+        weight: 32
+        enabled: false
+      ut_divider:
+        weight: 33
+        enabled: false
+      ut_events:
+        weight: 34
+        enabled: false
+      ut_gallery:
+        weight: 35
+        enabled: false
+      ut_gallery_item:
+        weight: 36
+        enabled: false
+      ut_image:
+        weight: 37
+        enabled: false
+      ut_news:
+        weight: 38
+        enabled: false
+      ut_stat:
+        weight: 39
+        enabled: false
+      ut_stat_group:
+        weight: 40
+        enabled: false
+      ut_table:
+        weight: 41
+        enabled: false
+      ut_tabs:
+        weight: 42
+        enabled: false
+      ut_tabs_item:
+        weight: 43
+        enabled: false
+      ut_text:
+        weight: 44
+        enabled: false
+      ut_text_2_columns:
+        weight: 45
+        enabled: false
+      ut_text_3_columns:
+        weight: 46
+        enabled: false
+      ut_view:
+        weight: 47
+        enabled: false
+      ut_webform:
+        weight: 48
+        enabled: false
+field_type: entity_reference_revisions

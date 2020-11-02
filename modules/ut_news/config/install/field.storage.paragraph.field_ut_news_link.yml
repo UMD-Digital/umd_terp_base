@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+_core:
+  default_config_hash: nn0UluH3bEPLgR8mmz6OqrpgHCB6DaXy0fj9LW9tNkQ
+id: paragraph.field_ut_news_link
+field_name: field_ut_news_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
