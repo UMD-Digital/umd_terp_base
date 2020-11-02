@@ -1,6 +1,10 @@
-8.1.30
+8.1.31
 ======
 - Configuration updates.
+
+8.1.30
+======
+- Update help text for carousel widget to recommend 4 or more images.
 
 8.1.29
 ======
