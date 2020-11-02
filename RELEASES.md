@@ -1,3 +1,7 @@
+8.1.30
+======
+- Configuration updates.
+
 8.1.29
 ======
 - Set version number.
