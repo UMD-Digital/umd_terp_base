@@ -14,7 +14,7 @@ entity_type: paragraph
 bundle: ut_feature
 label: Style
 description: 'Choose whether this should use standard (default) or background-image style.'
-required: true
+required: false
 translatable: false
 default_value:
   -

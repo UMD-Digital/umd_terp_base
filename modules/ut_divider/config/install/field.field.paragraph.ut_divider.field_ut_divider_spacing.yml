@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: ut_divider
 label: 'Spacing Size'
 description: 'Please choose the size of the space desired.'
-required: true
+required: false
 translatable: false
 default_value:
   -

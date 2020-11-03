@@ -11,3 +11,10 @@
 function ut_events_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_events');
 }
+
+/**
+ * Remove required field for events count.
+ */
+function ut_events_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_events');
+}

@@ -1,3 +1,7 @@
+8.1.32
+======
+- Remove required from select fields (https://trello.com/c/0Z1IRyYw/108-configuration-task)
+
 8.1.31
 ======
 - Configuration updates.

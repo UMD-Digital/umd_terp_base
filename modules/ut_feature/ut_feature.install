@@ -11,3 +11,10 @@
 function ut_feature_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_feature');
 }
+
+/**
+ * Remove required on style and color fields.
+ */
+function ut_feature_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_feature');
+}
