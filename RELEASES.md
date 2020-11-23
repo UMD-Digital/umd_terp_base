@@ -1,3 +1,7 @@
+8.1.33
+======
+- Add image field to stats (https://trello.com/c/4kwGh2si/136-d8-templates-icons-in-stat-blocks)
+
 8.1.32
 ======
 - Remove required from select fields (https://trello.com/c/0Z1IRyYw/108-configuration-task)

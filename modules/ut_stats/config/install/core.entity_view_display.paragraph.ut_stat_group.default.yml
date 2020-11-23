@@ -9,7 +9,7 @@ dependencies:
     - entity_reference_revisions
     - options
 _core:
-  default_config_hash: u1sX5D-lN1JeL-SHM33Wf0McFd0Phh2OFfLbWfJd_eo
+  default_config_hash: 9ThoTZTQwTsqOx08b36At5Ip1yXW4JinwThsdULF-2M
 id: paragraph.ut_stat_group.default
 targetEntityType: paragraph
 bundle: ut_stat_group

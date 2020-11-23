@@ -2,18 +2,28 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.ut_stat.field_ut_stat_image
     - field.field.paragraph.ut_stat.field_ut_stat_text
     - field.field.paragraph.ut_stat.field_ut_stat_value
     - paragraphs.paragraphs_type.ut_stat
+  module:
+    - media_library
 _core:
-  default_config_hash: kZNZg6hX3pyRAIfNuqsCujKwlnQSY03d5GHcWrmZr1k
+  default_config_hash: GnJCN86DzRMhl2oAFR8bH-mtYr4c9bvvxs9D4wmEkX4
 id: paragraph.ut_stat.default
 targetEntityType: paragraph
 bundle: ut_stat
 mode: default
 content:
+  field_ut_stat_image:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
   field_ut_stat_text:
-    weight: 1
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
@@ -21,7 +31,7 @@ content:
     type: string_textarea
     region: content
   field_ut_stat_value:
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''
