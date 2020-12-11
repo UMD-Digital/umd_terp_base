@@ -150,7 +150,7 @@ function _ut_events_get_events(
   }
   else {
     $currentDate = date('Y-m-d') . 'T00:00:00';
-    $query = 'adv_events(date_one: {field: \"start_date\", date: \"' . $currentDate . '\", operator: \">=\"}, page: {limit: ' . $range . ', offset: 0}';
+    $query = 'adv_events(date_one: {field: \"start_date\", date: \"' . $currentDate . '\", operator: \">=\"}, page: {limit: ' . $range . ', offset: 0}, sort: {field: \"start_date\", direction: ASC}';
     if (isset($destination) || isset($colleges_schools) || isset($event_type) || isset($messaging_area) || isset($priorities)) {
       $query .= ',filter: {';
       if (isset($destination)) {

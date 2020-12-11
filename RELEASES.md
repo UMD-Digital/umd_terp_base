@@ -1,3 +1,9 @@
+8.1.36
+- Adjust events sort logic (https://trello.com/c/9hyyguAO/146-qc-logic-of-events-feed)
+
+8.1.35
+- Add tab index to carousel
+
 8.1.34
 - Removing .container element in people widget template to remove excess whitespace on sides
 
