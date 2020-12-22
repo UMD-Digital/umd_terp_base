@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_event_time
+    - node.type.umd_terp_event
+id: node.umd_terp_event.field_umdt_ct_event_time
+field_name: field_umdt_ct_event_time
+entity_type: node
+bundle: umd_terp_event
+label: Time
+description: 'This field can be used to add time to the event. This is a plain text field, to provide maximum flexibility. This field will not be taken into account when ordering/etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
