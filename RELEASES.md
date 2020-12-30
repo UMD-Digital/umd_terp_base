@@ -1,3 +1,7 @@
+8.1.38
+======
+- Add spacing above ut_news "View all articles" link to avoid overlap of card
+
 8.1.37
 ======
 - Local events content type (https://trello.com/c/J9RLFCO4/147-create-local-events-content-type-and-views)
