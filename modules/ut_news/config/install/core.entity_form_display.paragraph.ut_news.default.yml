@@ -16,7 +16,7 @@ dependencies:
     - external_data_source
     - link
 _core:
-  default_config_hash: gVUe9ZQm8o9AGsnczXyrySyR2SIfPGPVEHFKntV1teI
+  default_config_hash: 9N_hepUJrm8qxw8oLN4NgbTcXR8KcGAMvxKO5RCib10
 id: paragraph.ut_news.default
 targetEntityType: paragraph
 bundle: ut_news
@@ -28,7 +28,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_news_colleges_schools:
     weight: 5
@@ -36,7 +36,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_news_destination:
     weight: 3
@@ -44,7 +44,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_news_link:
     weight: 2
@@ -60,7 +60,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_news_priorities:
     weight: 7
@@ -68,7 +68,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_news_style:
     weight: 0
@@ -90,7 +90,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
 hidden:
   created: true

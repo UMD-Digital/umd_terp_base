@@ -16,7 +16,7 @@ dependencies:
     - external_data_source
     - link
 _core:
-  default_config_hash: 7sXD6Hh-VtbwKyKb_aKtnXN_N4o_zFhHDMSQhGLtqSw
+  default_config_hash: aMJhIM9zunxdo5eoh1tQmfcMhMThywp9epqxvqSU5m8
 id: paragraph.ut_events.default
 targetEntityType: paragraph
 bundle: ut_events
@@ -28,7 +28,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_events_count:
     weight: 1
@@ -42,7 +42,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_events_event_types:
     weight: 5
@@ -50,7 +50,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_events_link:
     weight: 3
@@ -66,7 +66,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_events_priorities:
     weight: 8
@@ -74,7 +74,7 @@ content:
       size: 1
       placeholder: ''
     third_party_settings: {  }
-    type: external_data_source_select_widget
+    type: external_data_source_checkboxes_widget
     region: content
   field_ut_events_style:
     weight: 0

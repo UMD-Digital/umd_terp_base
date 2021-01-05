@@ -46,37 +46,37 @@ function ut_news_preprocess_paragraph__ut_news(&$variables) {
   // Check on Destination filter.
   $destination = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_news_destination->value)) {
-    $destination = $variables['elements']['#paragraph']->field_ut_news_destination->value;
+    $destination = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_destination->getValue());
   }
 
   // Check on Colleges and Schools filter.
   $colleges_schools = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_news_colleges_schools->value)) {
-    $colleges_schools = $variables['elements']['#paragraph']->field_ut_news_colleges_schools->value;
+    $colleges_schools = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_colleges_schools->getValue());
   }
 
   // Check on Audience filter.
   $audience = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_news_audience->value)) {
-    $audience = $variables['elements']['#paragraph']->field_ut_news_audience->value;
+    $audience = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_audience->getValue());
   }
 
   // Check on Messaging Area filter.
   $messaging_area = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_news_messaging_area->value)) {
-    $messaging_area = $variables['elements']['#paragraph']->field_ut_news_messaging_area->value;
+    $messaging_area = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_messaging_area->getValue());
   }
 
   // Check on Priorities filter.
   $priorities = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_news_priorities->value)) {
-    $priorities = $variables['elements']['#paragraph']->field_ut_news_priorities->value;
+    $priorities = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_priorities->getValue());
   }
 
   // Check on Topics filter.
   $topic = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_news_topics->value)) {
-    $topic = $variables['elements']['#paragraph']->field_ut_news_topics->value;
+    $topic = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_topics->getValue());
   }
 
   // Get news.
@@ -130,6 +130,18 @@ function ut_news_field_widget_paragraphs_form_alter(&$element, &$form_state, $co
 /**
  * CUSTOM FUNCTIONS.
  */
+
+ /**
+ * Formats multiple filters to send to the graphql endpoint.
+ *
+ */
+function _ut_news_format_filters($filter) {
+   $result = [];
+  foreach($filter as $key => $value) {
+    $result[] = intval($filter[$key]['value']);
+  }
+  return json_encode($result);
+ }
 
 /**
  * Gets news from HUB, and displays.

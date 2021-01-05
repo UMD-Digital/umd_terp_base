@@ -45,31 +45,31 @@ function ut_events_preprocess_paragraph__ut_events(&$variables) {
   // Check on Destination filter.
   $destination = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_events_destination->value)) {
-    $destination = $variables['elements']['#paragraph']->field_ut_events_destination->value;
+    $destination = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_destination->getValue());
   }
 
   // Check on Colleges and Schools filter.
   $colleges_schools = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_events_colleges_schools->value)) {
-    $colleges_schools = $variables['elements']['#paragraph']->field_ut_events_colleges_schools->value;
+    $colleges_schools = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_colleges_schools->getValue());
   }
 
   // Check on Event Type filter.
   $event_type = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_events_event_types->value)) {
-    $event_type = $variables['elements']['#paragraph']->field_ut_events_event_types->value;
+    $event_type = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_event_types->getValue());
   }
 
   // Check on Messaging Area filter.
   $messaging_area = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_events_messaging_area->value)) {
-    $messaging_area = $variables['elements']['#paragraph']->field_ut_events_messaging_area->value;
+    $messaging_area = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_messaging_area->getValue());
   }
 
   // Check on Priorities filter.
   $priorities = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_events_priorities->value)) {
-    $priorities = $variables['elements']['#paragraph']->field_ut_events_priorities->value;
+    $priorities = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_priorities->getValue());
   }
 
   // Check on Count.
@@ -130,6 +130,18 @@ function ut_events_field_widget_paragraphs_form_alter(&$element, &$form_state, $
 /**
  * CUSTOM FUNCTIONS.
  */
+
+/**
+ * Formats multiple filters to send to the graphql endpoint.
+ *
+ */
+function _ut_events_format_filters($filter) {
+   $result = [];
+  foreach($filter as $key => $value) {
+    $result[] = intval($filter[$key]['value']);
+  }
+  return json_encode($result);
+ }
 
 /**
  * Gets events from HUB, and displays.

@@ -1,3 +1,7 @@
+8.1.39
+======
+- Make news/events take multiple filters (https://trello.com/c/zHoOFqH8/162-d8-template-news-and-event-feeds-multiple-taxonomy-term-select)
+
 8.1.38
 ======
 - Add spacing above ut_news "View all articles" link to avoid overlap of card
