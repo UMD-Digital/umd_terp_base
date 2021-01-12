@@ -4,22 +4,21 @@ dependencies:
   config:
     - field.field.paragraph.ut_carousel_item.field_ut_carousel_item_image
     - paragraphs.paragraphs_type.ut_carousel_item
-  module:
-    - media_library
 _core:
-  default_config_hash: FwLmIsukeV-aiIV6bM8flym5_JdgNPVOwxCSOeE_qxg
+  default_config_hash: NSKcSK9BnXvZxryGj_J1q5R_yCm8NNGmZZPF7WRyjZE
 id: paragraph.ut_carousel_item.default
 targetEntityType: paragraph
 bundle: ut_carousel_item
 mode: default
 content:
   field_ut_carousel_item_image:
-    type: media_library_widget
-    weight: 0
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
     settings:
-      media_types: {  }
+      view_mode: default
+      link: false
     third_party_settings: {  }
     region: content
 hidden:
-  created: true
-  status: true
+  search_api_excerpt: true
