@@ -4,6 +4,7 @@
  * @file
  * Ut_feature module install file.
  */
+use Drupal\field\Entity\FieldConfig;
 
 /**
  * Reset all content types to match standard config.

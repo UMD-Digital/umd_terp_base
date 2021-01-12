@@ -1,3 +1,7 @@
+8.1.41
+======
+- Remove fields from carousel (https://trello.com/c/SCDQ0IhM/150-template-carousels-accessibility)
+
 8.1.40
 ======
 - Remove fields from carousel (https://trello.com/c/SCDQ0IhM/150-template-carousels-accessibility)
