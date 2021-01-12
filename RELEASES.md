@@ -1,3 +1,7 @@
+8.1.40
+======
+- Remove fields from carousel (https://trello.com/c/SCDQ0IhM/150-template-carousels-accessibility)
+
 8.1.39
 ======
 - Make news/events take multiple filters (https://trello.com/c/zHoOFqH8/162-d8-template-news-and-event-feeds-multiple-taxonomy-term-select)

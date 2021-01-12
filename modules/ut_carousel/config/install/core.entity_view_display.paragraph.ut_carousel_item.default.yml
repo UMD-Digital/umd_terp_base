@@ -2,49 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.ut_carousel_item.field_ut_carousel_item_caption
     - field.field.paragraph.ut_carousel_item.field_ut_carousel_item_image
-    - field.field.paragraph.ut_carousel_item.field_ut_carousel_item_text
-    - field.field.paragraph.ut_carousel_item.field_ut_carousel_item_title
     - paragraphs.paragraphs_type.ut_carousel_item
+  module:
+    - media_library
 _core:
-  default_config_hash: eSuGiGuuJN24XV7QV6tK4clT5QZgyOYNuuuIoIOoZq8
+  default_config_hash: FwLmIsukeV-aiIV6bM8flym5_JdgNPVOwxCSOeE_qxg
 id: paragraph.ut_carousel_item.default
 targetEntityType: paragraph
 bundle: ut_carousel_item
 mode: default
 content:
-  field_ut_carousel_item_caption:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_ut_carousel_item_image:
-    type: entity_reference_entity_view
-    weight: 1
-    label: hidden
+    type: media_library_widget
+    weight: 0
     settings:
-      view_mode: default
-      link: false
+      media_types: {  }
     third_party_settings: {  }
-    region: content
-  field_ut_carousel_item_text:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
-  field_ut_carousel_item_title:
-    weight: 3
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
 hidden:
-  search_api_excerpt: true
+  created: true
+  status: true
