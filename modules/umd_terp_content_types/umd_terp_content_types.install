@@ -18,3 +18,10 @@ function umd_terp_content_types_update_8001() {
 function umd_terp_content_types_update_8002() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'umd_terp_content_types');
 }
+
+/**
+ * Update local events content type.
+ */
+function umd_terp_content_types_update_8003() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'umd_terp_content_types');
+}
