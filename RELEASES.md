@@ -1,8 +1,4 @@
-8.1.43
-======
-- Update events CT (https://trello.com/c/J9RLFCO4/147-create-local-events-content-type-and-views)
-
-8.1.42
+8.1.42, 8.1.43, 8.1.44
 ======
 - Update events CT (https://trello.com/c/J9RLFCO4/147-create-local-events-content-type-and-views)
 
