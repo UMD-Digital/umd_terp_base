@@ -3,12 +3,13 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.ut_card_group.field_ut_card_group_cards
+    - field.field.paragraph.ut_card_group.field_ut_card_group_columns
     - field.field.paragraph.ut_card_group.field_ut_card_group_style
     - paragraphs.paragraphs_type.ut_card_group
   module:
     - paragraphs
 _core:
-  default_config_hash: JS4JmPyhpRx0MWgIN6QhcdMh3aFToxIIa8E0No4OpH8
+  default_config_hash: HKyKcgkJdWEWmaoXQvMeV-8p5X1vmVQmDfnintarStk
 id: paragraph.ut_card_group.default
 targetEntityType: paragraph
 bundle: ut_card_group
@@ -16,7 +17,7 @@ mode: default
 content:
   field_ut_card_group_cards:
     type: paragraphs
-    weight: 1
+    weight: 2
     settings:
       title: Card
       title_plural: Cards
@@ -28,13 +29,19 @@ content:
       form_display_mode: default
       default_paragraph_type: ut_card
       features:
-        duplicate: duplicate
-        collapse_edit_all: collapse_edit_all
         add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
-  field_ut_card_group_style:
+  field_ut_card_group_columns:
     weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ut_card_group_style:
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select

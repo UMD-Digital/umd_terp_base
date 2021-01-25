@@ -3,13 +3,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.ut_card_group.field_ut_card_group_cards
+    - field.field.paragraph.ut_card_group.field_ut_card_group_columns
     - field.field.paragraph.ut_card_group.field_ut_card_group_style
     - paragraphs.paragraphs_type.ut_card_group
   module:
     - entity_reference_revisions
     - options
 _core:
-  default_config_hash: HDwyRWF8TNmvTpvWf8Cch6Zzv3YKxOPFR4AU_Yc8vKc
+  default_config_hash: DKaghPmSf-EC9QAKxNy0yMD94InHJR9x3E3_RIzlOts
 id: paragraph.ut_card_group.default
 targetEntityType: paragraph
 bundle: ut_card_group
@@ -23,6 +24,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_ut_card_group_columns:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_ut_card_group_style:
     weight: 1

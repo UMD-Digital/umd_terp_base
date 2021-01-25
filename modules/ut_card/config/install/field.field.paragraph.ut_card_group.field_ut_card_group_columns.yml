@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ut_card_group_columns
+    - paragraphs.paragraphs_type.ut_card_group
+  module:
+    - options
+id: paragraph.ut_card_group.field_ut_card_group_columns
+field_name: field_ut_card_group_columns
+entity_type: paragraph
+bundle: ut_card_group
+label: Columns
+description: 'Optional. If left empty, will show as three columns.'
+required: false
+translatable: false
+default_value:
+  -
+    value: '3'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

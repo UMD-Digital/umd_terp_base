@@ -1,3 +1,7 @@
+8.1.45
+======
+- Add column choice to cards (https://trello.com/c/aNTHRt7n/158-template-card-widget-display-options)
+
 8.1.42, 8.1.43, 8.1.44
 ======
 - Update events CT (https://trello.com/c/J9RLFCO4/147-create-local-events-content-type-and-views)
