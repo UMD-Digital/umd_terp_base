@@ -1,3 +1,7 @@
+8.1.46
+======
+- Add 3 column modifier to news feed.
+
 8.1.45
 ======
 - Add column choice to cards (https://trello.com/c/aNTHRt7n/158-template-card-widget-display-options)
