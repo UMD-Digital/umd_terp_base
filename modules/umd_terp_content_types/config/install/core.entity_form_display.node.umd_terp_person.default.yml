@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.umd_terp_person.body
     - field.field.node.umd_terp_person.field_umdt_ct_hero_image
     - field.field.node.umd_terp_person.field_umdt_ct_metatags
+    - field.field.node.umd_terp_person.field_umdt_ct_person_author_stat
     - field.field.node.umd_terp_person.field_umdt_ct_person_bio
     - field.field.node.umd_terp_person.field_umdt_ct_person_departments
     - field.field.node.umd_terp_person.field_umdt_ct_person_email
@@ -49,6 +50,7 @@ third_party_settings:
         - field_umdt_ct_person_last_name
         - field_umdt_ct_person_photo
         - field_umdt_ct_person_title
+        - field_umdt_ct_person_author_stat
         - field_umdt_ct_person_departments
         - field_umdt_ct_person_bio
         - body
@@ -79,7 +81,7 @@ third_party_settings:
         required_fields: true
       label: Contact
 _core:
-  default_config_hash: EIuwZyqDG0gba8dST_fisAOqN5XBDkWmfAJsy6hllz4
+  default_config_hash: DolyV15vDTEgzOtXU_fkns0Jl1T5tVq8FpcWVC6kxI4
 id: node.umd_terp_person.default
 targetEntityType: node
 bundle: umd_terp_person
@@ -87,7 +89,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 21
+    weight: 22
     region: content
     settings:
       rows: 9
@@ -115,8 +117,15 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  field_umdt_ct_person_author_stat:
+    weight: 19
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_umdt_ct_person_bio:
-    weight: 20
+    weight: 21
     settings:
       rows: 5
       placeholder: ''
@@ -124,7 +133,7 @@ content:
     type: text_textarea
     region: content
   field_umdt_ct_person_departments:
-    weight: 19
+    weight: 20
     settings:
       match_operator: CONTAINS
       size: 60
@@ -207,7 +216,7 @@ content:
     region: content
   field_umdt_ct_sections:
     type: entity_reference_paragraphs
-    weight: 17
+    weight: 18
     region: content
     settings:
       title: Paragraph

@@ -7,7 +7,7 @@ dependencies:
   module:
     - search_api
 _core:
-  default_config_hash: NGCo0uNa7JO3DFWCJKjGpSgHQGXK13Jed21xOFUd7o4
+  default_config_hash: R_VelkUzJbXTI2qh34JPx91mjMwuEU_3z02SDNyUBCo
 id: articles
 label: Articles
 module: views
@@ -332,6 +332,78 @@ display:
         - url
         - url.query_args
         - user
+        - 'user.node_grants:view'
+      tags:
+        - 'config:search_api.index.umd_terp_articles_index'
+  search_only:
+    display_plugin: block
+    id: search_only
+    display_title: 'Search Only'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      allow:
+        items_per_page: true
+      display_description: 'Show news stories with search.'
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_umd_terp_articles_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            identifier: search
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields:
+            - rendered_item
+          plugin_id: search_api_fulltext
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.umd_terp_articles_index'

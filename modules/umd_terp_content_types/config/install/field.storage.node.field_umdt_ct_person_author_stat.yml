@@ -1,0 +1,18 @@
+uuid: dd2a941c-f0ff-415d-ac76-a71196648fe4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_umdt_ct_person_author_stat
+field_name: field_umdt_ct_person_author_stat
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

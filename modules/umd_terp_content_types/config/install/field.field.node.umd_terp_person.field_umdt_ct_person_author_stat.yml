@@ -1,0 +1,23 @@
+uuid: 68485ee6-881a-4489-ad81-144afda2521b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_person_author_stat
+    - node.type.umd_terp_person
+id: node.umd_terp_person.field_umdt_ct_person_author_stat
+field_name: field_umdt_ct_person_author_stat
+entity_type: node
+bundle: umd_terp_person
+label: 'Article Author'
+description: 'Please choose if this person should be included when generating lists of authors on the site. In essence, if you wish to credit this person with the authorship of articles on the site, you should check this box.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

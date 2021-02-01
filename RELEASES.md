@@ -1,3 +1,8 @@
+8.1.47
+======
+- Add new article search view (https://trello.com/c/JRMTMjLY/171-president-site-view-issues)
+- Add field to person CT to allow authors to be prefiltered (https://trello.com/c/d45iIZQ6/166-local-news-view-search-and-filter-by-author-not-working)
+
 8.1.46
 ======
 - Add 3 column modifier to news feed.
