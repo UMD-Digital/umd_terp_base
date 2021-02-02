@@ -1,3 +1,7 @@
+8.1.49
+======
+- Replace deprecated function menu_local_tasks() on toolbar edit button (https://trello.com/c/6vf7Cw17/168-conversation-move-templates-to-drupal-9)
+
 8.1.48
 ======
 - Add field to person CT to allow authors to be prefiltered (https://trello.com/c/d45iIZQ6/166-local-news-view-search-and-filter-by-author-not-working)
