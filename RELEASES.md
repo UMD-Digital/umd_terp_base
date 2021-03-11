@@ -1,3 +1,7 @@
+8.1.50
+======
+- Add hero video capability to homepage (https://trello.com/c/PMnfv7T7/134-d8-templates-video-loop-hero)
+
 8.1.49
 ======
 - Replace deprecated function menu_local_tasks() on toolbar edit button (https://trello.com/c/6vf7Cw17/168-conversation-move-templates-to-drupal-9)

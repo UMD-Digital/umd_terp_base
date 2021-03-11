@@ -58,7 +58,8 @@ The following fields are available on the UMD Terp Homepage:
 
 - Title
 - Hero Style: Background or default.
-- Hero Image: The main image associated with the article.
+- Hero Image: The main image in the hero.
+- Hero Video: The main video in the hero.
 - Hero Title: Main title in hero.
 - Hero Subtitle: Subtitle in hero.
 - Hero Text: Text in hero.

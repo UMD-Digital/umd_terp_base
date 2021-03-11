@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.umd_terp_homepage.field_umdt_ct_hero_subtitle
     - field.field.node.umd_terp_homepage.field_umdt_ct_hero_text
     - field.field.node.umd_terp_homepage.field_umdt_ct_hero_title
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_video
     - field.field.node.umd_terp_homepage.field_umdt_ct_metatags
     - field.field.node.umd_terp_homepage.field_umdt_ct_sections
     - node.type.umd_terp_homepage
@@ -27,6 +28,7 @@ third_party_settings:
         - field_umdt_ct_hero_style
         - field_umdt_ct_hero_dark
         - field_umdt_ct_hero_image
+        - field_umdt_ct_hero_video
         - field_umdt_ct_hero_title
         - field_umdt_ct_hero_subtitle
         - field_umdt_ct_hero_text
@@ -54,7 +56,7 @@ third_party_settings:
         required_fields: true
       label: Sections
 _core:
-  default_config_hash: h2DpDgB6AJY-x3dXVqh4uBzit06Gp_zKHAmPf_NNo_o
+  default_config_hash: 0YaqBKe4dR7X8ubJG4cyu37Hh5tSJI-RxylW6Ik9MYo
 id: node.umd_terp_homepage.default
 targetEntityType: node
 bundle: umd_terp_homepage
@@ -67,7 +69,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_umdt_ct_hero_cta:
-    weight: 8
+    weight: 9
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -104,7 +106,7 @@ content:
     type: options_select
     region: content
   field_umdt_ct_hero_subtitle:
-    weight: 6
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -112,7 +114,7 @@ content:
     type: string_textfield
     region: content
   field_umdt_ct_hero_text:
-    weight: 7
+    weight: 8
     settings:
       rows: 3
       placeholder: ''
@@ -120,12 +122,19 @@ content:
     type: string_textarea
     region: content
   field_umdt_ct_hero_title:
-    weight: 5
+    weight: 6
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_umdt_ct_hero_video:
+    type: media_library_widget
+    weight: 5
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
     region: content
   field_umdt_ct_metatags:
     weight: 8
@@ -135,7 +144,7 @@ content:
     type: metatag_firehose
     region: content
   field_umdt_ct_sections:
-    weight: 10
+    weight: 27
     settings:
       title: Section
       title_plural: Sections

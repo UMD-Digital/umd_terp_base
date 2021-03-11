@@ -10,13 +10,14 @@ dependencies:
     - field.field.node.umd_terp_homepage.field_umdt_ct_hero_subtitle
     - field.field.node.umd_terp_homepage.field_umdt_ct_hero_text
     - field.field.node.umd_terp_homepage.field_umdt_ct_hero_title
+    - field.field.node.umd_terp_homepage.field_umdt_ct_hero_video
     - field.field.node.umd_terp_homepage.field_umdt_ct_metatags
     - field.field.node.umd_terp_homepage.field_umdt_ct_sections
     - node.type.umd_terp_homepage
   module:
     - user
 _core:
-  default_config_hash: Z523KeOmV1xQFnBUqJSUDAG4Vo9Fco8zBcLxxV8d1DI
+  default_config_hash: qbRGpY9V0v1nqJ1xEPMggX92RpOnEmMTKuUpstJHzm8
 id: node.umd_terp_homepage.teaser
 targetEntityType: node
 bundle: umd_terp_homepage
@@ -35,6 +36,7 @@ hidden:
   field_umdt_ct_hero_subtitle: true
   field_umdt_ct_hero_text: true
   field_umdt_ct_hero_title: true
+  field_umdt_ct_hero_video: true
   field_umdt_ct_metatags: true
   field_umdt_ct_sections: true
   field_umdt_ct_subtitle: true
