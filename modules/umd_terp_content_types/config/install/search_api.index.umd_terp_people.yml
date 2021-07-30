@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_person_bio
+    - field.storage.node.field_umdt_ct_person_departments
+    - search_api.server.local_database
+  module:
+    - node
+    - search_api
+_core:
+  default_config_hash: BMgwIx7p5e77QbITzp7JCa7MOWok81GOsN0ft-SmVTU
+id: umd_terp_people
+name: 'UMD Terp People Index'
+description: ''
+read_only: false
+field_settings:
+  field_umdt_ct_person_bio:
+    label: Bio
+    datasource_id: 'entity:node'
+    property_path: field_umdt_ct_person_bio
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_umdt_ct_person_bio
+  field_umdt_ct_person_departments:
+    label: Departments
+    datasource_id: 'entity:node'
+    property_path: field_umdt_ct_person_departments
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_umdt_ct_person_departments
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - umd_terp_person
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local_database

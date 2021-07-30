@@ -2,7 +2,7 @@ name: 'UMD Terp Paragraphs: Text'
 type: module
 description: Provides a paragraphs bundle for embedding HTML/text as a Kitchen Sink Widgets.
 version: '8.x-1.0'
-core: '8.x'
+core_version_requirement: ^8.8 || ^9
 
 package: UMD.EDU
 dependencies:

@@ -1,8 +1,8 @@
 name: 'UMD Terp Base'
 type: module
 description: 'Provides base functionality for UMD Terp Theme (umd_terp), and is suitable for all UMD projects.'
-core: '8.x'
-version: '8.1.52'
+core_version_requirement: ^8.8 || ^9
+version: '8.1.53'
 package: UMD.EDU
 dependencies:
   - paragraphs

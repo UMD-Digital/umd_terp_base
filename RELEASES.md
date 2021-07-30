@@ -1,3 +1,7 @@
+8.1.53
+======
+- Add d9 to core version requirements
+
 8.1.52
 ======
 - Add poster to hero video (https://trello.com/c/PMnfv7T7/134-d8-templates-video-loop-hero)
