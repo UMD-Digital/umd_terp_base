@@ -1,3 +1,7 @@
+8.1.54
+======
+- Updates to allow better composer based installs
+
 8.1.53
 ======
 - Add d9 to core version requirements

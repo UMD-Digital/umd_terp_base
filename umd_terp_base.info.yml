@@ -2,35 +2,16 @@ name: 'UMD Terp Base'
 type: module
 description: 'Provides base functionality for UMD Terp Theme (umd_terp), and is suitable for all UMD projects.'
 core_version_requirement: ^8.8 || ^9
-version: '8.1.53'
+version: '8.1.54'
 package: UMD.EDU
 dependencies:
+  - admin_toolbar
   - paragraphs
+  - twig_tweak
   - pathauto
   - search_api
   - search_api_db
   - field_group
   - media_library
   - metatag
-  - ut_accordion
-  - ut_alert
-  - ut_blockquote
-  - ut_button
-  - ut_card
-  - ut_carousel
-  - ut_divider
-  - ut_events
-  - ut_feature
-  - ut_images
-  - ut_news
-  - ut_people
-  - ut_sidebar_menu
-  - ut_slideshow
-  - ut_stats
-  - ut_table
-  - ut_tabs
-  - ut_text
-  - ut_video
-  - ut_view
-  - ut_webform
   - umd_terp_content_types

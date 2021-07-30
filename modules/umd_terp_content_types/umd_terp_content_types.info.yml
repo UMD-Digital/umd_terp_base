@@ -5,4 +5,4 @@ core_version_requirement: ^8.8 || ^9
 package: UMD.EDU
 dependencies:
   - paragraphs
-  - umd_terp_base
+  - link_attributes
