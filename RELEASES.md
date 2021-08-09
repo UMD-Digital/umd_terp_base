@@ -1,3 +1,7 @@
+8.1.56
+======
+- Aria live added to slideshow and stat group code
+
 8.1.55
 ======
 - Updates to allow better composer based installs
