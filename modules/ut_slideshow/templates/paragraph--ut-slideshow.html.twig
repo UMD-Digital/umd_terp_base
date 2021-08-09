@@ -13,7 +13,7 @@
 %}
 
 {% block paragraph %}
-	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}} aria-live="polite">
 		{% block content %}
 			<div class="slideshow-nav">
 				<button class="slideshow-nav-control slideshow-control-prev" aria-label="Previous slide">
