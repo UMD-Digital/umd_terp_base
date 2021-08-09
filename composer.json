@@ -20,6 +20,7 @@
     ],
     "require": {
         "drupal/external_data_source": "*",
+        "drupal/admin_toolbar": "*",
         "drupal/link_attributes": "*",
         "drupal/paragraphs": "*",
         "drupal/pathauto": "*",
