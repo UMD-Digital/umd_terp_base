@@ -1,3 +1,7 @@
+8.1.57
+======
+- Adding UT News and Events Columns module. Displays Local Articles and Events in a two column layout.
+
 8.1.56
 ======
 - Aria live added to slideshow and stat group code

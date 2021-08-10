@@ -48,6 +48,7 @@ Install as you normally would any drupal 8 module.
 - ut_video: Paragraphs integration of a video for UMD projects. This module provides a way to add a a video to Kitchen Sink Pages.
 - ut_view: Paragraphs integration of a view for UMD projects. This module provides a way to add a view to Kitchen Sink Pages.
 - ut_webform: Paragraphs integration of a webform for UMD projects. This module provides a way to add a webform to Kitchen Sink Pages.
+- ut_news_and_events_columns: Paragraphs integration of a two column feature for UMD projects. This module provides a way to add a two column Local Articles and Events layout to Kitchen Sink Pages.
 
 ## Development
 

@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Ut_news_and_events_columns module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function ut_news_and_events_columns_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.ut_news_and_events_columns':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * Lets us define our paragraphs templates in this module.
+ */
+function ut_news_and_events_columns_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__ut_news_and_events_columns' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_field_WIDGET_TYPE_paragraphs_form_alter().
+ *
+ * Adds "Content Tips" helper text to the paragraph.
+ */
+function ut_news_and_events_columns_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+  if ($element['#paragraph_type'] == 'ut_news_and_events_columns') {
+    // Tips text.
+    $markup = '<ul>';
+    $markup .= '<li><strong>This section contains the following items:</strong> Articles Feed and Events Feed</li>';
+    $markup .= '<li>By default the user is presented with either Articles or Events. You may customize your display settings. It is recommended to display Articles "Without Filters".</li>';
+    $markup .= '</ul>';
+
+    $element['ut_news_and_events_columns_tips'] = [
+      '#type' => 'details',
+      '#title' => t('News and Events Two Column Content Tips'),
+      '#weight' => -1000,
+    ];
+    $element['ut_news_and_events_columns_tips']['#markup'] = $markup;
+  }
+}
