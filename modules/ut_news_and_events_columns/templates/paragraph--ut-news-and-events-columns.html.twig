@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override to display a UMD Terp Articles and Events Columns Paragraph.
+ */
+#}
+
+{% block paragraph %}
+  <div>
+    {% block content %}
+      <div class="row">
+        <div class="col-800 pr-800-5 mb-5">
+          {{ content.field_articles }}
+        </div>
+        <div class="col-800 pl-800-5 mb-5">
+          {{ content.field_events}}
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}
