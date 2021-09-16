@@ -18,7 +18,7 @@ class UmdTerpBase {
     $graphQLquery = '{"query": "query ' . $query . '"}';
     $response = (new Client)->request('post', 'https://today.umd-staging.com/graphql', [
       'headers' => [
-        'Authorization' => 'Bearer IjA1JEotnCZ_HQz61Wvo5FiWGHhNC6k0',
+        'Authorization' => 'Bearer xxxxxxxxxxxx',
         'Content-Type' => 'application/json',
       ],
       'body' => $graphQLquery,
