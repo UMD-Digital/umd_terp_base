@@ -25,9 +25,9 @@
 					{% for news in ut_news_list %}
 						{% set photo = assets_path ~ '/img/Profiles_Photo_Placeholder.svg' %}
 						{% set photo_alt = news.title %}
-						{% if news.hero_image.0 %}
-							{% set photo = news.hero_image.0.url_600_338 %}
-							{% set photo_alt = news.hero_image.0.alt %}
+						{% if news.articlesHeroImage.0 %}
+							{% set photo = 'https://today.umd.edu/' ~ news.articlesHeroImage.0.url %}
+							{% set photo_alt = news.articlesHeroImage.0.altText %}
 						{% endif %}
 						<div class="card-wrap card-wrap--3">
 							<div class="card">
@@ -41,9 +41,9 @@
 									{% if news.summary %}
 										<div class="card-text">{{ news.summary|raw }}</div>
 									{% endif %}
-									{% if news.slug %}
+									{% if news.url %}
 										{% spaceless %}
-											<a href="https://today.umd.edu/articles/{{ news.slug }}-{{news.id}}" class="card-cta fancy-link">
+											<a href="{{news.url}}" class="card-cta fancy-link">
 												View Article
 												<span class="sr-only">{{ news.title|raw }}</span>
 											</a>
@@ -65,6 +65,7 @@
 				{% endif %}
 			</div>
 		{% endblock %}
-		{{ content|without('field_ut_news_audience', 'field_ut_news_colleges_schools', 'field_ut_news_destination', 'field_ut_news_messaging_area', 'field_ut_news_priorities', 'field_ut_news_style', 'field_ut_news_title', 'field_ut_news_topics', 'field_ut_news_link') }}
+		{{ content|without('field_ut_news_audience', 'field_ut_news_colleges_schools', 'field_ut_news_style', 'field_ut_news_title', 'field_ut_news_topics', 'field_ut_news_link') }}
 	</div>
 {% endblock paragraph %}
+

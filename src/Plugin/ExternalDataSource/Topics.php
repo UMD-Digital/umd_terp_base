@@ -60,7 +60,7 @@ class Topics extends ExternalDataSourceBase {
    * @return array
    */
   public function getResponse() {
-    $data = UmdTerpBase::middleware_get_taxonomy('topics');
+    $data = UmdTerpBase::middleware_get_taxonomy('tags');
     return $this->formatResponse($data);
   }
 

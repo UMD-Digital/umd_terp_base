@@ -43,12 +43,6 @@ function ut_news_preprocess_paragraph__ut_news(&$variables) {
   // UUID to pass for cache.
   $uuid = $variables['elements']['#paragraph']->uuid->value;
 
-  // Check on Destination filter.
-  $destination = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_news_destination->value)) {
-    $destination = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_destination->getValue());
-  }
-
   // Check on Colleges and Schools filter.
   $colleges_schools = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_news_colleges_schools->value)) {
@@ -61,18 +55,6 @@ function ut_news_preprocess_paragraph__ut_news(&$variables) {
     $audience = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_audience->getValue());
   }
 
-  // Check on Messaging Area filter.
-  $messaging_area = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_news_messaging_area->value)) {
-    $messaging_area = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_messaging_area->getValue());
-  }
-
-  // Check on Priorities filter.
-  $priorities = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_news_priorities->value)) {
-    $priorities = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_priorities->getValue());
-  }
-
   // Check on Topics filter.
   $topic = NULL;
   if (isset($variables['elements']['#paragraph']->field_ut_news_topics->value)) {
@@ -81,15 +63,12 @@ function ut_news_preprocess_paragraph__ut_news(&$variables) {
 
   // Get news.
   $variables['ut_news_list'] = _ut_news_get_news(
-        $destination,
-        $colleges_schools,
-        $audience,
-        $messaging_area,
-        $priorities,
-        $topic,
-        3,
-        $uuid
-    );
+      $colleges_schools,
+      $audience,
+      $topic,
+      3,
+      $uuid
+  );
 }
 
 /**
@@ -144,16 +123,13 @@ function _ut_news_format_filters($filter) {
  }
 
 /**
- * Gets news from HUB, and displays.
+ * Gets news from UMD Today, and displays.
  *
- * See https://umd-hub.herokuapp.com/graphql for self documentation.
+ * See https://today.umd-staging.com/admin/graphiql for self documentation.
  */
 function _ut_news_get_news(
-    $destination = NULL,
     $colleges_schools = NULL,
     $audience = NULL,
-    $messaging_area = NULL,
-    $priorities = NULL,
     $topic = NULL,
     $range = 3,
     $id = 'news-default'
@@ -162,33 +138,23 @@ function _ut_news_get_news(
     return $cache->data;
   }
   else {
-    $query = 'articles(sort: {field: \"authorship_date\", direction: DESC}, page: {limit: ' . $range . ', offset: 0}';
-    if (isset($destination) || isset($colleges_schools) || isset($audience) || isset($messaging_area) || isset($priorities) || isset($topic)) {
-      $query .= ',filter: {';
-      if (isset($destination)) {
-        $query .= 'destination:' . $destination . ',';
-      }
+    $fields = '{ title url postDate ... on articles_today_Entry { summary: genericText articlesHeroImage { url ... on hero_Asset { altText: genericText }}}}';
+    $query = 'getArticlesByCategory{entries(section:\\"articles\\",limit:' . $range . ',';
+    if (isset($colleges_schools) || isset($audience) || isset($topic)) {
       if (isset($colleges_schools)) {
-        $query .= 'school:' . $colleges_schools . ',';
+        $query .= 'categoryCampusUnitsMultiple: ' . $audience . ',';
       }
       if (isset($audience)) {
-        $query .= 'audience:' . $audience . ',';
-      }
-      if (isset($messaging_area)) {
-        $query .= 'message_area:' . $messaging_area . ',';
-      }
-      if (isset($priorities)) {
-        $query .= 'initiative:' . $priorities . ',';
+        $query .= 'categoryAudienceMultiple: ' . $audience . ',';
       }
       if (isset($topic)) {
-        $query .= 'topic:' . $topic . ',';
+        $query .= 'categoryTagsMultiple: ' . $audience . ',';
       }
-      $query .= '}';
     }
+    $query .= ')' . $fields . '}';
 
-    $query .= ' ) { data { title slug id summary hero_image { url_600_338 alt } }}';
     $result = UmdTerpBase::middleware_get($query);
-    $result = $result['data']['articles']['data'];
+    $result = $result['data']['entries'];
     if ($result) {
       \Drupal::cache()->set('ut_news--' . $id, $result, time() + 900);
       return $result;
