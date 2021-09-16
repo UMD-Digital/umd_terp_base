@@ -1,0 +1,7 @@
+umd_terp_base.config:
+  path: '/admin/config/umd_terp_base/config'
+  defaults:
+    _form: '\Drupal\umd_terp_base\Utility\UmdTerpBaseConfigForm'
+    _title: 'Configuration for UMD Terp Modules'
+  requirements:
+    _permission: 'administer site configuration'

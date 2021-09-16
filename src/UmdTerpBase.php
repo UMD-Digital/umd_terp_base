@@ -14,11 +14,13 @@ class UmdTerpBase {
    *
    * Gets taxonomies/term ID's/etc from the HUB Middleware.
    */
-  public static function middleware_get($query) {
+  public static function middleware_get_news($query) {
+    $umd_terp_base_settings = \Drupal::config('umd_terp_base.settings');
+    $news_api_bearer_token = $umd_terp_base_settings->get('umd_terp_base.news_api_token');
     $graphQLquery = '{"query": "query ' . $query . '"}';
-    $response = (new Client)->request('post', 'https://today.umd-staging.com/graphql', [
+    $response = (new Client)->request('post', 'https://today.umd.edu/graphql', [
       'headers' => [
-        'Authorization' => 'Bearer xxxxxxxxxxxx',
+        'Authorization' => 'Bearer ' . $news_api_bearer_token,
         'Content-Type' => 'application/json',
       ],
       'body' => $graphQLquery,

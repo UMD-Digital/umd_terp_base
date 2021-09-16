@@ -1,0 +1,4 @@
+umd_terp_base.config:
+  title: 'UMD Terp Modules'
+  parent: system.admin_config_services
+  route_name: 'umd_terp_base.config'
