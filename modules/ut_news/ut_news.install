@@ -18,3 +18,11 @@ function ut_news_update_8001() {
 function ut_news_update_8002() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_news');
 }
+
+/**
+ * Change graphql endpoint to new craft site.
+ */
+function ut_news_update_8003() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_news');
+}
+

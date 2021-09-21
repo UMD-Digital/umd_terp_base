@@ -61,11 +61,25 @@ function ut_news_preprocess_paragraph__ut_news(&$variables) {
     $topic = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_topics->getValue());
   }
 
+  // Check on Messaging Area filter.
+  $messaging_area = NULL;
+  if (isset($variables['elements']['#paragraph']->field_ut_news_messaging_area->value)) {
+    $messaging_area = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_messaging_area->getValue());
+  }
+
+  // Check on Priorities filter.
+  $priorities = NULL;
+  if (isset($variables['elements']['#paragraph']->field_ut_news_priorities->value)) {
+    $priorities = _ut_news_format_filters($variables['elements']['#paragraph']->field_ut_news_priorities->getValue());
+  }
+
   // Get news.
   $variables['ut_news_list'] = _ut_news_get_news(
       $colleges_schools,
       $audience,
       $topic,
+      $messaging_area,
+      $priorities,
       3,
       $uuid
   );
@@ -132,6 +146,8 @@ function _ut_news_get_news(
     $colleges_schools = NULL,
     $audience = NULL,
     $topic = NULL,
+    $messaging_area = NULL,
+    $priorities = NULL,
     $range = 3,
     $id = 'news-default'
 ) {
@@ -143,18 +159,24 @@ function _ut_news_get_news(
     $query = 'getArticlesByCategory{entries(section:\\"articles\\",limit:' . $range . ',';
     if (isset($colleges_schools) || isset($audience) || isset($topic)) {
       if (isset($colleges_schools)) {
-        $query .= 'categoryCampusUnitsMultiple: ' . $audience . ',';
+        $query .= 'categoryCampusUnitsMultiple: ' . $colleges_schools . ',';
       }
       if (isset($audience)) {
         $query .= 'categoryAudienceMultiple: ' . $audience . ',';
       }
       if (isset($topic)) {
-        $query .= 'categoryTagsMultiple: ' . $audience . ',';
+        $query .= 'categoryTagsMultiple: ' . $topic . ',';
+      }
+      if (isset($messaging_area)) {
+        $query .= 'categoryMessagingAreaMultiple: ' . $messaging_area . ',';
+      }
+      if (isset($priorities)) {
+        $query .= 'categoryPrioritiesInitiativesMultiple: ' . $priorities . ',';
       }
     }
     $query .= ')' . $fields . '}';
 
-    $result = UmdTerpBase::middleware_get_news($query);
+    $result = UmdTerpBase::middleware_get($query);
     $result = $result['data']['entries'];
     if ($result) {
       \Drupal::cache()->set('ut_news--' . $id, $result, time() + 900);

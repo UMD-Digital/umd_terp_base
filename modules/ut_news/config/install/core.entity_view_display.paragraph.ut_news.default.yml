@@ -1,10 +1,10 @@
+uuid: 97b21ad8-d4ba-4c4d-8957-ed9e475ed826
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.paragraph.ut_news.field_ut_news_audience
     - field.field.paragraph.ut_news.field_ut_news_colleges_schools
-    - field.field.paragraph.ut_news.field_ut_news_destination
     - field.field.paragraph.ut_news.field_ut_news_link
     - field.field.paragraph.ut_news.field_ut_news_messaging_area
     - field.field.paragraph.ut_news.field_ut_news_priorities
@@ -17,7 +17,7 @@ dependencies:
     - link
     - options
 _core:
-  default_config_hash: IdUJM04AXQYSntxK7I-YsqjinF9FzgSRhNsPDWAHiek
+  default_config_hash: UTFy64ZqEy6BSnr5INoXaEvXQHiPY_RRM2PCGIgj6hY
 id: paragraph.ut_news.default
 targetEntityType: paragraph
 bundle: ut_news
@@ -32,13 +32,6 @@ content:
     region: content
   field_ut_news_colleges_schools:
     weight: 4
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: external_data_source_formatter
-    region: content
-  field_ut_news_destination:
-    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }

@@ -79,15 +79,15 @@ function ut_events_preprocess_paragraph__ut_events(&$variables) {
   }
 
   // Get events.
-  $variables['ut_events_list'] = _ut_events_get_events(
-        $destination,
-        $colleges_schools,
-        $event_type,
-        $messaging_area,
-        $priorities,
-        $count,
-        $uuid
-    );
+  //$variables['ut_events_list'] = _ut_events_get_events(
+  //      $destination,
+  //      $colleges_schools,
+  //      $event_type,
+  //      $messaging_area,
+  //      $priorities,
+  //      $count,
+  //      $uuid
+  //  );
 }
 
 /**
