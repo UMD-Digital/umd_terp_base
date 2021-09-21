@@ -12,10 +12,12 @@ The following fields are available on this KS widget:
 
 - Style: Light or Dark
 - Title: Sets the title in the header bar. Defaults to "News".
-- View All Link: Sets the link at the bottom of the feed to a specific page on umd.today, if needed.
-- Audience: Filters articles by the Audience taxonomy in the HUB.
-- Colleges and Schools: Filters articles by the Colleges and Schools taxonomy in the HUB.
-- Topics: Filters articles by the Topics taxonomy in the HUB.
+- View All Link: Sets the link at the bottom of the feed to a specific page on UMD Today, if needed.
+- Audience: Filters articles by the Audience taxonomy in the UMD Today.
+- Colleges and Schools: Filters articles by the Colleges and Schools taxonomy in UMD Today.
+- Topics: Filters articles by the Topics taxonomy in the UMD Today.
+- Messaging Area: Filters articles by the Messaging Area taxonomy in UMD Today.
+- Priorites and Initiatives: Filters articles by the Priorites and Initiatives taxonomy in UMD Today.
 
 ## Notes on news feed and filtering
 

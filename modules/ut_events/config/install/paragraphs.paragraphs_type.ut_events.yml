@@ -7,5 +7,5 @@ id: ut_events
 label: 'Events Feed'
 icon_uuid: null
 icon_default: null
-description: 'This widget provides an events feed from the UMD HUB.'
+description: 'This widget should not be used whilst the UMD Calendaring system is in flux.'
 behavior_plugins: {  }
