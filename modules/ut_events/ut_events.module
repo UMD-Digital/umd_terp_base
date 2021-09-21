@@ -43,40 +43,40 @@ function ut_events_preprocess_paragraph__ut_events(&$variables) {
   $uuid = $variables['elements']['#paragraph']->uuid->value;
 
   // Check on Destination filter.
-  $destination = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_destination->value)) {
-    $destination = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_destination->getValue());
-  }
+  //$destination = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_destination->value)) {
+ //   $destination = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_destination->getValue());
+ // }
 
   // Check on Colleges and Schools filter.
-  $colleges_schools = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_colleges_schools->value)) {
-    $colleges_schools = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_colleges_schools->getValue());
-  }
+  //$colleges_schools = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_colleges_schools->value)) {
+  //  $colleges_schools = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_colleges_schools->getValue());
+ // }
 
   // Check on Event Type filter.
-  $event_type = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_event_types->value)) {
-    $event_type = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_event_types->getValue());
-  }
+  //$event_type = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_event_types->value)) {
+   // $event_type = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_event_types->getValue());
+  //}
 
   // Check on Messaging Area filter.
-  $messaging_area = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_messaging_area->value)) {
-    $messaging_area = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_messaging_area->getValue());
-  }
+  //$messaging_area = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_messaging_area->value)) {
+   // $messaging_area = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_messaging_area->getValue());
+  //}
 
   // Check on Priorities filter.
-  $priorities = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_priorities->value)) {
-    $priorities = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_priorities->getValue());
-  }
+  //$priorities = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_priorities->value)) {
+  //  $priorities = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_priorities->getValue());
+  //}
 
   // Check on Count.
-  $count = 3;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_count->value)) {
-    $count = $variables['elements']['#paragraph']->field_ut_events_count->value;
-  }
+  //$count = 3;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_count->value)) {
+  //  $count = $variables['elements']['#paragraph']->field_ut_events_count->value;
+  //}
 
   // Get events.
   //$variables['ut_events_list'] = _ut_events_get_events(
