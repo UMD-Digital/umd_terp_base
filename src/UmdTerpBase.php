@@ -17,16 +17,24 @@ class UmdTerpBase {
   public static function middleware_get($query) {
     $umd_terp_base_settings = \Drupal::config('umd_terp_base.settings');
     $news_api_bearer_token = $umd_terp_base_settings->get('umd_terp_base.news_api_token');
-    $graphQLquery = '{"query": "query ' . $query . '"}';
-    $response = (new Client)->request('post', 'https://today.umd-staging.com/graphql', [
-      'headers' => [
-        'Authorization' => 'Bearer ' . $news_api_bearer_token,
-        'Content-Type' => 'application/json',
-      ],
-      'body' => $graphQLquery,
-    ]);
-    $result = Json::decode($response->getBody());
-    return $result;
+    if (!empty($news_api_bearer_token)) {
+      $graphQLquery = '{"query": "query ' . $query . '"}';
+      $response = (new Client)->request('post', 'https://today.umd.edu/graphql', [
+        'headers' => [
+          'Authorization' => 'Bearer ' . $news_api_bearer_token,
+          'Content-Type' => 'application/json',
+        ],
+        'body' => $graphQLquery,
+      ]);
+      $result = Json::decode($response->getBody());
+      return $result;
+    } else {
+      $message = 'Please set or check the <a href="/admin/config/umd_terp_base/config">UMD Today News API Bearer token</a> on the UMD Terp modules configuration page.';
+      \Drupal::logger('umd_terp_base')->alert($message);
+      \Drupal::messenger()->addError($message);
+      return;
+    }
+
   }
 
   /**
