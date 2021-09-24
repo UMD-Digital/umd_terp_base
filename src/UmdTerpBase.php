@@ -29,7 +29,7 @@ class UmdTerpBase {
       $result = Json::decode($response->getBody());
       return $result;
     } else {
-      $message = 'Please set or check the <a href="/admin/config/umd_terp_base/config">UMD Today News API Bearer token</a> on the UMD Terp modules configuration page.';
+      $message = 'Please set or check the UMD Today News API Bearer token on the UMD Terp modules configuration page.';
       \Drupal::logger('umd_terp_base')->alert($message);
       \Drupal::messenger()->addError($message);
       return;
