@@ -1,3 +1,7 @@
+8.1.58
+======
+- Change news endpoint to use umd today craft cms endpoint, remove filter options from events widget (https://trello.com/c/ilmh0opr/199-utnews-updates).
+
 8.1.57
 ======
 - Adding UT News and Events Columns module. Displays Local Articles and Events in a two column layout.
