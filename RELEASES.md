@@ -1,3 +1,7 @@
+8.1.60
+======
+- Update ut_feature module install to change field types for update 8001.
+
 8.1.59
 ======
 - Update depreciated d9 function (https://trello.com/c/GqPNgmEh/200-d09starter).
