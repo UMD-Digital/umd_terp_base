@@ -1,3 +1,7 @@
+8.1.61
+======
+- Update news and event columns ks widget to be d9 compatable.
+
 8.1.60
 ======
 - Update ut_feature module install to change field types for update 8001.

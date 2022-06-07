@@ -2,7 +2,7 @@ name: 'UMD Terp Paragraphs: News and Events Columns'
 type: module
 description: Provides a two column layout for the News Articles and Events views.
 version: '8.x-1.0'
-core: '8.x'
+core_version_requirement: ^8.8 || ^9
 
 package: UMD.EDU
 dependencies:
