@@ -39,7 +39,7 @@ class UmdTerpBaseConfigForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => t('UMD Today News API Bearer token'),
       '#default_value' => $config->get('umd_terp_base.news_api_token'),
-      '#description' => t('Please contact digital-admin@umd.edu to get a bearer token for your site.'),
+      '#description' => t('Please contact digital@umd.edu to get a bearer token for your site.'),
     ];
 
     return $form;
