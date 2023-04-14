@@ -1,3 +1,11 @@
+8.1.63
+======
+- Wrap preproccess in condional.
+
+8.1.62
+======
+- Update help text for news feed.
+
 8.1.61
 ======
 - Update news and event columns ks widget to be d9 compatable.
