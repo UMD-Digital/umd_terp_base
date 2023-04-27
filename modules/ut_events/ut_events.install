@@ -61,3 +61,10 @@ function ut_events_update_8004() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_events');
 
 }
+
+/**
+ * Reconfigure events feed to go to calendar.umd.edu.
+ */
+function ut_events_update_8005() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_events');
+}

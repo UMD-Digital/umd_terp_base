@@ -7,22 +7,22 @@ use Symfony\Component\HttpFoundation\Request;
 use Drupal\umd_terp_base\UmdTerpBase;
 
 /**
- * Provides a 'Topics' ExternalDataSource.
+ * Provides a 'Events Campus Units' ExternalDataSource.
  *
  * @ExternalDataSource(
- *   id = "topics",
- *   name = @Translation("Topics"),
- *   description = @Translation("This Plugin will gather a list of UMD Topics.")
+ *   id = "events_campus_locations",
+ *   name = @Translation("Events Campus Locations"),
+ *   description = @Translation("This Plugin will gather a list of UMD Calendar Event Campus Location terms.")
  * )
  */
-class Topics extends ExternalDataSourceBase {
+class EventsCampusLocations extends ExternalDataSourceBase {
 
   /**
    *
    * @return string
    */
   public function getPluginId() {
-    return 'topics';
+    return 'events_campus_locations';
   }
 
   /**
@@ -30,7 +30,7 @@ class Topics extends ExternalDataSourceBase {
    * @return string
    */
   public function getPluginDefinition() {
-    return $this->t('This Plugin will gather a list of UMD Topics.');
+    return $this->t('This Plugin will gather a list of UMD Calendar Event Campus Location terms.');
   }
 
   /**
@@ -60,7 +60,7 @@ class Topics extends ExternalDataSourceBase {
    * @return array
    */
   public function getResponse() {
-    $data = UmdTerpBase::middleware_get_news_taxonomy('tags');
+    $data = UmdTerpBase::middleware_get_events_taxonomy('campusLocationBuildings');
     return $this->formatResponse($data);
   }
 

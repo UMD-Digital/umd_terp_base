@@ -1,3 +1,8 @@
+8.1.64
+======
+- Revamp ut_events module, to go to calendar.umd.edu.
+- Minor ut_news documantation fixes.
+
 8.1.63
 ======
 - Wrap preproccess in condional.

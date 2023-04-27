@@ -1,6 +1,6 @@
 name: 'UMD Terp Paragraphs: News'
 type: module
-description: Provides a paragraphs bundle for embedding News Feeds as a Kitchen Sink Widget.
+description: Provides a paragraphs bundle for embedding News Feeds from today.umd.edu as a Kitchen Sink Widget.
 version: '8.x-1.0'
 core_version_requirement: ^8.8 || ^9
 
