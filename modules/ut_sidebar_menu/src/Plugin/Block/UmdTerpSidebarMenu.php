@@ -28,7 +28,7 @@ class UmdTerpSidebarMenu extends BlockBase {
       '#type' => 'select',
       '#title' => t('Menu'),
       '#default_value' => $config['menu_name'],
-      '#options' => menu_ui_get_menus(),
+      '#options' => loadMultiple(),
       '#description' => t('The menus available to place links in for this content type.'),
     ];
 

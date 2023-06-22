@@ -5,7 +5,7 @@ dependencies:
     - options
     - paragraphs
 _core:
-  default_config_hash: k3gCMqSM40B5bdOx4v2PHXXWySyF_LjzEMK4MHfuiF4
+  default_config_hash: gPAREYJTr-YI3XBPJj8tyfGsXodWlQSgrCv-FjCyPnU
 id: paragraph.field_ut_events_style
 field_name: field_ut_events_style
 entity_type: paragraph

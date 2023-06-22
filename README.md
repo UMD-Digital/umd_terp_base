@@ -37,7 +37,7 @@ Install as you normally would any drupal 8 module.
 - ut_events: Paragraphs integration of an Events Feed (from calendar.umd.edu) for UMD projects. Essentially, this module pulls a feed of upcoming events from hub.umd.edu, with optional filter paramaters available, in order to highlight relevant events.
 - ut_feature: Paragraphs integration of features for UMD projects. This module provides a way to add a feature to Kitchen Sink Pages.
 - ut_images: Paragraphs integration of images for UMD projects. This module provides a way to add a images to Kitchen Sink Pages.
-- ut_news: Paragraphs integration of a News Feed (from today.umd.edu) for UMD projects. Essentially, this module pulls a feed of articles from today.umd.edu, with optional filter paramaters available, in order to highlight relevant articles.
+- ut_news: Paragraphs integration of a News Feed (from calendar.umd.edu) for UMD projects. Essentially, this module pulls a feed of articles from hub.umd.edu, with optional filter paramaters available, in order to highlight relevant articles.
 - ut_people: Paragraphs integration of people for UMD projects. This module provides a way to add a list of Content Type People to Kitchen Sink Pages.
 - ut_sidebar_menu: This module provides a customized sidebar menu, for use in the UMD Terp theme.
 - ut_slideshow: Paragraphs integration of a slideshow for UMD projects. This module provides a way to add a slideshow to Kitchen Sink Pages.

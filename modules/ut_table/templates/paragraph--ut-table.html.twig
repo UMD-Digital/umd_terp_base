@@ -16,7 +16,8 @@
 
 {% block paragraph %}
 	<div{{attributes}}>
-		{% for key, item in content.field_ut_table_table if key|first != '#' %}
+		{% for key, item in content.field_ut_table_table %}
+		{% if key|first != '#' %}
 			{% block content %}
 				<table class="{{ classes|join(' ') }}" data-tablesaw-mode="stack" id="umd_terp_paragraph--{{ paragraph.id() }}">
 					{% if item.tablefield['#header'] %}
@@ -41,6 +42,7 @@
 					{% endif %}
 				</table>
 			{% endblock %}
+		{% endif %}
 		{% endfor %}
 		{{ content|without('field_ut_table_style', 'field_ut_table_table') }}
 	</div>
