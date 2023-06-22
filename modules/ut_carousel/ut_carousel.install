@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Ut_feature module install file.
+ */
+use Drupal\field\Entity\FieldConfig;
+
+/**
+ * Reset all content types to match standard config.
+ */
+function ut_carousel_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_carousel');
+}
+
+/**
+ * Remove all fields but image, per https://trello.com/c/SCDQ0IhM/150-template-carousels-accessibility.
+ */
+function ut_carousel_update_8002() {
+  // Deleting fields no longer desired.
+  if (FieldConfig::loadByName('paragraph', 'ut_carousel_item', 'field_ut_carousel_item_caption') !== NULL ) {
+    FieldConfig::loadByName('paragraph', 'ut_carousel_item', 'field_ut_carousel_item_caption')->delete();
+  }
+  if (FieldConfig::loadByName('paragraph', 'ut_carousel_item', 'field_ut_carousel_item_text') !== NULL ) {
+    FieldConfig::loadByName('paragraph', 'ut_carousel_item', 'field_ut_carousel_item_text')->delete();
+  }
+  if (FieldConfig::loadByName('paragraph', 'ut_carousel_item', 'field_ut_carousel_item_title') !== NULL ) {
+    FieldConfig::loadByName('paragraph', 'ut_carousel_item', 'field_ut_carousel_item_title')->delete();
+  }
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_carousel');
+}

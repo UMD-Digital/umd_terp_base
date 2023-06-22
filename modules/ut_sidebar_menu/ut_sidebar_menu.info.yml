@@ -2,7 +2,7 @@ name: 'UMD Terp: Sidebar Menu'
 type: module
 description: Provides a custom sidebar menu for the UMD Terp Theme.
 version: '8.x-1.0'
-core: '8.x'
+core_version_requirement: ^8.8 || ^9 || ^10
 
 package: UMD.EDU
 dependencies:

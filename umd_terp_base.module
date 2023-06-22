@@ -18,54 +18,11 @@ function umd_terp_base_preprocess_paragraph(&$variables) {
 /**
  * Implements hook_toolbar().
  *
- * Adds admin edit links/tabs in toolbar, so we dont need to have directly on the page.
+ * Adds admin edit links/tabs in toolbar, so we don't need to have directly on the page.
  */
 function umd_terp_base_toolbar() {
-  $links = [];
-  $local_tasks = menu_local_tasks();
-
-  if (empty($local_tasks['tabs'])) {
-    return $links;
-  }
-
-  foreach ($local_tasks['tabs'] as $route_name => $value) {
-    // Add to array by #weight so that we have the correct order
-    $links[$value['#weight']] = $value['#link'];
-  }
-
-  // Sort into correct order
-  ksort($links);
-
-  // Add the menu local tasks into the toolbar.
-  $items['local_tasks'] = [
-    '#type' => 'toolbar_item',
-    'tab' => [
-      '#type' => 'html_tag',
-      '#tag' => 'button',
-      '#value' => t('Edit'),
-      '#attributes' => [
-        'title' => t('Local tasks'),
-        'class' => ['toolbar-icon', 'toolbar-icon-edit'],
-      ],
-      '#cache' => [
-        'contexts' => [
-          'url.path',
-        ],
-      ],
-    ],
-    'tray' => [
-      '#heading' => t('Local tasks'),
-      'toolbar_administration' => [
-        '#attributes' => [
-          'class' => ['toolbar-menu'],
-        ],
-        '#links' => $links,
-        '#theme' => 'links__toolbar_MY_MODULE',
-      ],
-    ],
-    '#weight' => 1000,
-  ];
-  return $items;
+  return \Drupal::service('umd_terp_base.edit_button')
+    ->addEdit();
 }
 
 /**

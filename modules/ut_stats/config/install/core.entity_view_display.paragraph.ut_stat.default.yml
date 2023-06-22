@@ -2,16 +2,29 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.ut_stat.field_ut_stat_image
     - field.field.paragraph.ut_stat.field_ut_stat_text
     - field.field.paragraph.ut_stat.field_ut_stat_value
+    - image.style.medium
     - paragraphs.paragraphs_type.ut_stat
+  module:
+    - media
 _core:
-  default_config_hash: TRMWPze4ZLfccZ0D2RaTGxxv_BaMalOWfgqJsDDU0GQ
+  default_config_hash: F4IBHoqsgb8tTE1Z1YeKv2OFIMuYeoGVXbUOPMl9W8Y
 id: paragraph.ut_stat.default
 targetEntityType: paragraph
 bundle: ut_stat
 mode: default
 content:
+  field_ut_stat_image:
+    type: media_thumbnail
+    weight: 2
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    region: content
   field_ut_stat_text:
     weight: 1
     label: hidden

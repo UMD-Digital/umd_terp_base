@@ -4,6 +4,7 @@
  * @file
  * Ut_News module install file.
  */
+use Drupal\field\Entity\FieldConfig;
 
 /**
  * Reset all paragraph fields to match standard config.
@@ -11,3 +12,24 @@
 function ut_news_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_news');
 }
+
+/**
+ * Change filters to allow for multiple choices.
+ */
+function ut_news_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_news');
+}
+
+/**
+ * Change graphql endpoint to new craft site.
+ */
+function ut_news_update_8003() {
+
+  // Deleting destination field.
+  if (FieldConfig::loadByName('paragraph', 'ut_events', 'field_ut_news_destination') !== NULL ) {
+    FieldConfig::loadByName('paragraph', 'ut_events', 'field_ut_news_destination')->delete();
+  }
+
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_news');
+}
+

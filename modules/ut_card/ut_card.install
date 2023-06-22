@@ -11,3 +11,10 @@
 function ut_card_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_card');
 }
+
+/**
+ * Update to add columns to card groups.
+ */
+function ut_card_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_card');
+}

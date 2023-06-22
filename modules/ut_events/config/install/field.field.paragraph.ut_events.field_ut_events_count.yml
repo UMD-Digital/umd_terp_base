@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: ut_events
 label: Count
 description: 'Please select whether to show Three, Six, or Nine events. We strongly recommend going with Three, unless there is a specific reason to show more. This will default to Three.'
-required: true
+required: false
 translatable: false
 default_value:
   -

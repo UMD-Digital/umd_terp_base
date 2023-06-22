@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_event_image
+    - media.type.image
+    - node.type.umd_terp_event
+id: node.umd_terp_event.field_umdt_ct_event_image
+field_name: field_umdt_ct_event_image
+entity_type: node
+bundle: umd_terp_event
+label: Image
+description: "<p>Image Guidelines:</p>\r\n<ul>\r\n<li><strong>Dimensions:</strong> 1400px x 700px</li>\r\n<li><strong>Aspect ratio:</strong> 2:1</li>\r\n<li><strong>Focal point:</strong> Any</li>\r\n</ul>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

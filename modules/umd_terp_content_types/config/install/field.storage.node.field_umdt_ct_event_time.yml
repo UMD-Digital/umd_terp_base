@@ -2,12 +2,10 @@ langcode: en
 status: true
 dependencies:
   module:
-    - paragraphs
-_core:
-  default_config_hash: 3hNYwfnp_iHir47OUaW1Wj76iC2E_XljiOq9DWuCbJw
-id: paragraph.field_ut_carousel_item_title
-field_name: field_ut_carousel_item_title
-entity_type: paragraph
+    - node
+id: node.field_umdt_ct_event_time
+field_name: field_umdt_ct_event_time
+entity_type: node
 type: string
 settings:
   max_length: 255

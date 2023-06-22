@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: HC4sCmcxr-79n5wpH906xwUsi21Q0ZZvfY-dP64ArL0
+  default_config_hash: kZPXWzsLCp0HSaEUyILrYSKZNEhYkX_PHroEJMH3Yxg
 id: ut_card_group
 label: 'Card Group'
 icon_uuid: null

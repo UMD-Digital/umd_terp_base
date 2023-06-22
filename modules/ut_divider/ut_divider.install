@@ -18,3 +18,10 @@ function ut_divider_update_8001() {
     FieldConfig::loadByName('paragraph', 'ut_divider', 'field_ut_divider_size')->delete();
   }
 }
+
+ /**
+ * Remove required from size field.
+ */
+function ut_divider_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_divider');
+}

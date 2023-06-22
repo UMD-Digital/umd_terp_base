@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_umdt_ct_hero_video
+    - media.type.video
+    - node.type.umd_terp_homepage
+id: node.umd_terp_homepage.field_umdt_ct_hero_video
+field_name: field_umdt_ct_hero_video
+entity_type: node
+bundle: umd_terp_homepage
+label: 'Hero Video'
+description: "<p>You may optionally use a short, atmospheric video for the hero. If a video is uploaded here, it will display instead of the Hero Image. The hero image will, however be used as the video poster, so please be sure to choose an image that works seamlessly with the video, once loaded.</p>\r\n<ul>\r\n<li>Any animations or video loops should play for five seconds or less.</li>\r\n<li>Text is not recommended to be used in the video itself.</li>\r\n<li>It is best to avoid flickering, flashing, and strobing content within the videos/animations (these types of things can cause seizures).\r\nBest to go by the “three flashes or below” rule.</li>\r\n<li>Any flashing content included needs a content warning attached to it.</li>\r\n</ul>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

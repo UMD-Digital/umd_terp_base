@@ -11,3 +11,10 @@
 function ut_stats_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_stats');
 }
+
+/**
+ * Add image option to stats.
+ */
+function ut_stats_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_stats');
+}

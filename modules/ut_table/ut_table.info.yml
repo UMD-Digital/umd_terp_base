@@ -2,7 +2,7 @@ name: 'UMD Terp Paragraphs: Table'
 type: module
 description: Provides a paragraphs bundle for embedding a responsive table as a Kitchen Sink Widget.
 version: '8.x-1.0'
-core: '8.x'
+core_version_requirement: ^8.8 || ^9 || ^10
 
 package: UMD.EDU
 dependencies:

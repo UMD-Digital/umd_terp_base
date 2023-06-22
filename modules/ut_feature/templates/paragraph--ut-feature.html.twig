@@ -9,8 +9,8 @@
   set classes = [
     'feature',
     paragraph.field_ut_feature_reverse.value ? 'feature-reverse',
-    paragraph.field_ut_feature_style.value ? paragraph.field_ut_feature_style.value|clean_class,
-    paragraph.field_ut_feature_color.value ? paragraph.field_ut_feature_color.value|clean_class,
+    paragraph.field_ut_feature_style.value ? paragraph.field_ut_feature_style.value|clean_class : 'feature-default',
+    paragraph.field_ut_feature_color.value ? paragraph.field_ut_feature_color.value|clean_class : 'bg-white',
   ]
 %}
 

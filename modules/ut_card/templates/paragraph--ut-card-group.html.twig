@@ -17,6 +17,6 @@
 		{% block content %}
 			{{ content.field_ut_card_group_cards }}
 		{% endblock %}
-		{{ content|without('field_ut_card_group_cards', 'field_ut_card_group_style') }}
+		{{ content|without('field_ut_card_group_cards', 'field_ut_card_group_style', 'field_ut_card_group_columns') }}
 	</div>
 {% endblock paragraph %}

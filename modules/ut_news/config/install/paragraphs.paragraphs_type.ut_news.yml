@@ -7,5 +7,5 @@ id: ut_news
 label: 'News Feed'
 icon_uuid: null
 icon_default: null
-description: 'This widget provides a news feed from the UMD HUB.'
+description: 'This widget provides a news feed from UMD Today.'
 behavior_plugins: {  }

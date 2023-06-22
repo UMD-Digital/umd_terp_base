@@ -14,6 +14,12 @@
 
 {% block paragraph %}
 	<div{{attributes.addClass(classes).setAttribute('id','umd_terp_paragraph--'~paragraph.id())}}>
+
+	<div class="text-center">
+		<p>Sorry, this functionality has temporarily been depreciated, while the University of Maryland adjusts its calendaring system.</p>
+	</div>
+
+{#
 		{% block content %}
 			{% if content.field_ut_events_title|field_value %}
 				<h2 class="widget-heading h3">{{ content.field_ut_events_title|field_value }}</h2>
@@ -60,5 +66,6 @@
 			</div>
 			{{ content|without('field_ut_events_colleges_schools', 'field_ut_events_count', 'field_ut_events_destination', 'field_ut_events_event_types', 'field_ut_events_messaging_area', 'field_ut_events_priorities', 'field_ut_events_style', 'field_ut_events_title', 'field_ut_events_link') }}
 		{% endblock %}
+		#}
 	</div>
 {% endblock paragraph %}

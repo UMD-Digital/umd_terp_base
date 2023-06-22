@@ -27,7 +27,7 @@ Install as you normally would any drupal 8 module.
 
 ### Sub Modules
 
-- umd_terp_content_types: Provides various customizations and configurations for content types used in the "UMD Terp" theme.
+- umd_terp_content_types: Provides various customizations and configurations for content types used in the "UMD Terp" theme. This is installed by default when enabling umd_terp_base.
 - ut_accordion: Paragraphs integration of accordions for UMD projects. This module provides a way to add an accordion to Kitchen Sink Pages.
 - ut_blockquote: Paragraphs integration of blockquote for UMD projects. This module provides a way to add a blockquote to Kitchen Sink Pages.
 - ut_button: Paragraphs integration of buttons and links for UMD projects. This module provides a way to add buttons to Kitchen Sink Pages.
@@ -48,6 +48,7 @@ Install as you normally would any drupal 8 module.
 - ut_video: Paragraphs integration of a video for UMD projects. This module provides a way to add a a video to Kitchen Sink Pages.
 - ut_view: Paragraphs integration of a view for UMD projects. This module provides a way to add a view to Kitchen Sink Pages.
 - ut_webform: Paragraphs integration of a webform for UMD projects. This module provides a way to add a webform to Kitchen Sink Pages.
+- ut_news_and_events_columns: Paragraphs integration of a two column feature for UMD projects. This module provides a way to add a two column Local Articles and Events layout to Kitchen Sink Pages.
 
 ## Development
 

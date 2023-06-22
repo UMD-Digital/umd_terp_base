@@ -36,7 +36,7 @@ function umd_terp_content_types_help($route_name, RouteMatchInterface $route_mat
 /**
  * Implements hook_preprocess_node().
  *
- * Add Does some preproccessing on different umd terp content types.
+ * Add Does some preprocessing on different umd terp content types.
  */
 function umd_terp_content_types_preprocess_node(&$variables) {
 
@@ -48,7 +48,7 @@ function umd_terp_content_types_preprocess_node(&$variables) {
   $variables['nid'] = $nid;
   // Link URL for all teasers, as most need them.
   if ($view_mode !== 'full') {
-    $variables['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $nid);
+    $variables['link'] = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
   }
   // Content type specific overrides.
   if ($bundle == 'umd_terp_article') {
@@ -72,7 +72,7 @@ function umd_terp_content_types_preprocess_node(&$variables) {
     if ($view_mode == 'full') {
       $departments = $node->field_umdt_ct_person_departments->getValue();
       if (!empty($departments)) {
-        // Keep link empty for now, as there is anot yet a view based by department.
+        // Keep link empty for now, as there is not yet a view based by department.
         $departments_formatted = _umd_terp_content_types_format_term_links($departments, NULL);
         $variables['departments'] = $departments_formatted;
       }
@@ -153,10 +153,11 @@ function _umd_terp_content_types_get_people() {
   }
   else {
     $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
-    $nids = $storage->getQuery();
-    // Gather published artist nodes and sort by title.
+    $nids = $storage->entityQuery();
+    // Gather published artist nodes and sort by title. Get only people tagged as "Article Authors", to cut down on excess.
     $nids = $nids->condition('type', 'umd_terp_person')
       ->condition('status', 1)
+      ->condition('field_umdt_ct_person_author_stat', TRUE)
       ->sort('title')
       ->execute();
     $result = $storage->loadMultiple($nids);

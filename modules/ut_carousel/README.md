@@ -17,9 +17,6 @@ The following fields are available on the Carousel KS widget:
 The following fields are available on the Carousel Item KS widget:
 
 - Image: The featured image
-- Caption: Accompaning caption for the carousel
-- Title: Accompaning title for the carousel
-- Text: Accompaning text for the carousel
 
 ## Markup Overrides
 

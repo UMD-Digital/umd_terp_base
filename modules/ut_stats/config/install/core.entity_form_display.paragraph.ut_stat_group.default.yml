@@ -8,7 +8,7 @@ dependencies:
   module:
     - paragraphs
 _core:
-  default_config_hash: 8_BQmEUy2f1WmYb2J3ddGPn6jaIxKXofOQvYlq1lfJw
+  default_config_hash: Ter6CduwY5g64SAddLuci2lJOVhOALHtGR9No97h7Dk
 id: paragraph.ut_stat_group.default
 targetEntityType: paragraph
 bundle: ut_stat_group

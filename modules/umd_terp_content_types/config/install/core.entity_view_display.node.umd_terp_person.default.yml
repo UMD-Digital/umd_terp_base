@@ -5,6 +5,7 @@ dependencies:
     - field.field.node.umd_terp_person.body
     - field.field.node.umd_terp_person.field_umdt_ct_hero_image
     - field.field.node.umd_terp_person.field_umdt_ct_metatags
+    - field.field.node.umd_terp_person.field_umdt_ct_person_author_stat
     - field.field.node.umd_terp_person.field_umdt_ct_person_bio
     - field.field.node.umd_terp_person.field_umdt_ct_person_departments
     - field.field.node.umd_terp_person.field_umdt_ct_person_email
@@ -25,7 +26,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: K79J7uk1oXzH2tyns1s9i7Jra_DhctkqYoiGoIP_NKQ
+  default_config_hash: yMlhQCJuluaYbOijwmFWHWRFz98UgiLVK_4TXAvYa7U
 id: node.umd_terp_person.default
 targetEntityType: node
 bundle: umd_terp_person
@@ -53,6 +54,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_umdt_ct_person_author_stat:
+    weight: 22
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_umdt_ct_person_bio:
     weight: 4

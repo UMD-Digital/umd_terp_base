@@ -2,15 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - media
     - paragraphs
-_core:
-  default_config_hash: 7Bn6zyA0giyH93p-O_AnyJAZQsZBdfWLCcW3BX7HqEk
-id: paragraph.field_ut_carousel_item_text
-field_name: field_ut_carousel_item_text
+id: paragraph.field_ut_stat_image
+field_name: field_ut_stat_image
 entity_type: paragraph
-type: string_long
+type: entity_reference
 settings:
-  case_sensitive: false
+  target_type: media
 module: core
 locked: false
 cardinality: 1

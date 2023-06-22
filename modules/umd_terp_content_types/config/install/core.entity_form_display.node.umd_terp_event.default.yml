@@ -1,0 +1,180 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.umd_terp_event.body
+    - field.field.node.umd_terp_event.field_umdt_ct_event_caption
+    - field.field.node.umd_terp_event.field_umdt_ct_event_end_date
+    - field.field.node.umd_terp_event.field_umdt_ct_event_image
+    - field.field.node.umd_terp_event.field_umdt_ct_event_link
+    - field.field.node.umd_terp_event.field_umdt_ct_event_location
+    - field.field.node.umd_terp_event.field_umdt_ct_event_start_date
+    - field.field.node.umd_terp_event.field_umdt_ct_event_time
+    - node.type.umd_terp_event
+  module:
+    - datetime
+    - field_group
+    - link
+    - media_library
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_general:
+      children:
+        - title
+        - field_umdt_ct_event_image
+        - field_umdt_ct_event_caption
+        - field_umdt_ct_event_start_date
+        - field_umdt_ct_event_end_date
+        - field_umdt_ct_event_time
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        label: General
+        open: true
+        required_fields: true
+        id: ''
+        classes: ''
+      label: General
+    group_description:
+      children:
+        - field_umdt_ct_event_location
+        - body
+        - field_umdt_ct_event_link
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        label: Description
+        open: true
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Description
+_core:
+  default_config_hash: pabLsaBhipGzXzECAhUUMngjhE-_v7RMsHuGeRf1wZU
+id: node.umd_terp_event.default
+targetEntityType: node
+bundle: umd_terp_event
+mode: default
+content:
+  body:
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_umdt_ct_event_caption:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_umdt_ct_event_end_date:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_umdt_ct_event_image:
+    type: media_library_widget
+    weight: 2
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_umdt_ct_event_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_umdt_ct_event_location:
+    type: string_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_umdt_ct_event_start_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_umdt_ct_event_time:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

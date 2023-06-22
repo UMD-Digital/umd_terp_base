@@ -15,15 +15,26 @@ class UmdTerpBase {
    * Gets taxonomies/term ID's/etc from the HUB Middleware.
    */
   public static function middleware_get($query) {
-    $graphQLquery = '{"query": "query { ' . $query . ' } "}';
-    $response = (new Client)->request('post', 'https://umd-hub.herokuapp.com/graphql', [
-      'headers' => [
-        'Content-Type' => 'application/json',
-      ],
-      'body' => $graphQLquery,
-    ]);
-    $result = Json::decode($response->getBody());
-    return $result;
+    $umd_terp_base_settings = \Drupal::config('umd_terp_base.settings');
+    $news_api_bearer_token = $umd_terp_base_settings->get('umd_terp_base.news_api_token');
+    if (!empty($news_api_bearer_token)) {
+      $graphQLquery = '{"query": "query ' . $query . '"}';
+      $response = (new Client)->request('post', 'https://today.umd.edu/graphql', [
+        'headers' => [
+          'Authorization' => 'Bearer ' . $news_api_bearer_token,
+          'Content-Type' => 'application/json',
+        ],
+        'body' => $graphQLquery,
+      ]);
+      $result = Json::decode($response->getBody());
+      return $result;
+    } else {
+      $message = 'Please set or check the UMD Today News API Bearer token on the UMD Terp modules configuration page.';
+      \Drupal::logger('umd_terp_base')->alert($message);
+      \Drupal::messenger()->addError($message);
+      return;
+    }
+
   }
 
   /**
@@ -33,10 +44,10 @@ class UmdTerpBase {
    */
   public static function middleware_format_taxonomy($response) {
     $collection = [];
-    foreach ($response['data']['taxonomy']['data'] as $entry) {
+    foreach ($response['data']['categories'] as $entry) {
       $collection[] = [
-        'value' => $entry['tid'],
-        'label' => $entry['name'],
+        'value' => $entry['id'],
+        'label' => $entry['title'],
       ];
     }
     return $collection;
@@ -48,7 +59,7 @@ class UmdTerpBase {
    * Define the query for getting taxonomy terms.
    */
   public static function middleware_get_taxonomy($taxonomy) {
-    $query = 'taxonomy(filter: {vocabulary: \"' . $taxonomy . '\"}) { data { tid name } }';
+    $query = 'getCategoriesByType { categories(group: \\"' . $taxonomy . '\\") { title id }}';
     return self::middleware_get($query);
   }
 

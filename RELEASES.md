@@ -1,3 +1,124 @@
+8.1.61
+======
+- Update news and event columns ks widget to be d9 compatable.
+
+8.1.60
+======
+- Update ut_feature module install to change field types for update 8001.
+
+8.1.59
+======
+- Update depreciated d9 function (https://trello.com/c/GqPNgmEh/200-d09starter).
+
+8.1.58
+======
+- Change news endpoint to use umd today craft cms endpoint, remove filter options from events widget (https://trello.com/c/ilmh0opr/199-utnews-updates).
+
+8.1.57
+======
+- Adding UT News and Events Columns module. Displays Local Articles and Events in a two column layout.
+
+8.1.56
+======
+- Aria live added to slideshow and stat group code
+
+8.1.55
+======
+- Updates to allow better composer based installs
+
+8.1.54
+======
+- Updates to allow better composer based installs
+
+8.1.53
+======
+- Add d9 to core version requirements
+
+8.1.52
+======
+- Add poster to hero video (https://trello.com/c/PMnfv7T7/134-d8-templates-video-loop-hero)
+
+8.1.51
+======
+- Adjust card titles to use H2's
+
+8.1.50
+======
+- Add hero video capability to homepage (https://trello.com/c/PMnfv7T7/134-d8-templates-video-loop-hero)
+
+8.1.49
+======
+- Replace deprecated function menu_local_tasks() on toolbar edit button (https://trello.com/c/6vf7Cw17/168-conversation-move-templates-to-drupal-9)
+
+8.1.48
+======
+- Add field to person CT to allow authors to be prefiltered (https://trello.com/c/d45iIZQ6/166-local-news-view-search-and-filter-by-author-not-working)
+
+8.1.47
+======
+- Add new article search view (https://trello.com/c/JRMTMjLY/171-president-site-view-issues)
+- Add field to person CT to allow authors to be prefiltered (https://trello.com/c/d45iIZQ6/166-local-news-view-search-and-filter-by-author-not-working)
+
+8.1.46
+======
+- Add 3 column modifier to news feed.
+
+8.1.45
+======
+- Add column choice to cards (https://trello.com/c/aNTHRt7n/158-template-card-widget-display-options)
+
+8.1.42, 8.1.43, 8.1.44
+======
+- Update events CT (https://trello.com/c/J9RLFCO4/147-create-local-events-content-type-and-views)
+
+8.1.41
+======
+- Remove fields from carousel (https://trello.com/c/SCDQ0IhM/150-template-carousels-accessibility)
+
+8.1.40
+======
+- Remove fields from carousel (https://trello.com/c/SCDQ0IhM/150-template-carousels-accessibility)
+
+8.1.39
+======
+- Make news/events take multiple filters (https://trello.com/c/zHoOFqH8/162-d8-template-news-and-event-feeds-multiple-taxonomy-term-select)
+
+8.1.38
+======
+- Add spacing above ut_news "View all articles" link to avoid overlap of card
+
+8.1.37
+======
+- Local events content type (https://trello.com/c/J9RLFCO4/147-create-local-events-content-type-and-views)
+
+8.1.36
+======
+- Adjust events sort logic (https://trello.com/c/9hyyguAO/146-qc-logic-of-events-feed)
+
+8.1.35
+======
+- Add tab index to carousel
+
+8.1.34
+======
+- Removing .container element in people widget template to remove excess whitespace on sides
+
+8.1.33
+======
+- Add image field to stats (https://trello.com/c/4kwGh2si/136-d8-templates-icons-in-stat-blocks)
+
+8.1.32
+======
+- Remove required from select fields (https://trello.com/c/0Z1IRyYw/108-configuration-task)
+
+8.1.31
+======
+- Configuration updates.
+
+8.1.30
+======
+- Update help text for carousel widget to recommend 4 or more images.
+
 8.1.29
 ======
 - Set version number.

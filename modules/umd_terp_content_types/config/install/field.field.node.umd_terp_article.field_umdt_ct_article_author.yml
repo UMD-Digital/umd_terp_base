@@ -12,7 +12,7 @@ field_name: field_umdt_ct_article_author
 entity_type: node
 bundle: umd_terp_article
 label: Author
-description: 'Please choose the Author for this article. This references "UMD Terp Person" in the system, so you will need to add them there, if this is desired.'
+description: 'Please choose the Author for this article. This references "UMD Terp Person" in the system, so you will need to add them there, if this is desired. You should also ensure "Article Author" is checked on the desired persons profile, to ensure they show up in feeds where appropriate.'
 required: false
 translatable: false
 default_value: {  }

@@ -1,0 +1,4 @@
+services:
+  umd_terp_base.edit_button:
+    class: Drupal\umd_terp_base\UmdTerpToolbar
+    arguments: ['@plugin.manager.menu.local_task', '@current_route_match']

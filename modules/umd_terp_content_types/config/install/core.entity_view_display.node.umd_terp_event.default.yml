@@ -1,0 +1,100 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.umd_terp_event.body
+    - field.field.node.umd_terp_event.field_umdt_ct_event_caption
+    - field.field.node.umd_terp_event.field_umdt_ct_event_end_date
+    - field.field.node.umd_terp_event.field_umdt_ct_event_image
+    - field.field.node.umd_terp_event.field_umdt_ct_event_link
+    - field.field.node.umd_terp_event.field_umdt_ct_event_location
+    - field.field.node.umd_terp_event.field_umdt_ct_event_start_date
+    - field.field.node.umd_terp_event.field_umdt_ct_event_time
+    - node.type.umd_terp_event
+  module:
+    - datetime
+    - link
+    - text
+    - user
+_core:
+  default_config_hash: udE_OhKFW8E8xtPkrQeDDM2jyb7jf4x78n_42Z6UDz0
+id: node.umd_terp_event.default
+targetEntityType: node
+bundle: umd_terp_event
+mode: default
+content:
+  body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_umdt_ct_event_caption:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_umdt_ct_event_end_date:
+    weight: 7
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: umd_terp_standard_day
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_umdt_ct_event_image:
+    type: entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_umdt_ct_event_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_umdt_ct_event_location:
+    type: basic_string
+    weight: 8
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_umdt_ct_event_start_date:
+    weight: 6
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: umd_terp_standard_day
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_umdt_ct_event_time:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

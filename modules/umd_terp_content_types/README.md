@@ -14,6 +14,7 @@ Provides the following content types:
 - UMD Terp Basic Page: This is for creating most site content.
 - UMD Terp Homepage: This content type is for creating the homepage. In certain instances, it may also be used to create specific landing pages/etc.
 - UMD terp Person: This is for creating staff and faculty Bios.
+- UMD terp Event: This is for creating local events.
 
 Provides the following Taxonomies:
 
@@ -23,6 +24,7 @@ Provides the following Taxonomies:
 Provides the following views:
 
 - Articles: A filterable list of articles. Can be added to any basic page via the ut_view module.
+- Events: A simple list of events. Can be added to any basic page via the ut_view module.
 
 ### UMD Terp Article
 
@@ -56,7 +58,8 @@ The following fields are available on the UMD Terp Homepage:
 
 - Title
 - Hero Style: Background or default.
-- Hero Image: The main image associated with the article.
+- Hero Image: The main image in the hero.
+- Hero Video: The main video in the hero.
 - Hero Title: Main title in hero.
 - Hero Subtitle: Subtitle in hero.
 - Hero Text: Text in hero.
@@ -83,6 +86,20 @@ The following fields are available on the UMD Terp Person:
 - Hero Image: Optional large image associated with the person.
 - Body: Optional, additional text.
 - Sections: Optional kitchen sink widgets.
+- Metatags: You may use these fields to fine tune metatags, if desired.
+
+### UMD Terp Event
+
+The following fields are available on the UMD Terp Event:
+
+- Event Name
+- Image: The main image associated with the event.
+- Caption: A caption for the added image.
+- Start Date: The start date of the event.
+- End Date: The end date of the event.
+- Time: The event time.
+- Description: The main body text.
+- Event Link: Optional link to an event registration page/etc.
 - Metatags: You may use these fields to fine tune metatags, if desired.
 
 ## Markup Overrides

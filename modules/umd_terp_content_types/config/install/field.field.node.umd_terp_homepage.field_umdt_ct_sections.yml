@@ -4,30 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_umdt_ct_sections
     - node.type.umd_terp_homepage
-    - paragraphs.paragraphs_type.ut_accordion
-    - paragraphs.paragraphs_type.ut_alerts
-    - paragraphs.paragraphs_type.ut_blockquote
-    - paragraphs.paragraphs_type.ut_button_set
-    - paragraphs.paragraphs_type.ut_card_group
-    - paragraphs.paragraphs_type.ut_carousel
-    - paragraphs.paragraphs_type.ut_divider
-    - paragraphs.paragraphs_type.ut_events
-    - paragraphs.paragraphs_type.ut_feature
-    - paragraphs.paragraphs_type.ut_image
-    - paragraphs.paragraphs_type.ut_image_with_text
-    - paragraphs.paragraphs_type.ut_link_set
-    - paragraphs.paragraphs_type.ut_news
-    - paragraphs.paragraphs_type.ut_people
-    - paragraphs.paragraphs_type.ut_slideshow
-    - paragraphs.paragraphs_type.ut_stat_group
-    - paragraphs.paragraphs_type.ut_table
-    - paragraphs.paragraphs_type.ut_tabs
-    - paragraphs.paragraphs_type.ut_text
-    - paragraphs.paragraphs_type.ut_text_2_columns
-    - paragraphs.paragraphs_type.ut_text_3_columns
-    - paragraphs.paragraphs_type.ut_video
-    - paragraphs.paragraphs_type.ut_view
-    - paragraphs.paragraphs_type.ut_webform
   module:
     - entity_reference_revisions
 _core:

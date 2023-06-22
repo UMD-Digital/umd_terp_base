@@ -57,7 +57,6 @@ function ut_carousel_field_widget_paragraphs_form_alter(&$element, &$form_state,
     // Tips text.
     $markup = '<ul>';
     $markup .= '<li><strong>Use at least four images.</strong> If you only have less than four then consider using a different widget.</li>';
-    $markup .= '<li><strong>Use plain text.</strong> The Caption, Title, and Text should not have styles (bold, italics, etc.).</li>';
     $markup .= '<li><a target="_blank" href="/admin/help/ut_carousel">Carousel Help</a></li>';
     $markup .= '</ul>';
 
@@ -68,11 +67,4 @@ function ut_carousel_field_widget_paragraphs_form_alter(&$element, &$form_state,
     ];
     $element['ut_carousel_tips']['#markup'] = $markup;
   }
-}
-
-/**
- * Reset all content types to match standard config.
- */
-function ut_carousel_update_8001() {
-  \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_carousel');
 }

@@ -11,3 +11,31 @@
 function umd_terp_content_types_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'umd_terp_content_types');
 }
+
+/**
+ * Add local events content type.
+ */
+function umd_terp_content_types_update_8002() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'umd_terp_content_types');
+}
+
+/**
+ * Update local events content type.
+ */
+function umd_terp_content_types_update_8003() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'umd_terp_content_types');
+}
+
+/**
+ * Update local peoples content type, update articles view.
+ */
+function umd_terp_content_types_update_8004() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'umd_terp_content_types');
+}
+
+/**
+ * Update homepage to allow for video.
+ */
+function umd_terp_content_types_update_8005() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'umd_terp_content_types');
+}

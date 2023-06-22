@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: TASr21IPvaDFeRsr5BFpZJ8LiMvYz-fKEnvWIXH5rzQ
+name: Departments
+vid: departments
+description: 'This taxonomy holds departments for the UMD Terp Person content.'
+weight: 0

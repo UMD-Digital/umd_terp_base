@@ -43,51 +43,51 @@ function ut_events_preprocess_paragraph__ut_events(&$variables) {
   $uuid = $variables['elements']['#paragraph']->uuid->value;
 
   // Check on Destination filter.
-  $destination = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_destination->value)) {
-    $destination = $variables['elements']['#paragraph']->field_ut_events_destination->value;
-  }
+  //$destination = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_destination->value)) {
+ //   $destination = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_destination->getValue());
+ // }
 
   // Check on Colleges and Schools filter.
-  $colleges_schools = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_colleges_schools->value)) {
-    $colleges_schools = $variables['elements']['#paragraph']->field_ut_events_colleges_schools->value;
-  }
+  //$colleges_schools = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_colleges_schools->value)) {
+  //  $colleges_schools = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_colleges_schools->getValue());
+ // }
 
   // Check on Event Type filter.
-  $event_type = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_event_types->value)) {
-    $event_type = $variables['elements']['#paragraph']->field_ut_events_event_types->value;
-  }
+  //$event_type = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_event_types->value)) {
+   // $event_type = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_event_types->getValue());
+  //}
 
   // Check on Messaging Area filter.
-  $messaging_area = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_messaging_area->value)) {
-    $messaging_area = $variables['elements']['#paragraph']->field_ut_events_messaging_area->value;
-  }
+  //$messaging_area = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_messaging_area->value)) {
+   // $messaging_area = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_messaging_area->getValue());
+  //}
 
   // Check on Priorities filter.
-  $priorities = NULL;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_priorities->value)) {
-    $priorities = $variables['elements']['#paragraph']->field_ut_events_priorities->value;
-  }
+  //$priorities = NULL;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_priorities->value)) {
+  //  $priorities = _ut_events_format_filters($variables['elements']['#paragraph']->field_ut_events_priorities->getValue());
+  //}
 
   // Check on Count.
-  $count = 3;
-  if (isset($variables['elements']['#paragraph']->field_ut_events_count->value)) {
-    $count = $variables['elements']['#paragraph']->field_ut_events_count->value;
-  }
+  //$count = 3;
+  //if (isset($variables['elements']['#paragraph']->field_ut_events_count->value)) {
+  //  $count = $variables['elements']['#paragraph']->field_ut_events_count->value;
+  //}
 
   // Get events.
-  $variables['ut_events_list'] = _ut_events_get_events(
-        $destination,
-        $colleges_schools,
-        $event_type,
-        $messaging_area,
-        $priorities,
-        $count,
-        $uuid
-    );
+  //$variables['ut_events_list'] = _ut_events_get_events(
+  //      $destination,
+  //      $colleges_schools,
+  //      $event_type,
+  //      $messaging_area,
+  //      $priorities,
+  //      $count,
+  //      $uuid
+  //  );
 }
 
 /**
@@ -132,6 +132,18 @@ function ut_events_field_widget_paragraphs_form_alter(&$element, &$form_state, $
  */
 
 /**
+ * Formats multiple filters to send to the graphql endpoint.
+ *
+ */
+function _ut_events_format_filters($filter) {
+   $result = [];
+  foreach($filter as $key => $value) {
+    $result[] = intval($filter[$key]['value']);
+  }
+  return json_encode($result);
+ }
+
+/**
  * Gets events from HUB, and displays.
  *
  * See https://umd-hub.herokuapp.com/graphql for self documentation.
@@ -150,7 +162,7 @@ function _ut_events_get_events(
   }
   else {
     $currentDate = date('Y-m-d') . 'T00:00:00';
-    $query = 'adv_events(date_one: {field: \"start_date\", date: \"' . $currentDate . '\", operator: \">=\"}, page: {limit: ' . $range . ', offset: 0}';
+    $query = 'adv_events(date_one: {field: \"start_date\", date: \"' . $currentDate . '\", operator: \">=\"}, page: {limit: ' . $range . ', offset: 0}, sort: {field: \"start_date\", direction: ASC}';
     if (isset($destination) || isset($colleges_schools) || isset($event_type) || isset($messaging_area) || isset($priorities)) {
       $query .= ',filter: {';
       if (isset($destination)) {
