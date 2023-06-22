@@ -20,22 +20,22 @@ class UmdTerpBaseTest extends UnitTestCase {
   }
 
   /**
-   * @covers Drupal\umd_terp_base\UmdTerpBase::middleware_get_news
+   * @covers Drupal\umd_terp_base\UmdTerpBase::middleware_get
    */
   public function testMiddlewareGet() {
     $currentDate = date('Y-m-d') . 'T00:00:00';
     $query = 'adv_events(date_one: {field: \"start_date\", date: \"' . $currentDate . '\", operator: \">=\"}, page: {limit: 3, offset: 0}';
     $query .= ' ) { data { title slug all_day start_date { formatted_short time } end_date { time } campus_location { name } }}';
-    $data = $this->umdterpbase->middleware_get_news($query);
+    $data = $this->umdterpbase->middleware_get($query);
     $this->assertArrayHasKey('data', $data);
     $this->assertEquals(3,count($data['data']['adv_events']['data']));
   }
 
   /**
-   * @covers Drupal\umd_terp_base\UmdTerpBase::middleware_get_news_taxonomy
+   * @covers Drupal\umd_terp_base\UmdTerpBase::middleware_get_taxonomy
    */
   public function testMiddlewareGetTaxonomy() {
-    $data = $this->umdterpbase->middleware_get_news_taxonomy('audience');
+    $data = $this->umdterpbase->middleware_get_taxonomy('audience');
     $this->assertArrayHasKey('data', $data);
     $this->assertGreaterThanOrEqual(1,count($data['data']));
   }

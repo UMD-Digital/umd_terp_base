@@ -14,7 +14,8 @@
 {% block paragraph %}
 	<div{{attributes.addClass(classes).setAttribute('id','accordion-'~paragraph.id())}}>
 		{% block content %}
-			{% for key, item in content.field_ut_accordion_items if key|first != '#' %}
+			{% for key, item in content.field_ut_accordion_items %}
+			{% if key|first != '#' %}
 				<div class="card">
 					{% set expanded = loop.index == 1 and paragraph.field_ut_accordion_open_first.value %}
 					<div class="card-header" id="accordion-{{ paragraph.id() }}-header-{{ loop.index }}">
@@ -28,6 +29,7 @@
 						</div>
 					</div>
 				</div>
+			{% endif %}
 			{% endfor %}
 		{% endblock %}
 	</div>

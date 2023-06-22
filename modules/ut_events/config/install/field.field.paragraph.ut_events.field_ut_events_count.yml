@@ -6,8 +6,6 @@ dependencies:
     - paragraphs.paragraphs_type.ut_events
   module:
     - options
-_core:
-  default_config_hash: oXeUJmVZaOQgBhYTWNx4QdPEa6MiQ0EZ-yupxa3cSdk
 id: paragraph.ut_events.field_ut_events_count
 field_name: field_ut_events_count
 entity_type: paragraph

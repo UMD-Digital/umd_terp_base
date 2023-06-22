@@ -60,7 +60,7 @@ class CollegesSchools extends ExternalDataSourceBase {
    * @return array
    */
   public function getResponse() {
-    $data = UmdTerpBase::middleware_get_news_taxonomy('campusUnits');
+    $data = UmdTerpBase::middleware_get_taxonomy('campusUnits');
     return $this->formatResponse($data);
   }
 

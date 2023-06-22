@@ -153,7 +153,7 @@ function _umd_terp_content_types_get_people() {
   }
   else {
     $storage = Drupal::getContainer()->get('entity_type.manager')->getStorage('node');
-    $nids = $storage->getQuery();
+    $nids = $storage->entityQuery();
     // Gather published artist nodes and sort by title. Get only people tagged as "Article Authors", to cut down on excess.
     $nids = $nids->condition('type', 'umd_terp_person')
       ->condition('status', 1)

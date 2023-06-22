@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: WO93SHnAvBOMFYJrwB2jDFCplyFdfcaeLbsINIGEVf8
+  default_config_hash: QjdwyEqA8hzl95xmr1yBPA0MD5WaGnwUqXHIXcdpoE8
 id: ut_events
 label: 'Events Feed'
 icon_uuid: null
