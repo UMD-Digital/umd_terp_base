@@ -1,3 +1,7 @@
+8.1.67
+======
+- Add if statement around module functionality to avoid breakage in some subthemes
+
 8.1.66
 ======
 - https://github.com/UMD-Digital/umd_terp_base/issues/6

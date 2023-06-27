@@ -12,7 +12,9 @@
  */
 function umd_terp_base_preprocess_paragraph(&$variables) {
   // Need some theme settings for asset path/etc.
-  _umd_terp_extend_theme_variables($variables);
+  if (function_exists('_umd_terp_extend_theme_variables')) {
+    _umd_terp_extend_theme_variables($variables);
+  }
 }
 
 /**
