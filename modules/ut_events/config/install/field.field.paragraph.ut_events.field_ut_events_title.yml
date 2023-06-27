@@ -5,7 +5,7 @@ dependencies:
     - field.storage.paragraph.field_ut_events_title
     - paragraphs.paragraphs_type.ut_events
 _core:
-  default_config_hash: rxuSnnt37K3kKQDNhCLcqLfG139PSnC9L-yew2sudVk
+  default_config_hash: YWLhmRrBJTKgvP7DFN-SSZ8aWYycl68A98-hGidjOCg
 id: paragraph.ut_events.field_ut_events_title
 field_name: field_ut_events_title
 entity_type: paragraph

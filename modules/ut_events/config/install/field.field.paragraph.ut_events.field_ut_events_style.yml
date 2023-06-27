@@ -7,7 +7,7 @@ dependencies:
   module:
     - options
 _core:
-  default_config_hash: g899emsAsflDcaK5KwxaiLdRT1qtSR77AkvuM9IbJRw
+  default_config_hash: leMGwPszchTx3vuEG0pIdP0OQ3vvPePTdrvH5FKD7WY
 id: paragraph.ut_events.field_ut_events_style
 field_name: field_ut_events_style
 entity_type: paragraph

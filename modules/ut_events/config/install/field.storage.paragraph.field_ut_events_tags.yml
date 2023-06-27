@@ -2,18 +2,19 @@ langcode: en
 status: true
 dependencies:
   module:
+    - external_data_source
     - paragraphs
-_core:
-  default_config_hash: LS39PnDThX1i1kV1OEMtwuO2MLFk9BVvCcyF8hl-C-o
-id: paragraph.field_ut_events_title
-field_name: field_ut_events_title
+id: paragraph.field_ut_events_tags
+field_name: field_ut_events_tags
 entity_type: paragraph
-type: string
+type: external_data_source
 settings:
-  max_length: 255
-  case_sensitive: false
+  ws: events_tags
+  count: '100'
+  max_length: '255'
   is_ascii: false
-module: core
+  case_sensitive: false
+module: external_data_source
 locked: false
 cardinality: 1
 translatable: true

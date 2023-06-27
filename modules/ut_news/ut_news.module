@@ -13,14 +13,14 @@ use Drupal\umd_terp_base\UmdTerpBase;
  *
  * @inheritdoc
  */
-function ut_news_help($route_name, RouteMatchInterface $route_match) {
+function ut_news_help($route_name, RouteMatchInterface $route_match)
+{
   switch ($route_name) {
     case 'help.page.ut_news':
       $text = file_get_contents(dirname(__FILE__) . "/README.md");
       if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
         return '<pre>' . $text . '</pre>';
-      }
-      else {
+      } else {
         // Use the Markdown filter to render the README.
         $filter_manager = \Drupal::service('plugin.manager.filter');
         $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
@@ -38,7 +38,8 @@ function ut_news_help($route_name, RouteMatchInterface $route_match) {
  * @param $variables
  *   This sets variables for getting events, and then gets events, and displays.
  */
-function ut_news_preprocess_paragraph__ut_news(&$variables) {
+function ut_news_preprocess_paragraph__ut_news(&$variables)
+{
 
   // UUID to pass for cache.
   $uuid = $variables['elements']['#paragraph']->uuid->value;
@@ -75,13 +76,13 @@ function ut_news_preprocess_paragraph__ut_news(&$variables) {
 
   // Get news.
   $variables['ut_news_list'] = _ut_news_get_news(
-      $colleges_schools,
-      $audience,
-      $topic,
-      $messaging_area,
-      $priorities,
-      3,
-      $uuid
+    $colleges_schools,
+    $audience,
+    $topic,
+    $messaging_area,
+    $priorities,
+    3,
+    $uuid
   );
 }
 
@@ -89,7 +90,8 @@ function ut_news_preprocess_paragraph__ut_news(&$variables) {
  * Implements hook_theme().
  * Lets us define our paragraphs templates in this module.
  */
-function ut_news_theme($existing, $type, $theme, $path) {
+function ut_news_theme($existing, $type, $theme, $path)
+{
   return [
     'paragraph__ut_news' => [
       'base hook' => 'paragraph',
@@ -102,7 +104,8 @@ function ut_news_theme($existing, $type, $theme, $path) {
  *
  * Adds "Content Tips" helper text to the paragraph.
  */
-function ut_news_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
+function ut_news_field_widget_paragraphs_form_alter(&$element, &$form_state, $context)
+{
   if ($element['#paragraph_type'] == 'ut_news') {
     // Tips text.
     $markup = '<ul>';
@@ -125,17 +128,18 @@ function ut_news_field_widget_paragraphs_form_alter(&$element, &$form_state, $co
  * CUSTOM FUNCTIONS.
  */
 
- /**
+/**
  * Formats multiple filters to send to the graphql endpoint.
  *
  */
-function _ut_news_format_filters($filter) {
-   $result = [];
-  foreach($filter as $key => $value) {
+function _ut_news_format_filters($filter)
+{
+  $result = [];
+  foreach ($filter as $key => $value) {
     $result[] = intval($filter[$key]['value']);
   }
   return json_encode($result);
- }
+}
 
 /**
  * Gets news from UMD Today, and displays.
@@ -143,21 +147,20 @@ function _ut_news_format_filters($filter) {
  * See https://today.umd-staging.com/admin/graphiql for self documentation.
  */
 function _ut_news_get_news(
-    $colleges_schools = NULL,
-    $audience = NULL,
-    $topic = NULL,
-    $messaging_area = NULL,
-    $priorities = NULL,
-    $range = 3,
-    $id = 'news-default'
+  $colleges_schools = NULL,
+  $audience = NULL,
+  $topic = NULL,
+  $messaging_area = NULL,
+  $priorities = NULL,
+  $range = 3,
+  $id = 'news-default'
 ) {
   if ($cache = \Drupal::cache()->get('ut_news--' . $id)) {
     return $cache->data;
-  }
-  else {
+  } else {
     $fields = '{ title url postDate ... on articles_today_Entry { summary: genericText articlesHeroImage { url ... on hero_Asset { altText: genericText }}}}';
     $query = 'getArticlesByCategory{entries(section:\\"articles\\",limit:' . $range . ',';
-    if ($colleges_schools !== NULL || $audience !== NULL || $topic!== NULL || $messaging_area !== NULL || $priorities !== NULL) {
+    if ($colleges_schools !== NULL || $audience !== NULL || $topic !== NULL || $messaging_area !== NULL || $priorities !== NULL) {
       if (isset($colleges_schools)) {
         $query .= 'categoryCampusUnitsMultiple: ' . $colleges_schools . ',';
       }
@@ -176,14 +179,13 @@ function _ut_news_get_news(
     }
     $query .= ')' . $fields . '}';
 
-    $result = UmdTerpBase::middleware_get($query);
+    $result = UmdTerpBase::middleware_get_news($query);
 
     if (isset($result['data'])) {
       $result = $result['data']['entries'];
       \Drupal::cache()->set('ut_news--' . $id, $result, time() + 900);
       return $result;
-    }
-    else {
+    } else {
       return NULL;
     }
   }
