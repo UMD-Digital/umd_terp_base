@@ -1,3 +1,7 @@
+8.1.65
+======
+- Update for D10 compatibility
+
 8.1.64
 ======
 - Revamp ut_events module, to go to calendar.umd.edu.

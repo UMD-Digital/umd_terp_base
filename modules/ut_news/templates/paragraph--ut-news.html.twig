@@ -42,12 +42,12 @@
 										<div class="card-text">{{ news.summary|raw }}</div>
 									{% endif %}
 									{% if news.url %}
-										{% spaceless %}
+										{% apply spaceless %}
 											<a href="{{news.url}}" class="card-cta fancy-link">
 												View Article
 												<span class="sr-only">{{ news.title|raw }}</span>
 											</a>
-										{% endspaceless %}
+										{% endapply %}
 									{% endif %}
 								</div>
 							</div>
