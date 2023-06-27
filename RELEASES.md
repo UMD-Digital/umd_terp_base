@@ -1,3 +1,7 @@
+8.1.66
+======
+- https://github.com/UMD-Digital/umd_terp_base/issues/6
+
 8.1.65
 ======
 - Update for D10 compatibility
