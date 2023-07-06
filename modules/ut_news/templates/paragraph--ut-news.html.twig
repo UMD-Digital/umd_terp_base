@@ -27,6 +27,9 @@
 						{% set photo_alt = news.title %}
 						{% if news.articlesHeroImage.0 %}
 							{% set photo = news.articlesHeroImage.0.url %}
+							{% if not ((photo starts with 'http://') or (photo starts with 'https://')) %}
+								{% set photo = 'https://today.umd.edu/' ~ photo %}
+							{% endif %}
 							{% set photo_alt = news.articlesHeroImage.0.altText %}
 						{% endif %}
 						<div class="card-wrap card-wrap--3">
