@@ -14,10 +14,11 @@
 {% block paragraph %}
 	<div{{attributes.addClass(classes).setAttribute('id','accordion-'~paragraph.id())}}>
 		{% block content %}
+			{% set _loop_index = 0 %}
 			{% for key, item in content.field_ut_accordion_items %}
 			{% if key|first != '#' %}
 				<div class="card">
-					{% set expanded = loop.index == 1 and paragraph.field_ut_accordion_open_first.value %}
+					{% set expanded = (_loop_index == 0) and (paragraph.field_ut_accordion_open_first.value) %}
 					<div class="card-header" id="accordion-{{ paragraph.id() }}-header-{{ loop.index }}">
 						<button class="btn" data-toggle="collapse" data-target="#accordion-{{ paragraph.id() }}-content-{{ loop.index }}" aria-expanded="{{ expanded ? 'true' : 'false' }}" aria-controls="accordion-{{ paragraph.id() }}-content-{{ loop.index }}">
 							{{ item['#paragraph'].field_ut_accordion_item_title.value }}
@@ -29,6 +30,7 @@
 						</div>
 					</div>
 				</div>
+				{% set _loop_index = _loop_index + 1 %}
 			{% endif %}
 			{% endfor %}
 		{% endblock %}
