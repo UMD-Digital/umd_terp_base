@@ -1,3 +1,15 @@
+8.1.67
+======
+- Add if statement around module functionality to avoid breakage in some subthemes
+
+8.1.66
+======
+- https://github.com/UMD-Digital/umd_terp_base/issues/6
+
+8.1.65
+======
+- Update for D10 compatibility
+
 8.1.64
 ======
 - Revamp ut_events module, to go to calendar.umd.edu.

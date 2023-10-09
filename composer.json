@@ -28,8 +28,8 @@
         "drupal/metatag": "*",
         "drupal/search_api": "*",
         "drupal/tablefield": "*",
-        "drupal/viewsreference": "*",
-        "drupal/webform": "*"
+        "drupal/viewsreference": "^2.0@beta",
+        "drupal/webform": "^6.2@beta"
     },
     "support": {
         "issues": "https://github.com/UMD-Digital/umd_terp_base/issues",

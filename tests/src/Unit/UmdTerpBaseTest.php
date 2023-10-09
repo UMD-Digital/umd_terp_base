@@ -32,10 +32,10 @@ class UmdTerpBaseTest extends UnitTestCase {
   }
 
   /**
-   * @covers Drupal\umd_terp_base\UmdTerpBase::middleware_get_news_taxonomy
+   * @covers Drupal\umd_terp_base\UmdTerpBase::middleware_get_taxonomy
    */
   public function testMiddlewareGetTaxonomy() {
-    $data = $this->umdterpbase->middleware_get_news_taxonomy('audience');
+    $data = $this->umdterpbase->middleware_get_taxonomy('audience');
     $this->assertArrayHasKey('data', $data);
     $this->assertGreaterThanOrEqual(1,count($data['data']));
   }
