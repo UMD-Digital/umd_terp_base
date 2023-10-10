@@ -11,3 +11,31 @@
 function ut_view_update_8001() {
   \Drupal::service('config.installer')->installDefaultConfig('module', 'ut_view');
 }
+
+
+/**
+ * Fix following error.
+ *
+ * Mismatched entity and/or field definitions.
+ * The paragraph.field_ut_view_view field needs to be updated.
+ */
+function ut_view_update_9001() {
+  //
+  // Flush all caches to be safe.
+  drupal_flush_all_caches();
+
+  //
+  // Get correct storage configuration
+  $field_storage_config = \Drupal\field\Entity\FieldStorageConfig ::load('paragraph.field_ut_view_view');
+
+  //
+  // Update installed storage configuration with the correct one
+  $installedStorageSchema = \Drupal::keyValue('entity.storage_schema.sql');
+  $installedStorageSchema->set('paragraph.field_schema_data.field_ut_view_view', $field_storage_config->getSchema());
+
+  //
+  // Refresh field storage definition to validate
+  $manager = \Drupal::entityDefinitionUpdateManager();
+  $field_storage_definition = $manager->getFieldStorageDefinition('field_ut_view_view', 'paragraph');
+  $manager->updateFieldStorageDefinition($field_storage_definition);
+}
